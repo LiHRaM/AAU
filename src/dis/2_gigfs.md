@@ -1,1 +1,0 @@
-# Google Infrastructure and GFS
