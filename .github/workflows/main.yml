@@ -1,0 +1,28 @@
+name: Deploy
+
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  pages:
+    name: Github Pages
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@master
+      - name: Fetch mdBook 0.3.5
+        run: curl -LsSf https://github.com/rust-lang/mdBook/releases/download/v0.3.5/mdbook-v0.3.5-x86_64-unknown-linux-gnu.tar.gz | tar -xzv -O > /tmp/mdbook && chmod +x /tmp/mdbook
+      - name: Build book
+        run: /tmp/mdbook build
+      - name: Deploy to GitHub
+        env:
+          GITHUB_DEPLOY_KEY: ${{ secrets.ACTIONS_DEPLOY_KEY }}
+        run: |
+          git worktree add /tmp/book gh-pages
+          rm -rf /tmp/book/*
+          cp -rp book/* /tmp/book/
+          cd /tmp/book && \
+              git add -A && \
+              git commit -m "deployed on $(shell date) by GitHub Actions" && \
+              git push origin gh-pages
