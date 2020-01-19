@@ -19,6 +19,7 @@ jobs:
         env:
           GITHUB_DEPLOY_KEY: ${{ secrets.ACTIONS_DEPLOY_KEY }}
         run: |
+          git fetch
           git worktree add /tmp/book gh-pages
           rm -rf /tmp/book/*
           cp -rp book/* /tmp/book/
