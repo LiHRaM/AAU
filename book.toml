@@ -4,6 +4,3 @@ language = "en"
 multilingual = false
 src = "src"
 title = "Hilmar's Stay at Aalborg University"
-
-[build]
-create-missing = false
