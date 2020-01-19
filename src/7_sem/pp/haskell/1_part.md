@@ -1,1 +1,0 @@
-# Haskell - Part 1

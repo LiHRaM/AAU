@@ -1,1 +1,0 @@
-Useful video on PageRank algorithm implementation: https://www.youtube.com/watch?v=715N3qyrYJk
