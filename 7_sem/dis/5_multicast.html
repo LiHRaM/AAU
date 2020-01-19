@@ -1,0 +1,290 @@
+<!DOCTYPE HTML>
+<html lang="en" class="sidebar-visible no-js light">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>Multicast - Hilmar's Stay at Aalborg University</title>
+        
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff" />
+
+        <link rel="shortcut icon" href="../../favicon.png">
+        <link rel="stylesheet" href="../../css/variables.css">
+        <link rel="stylesheet" href="../../css/general.css">
+        <link rel="stylesheet" href="../../css/chrome.css">
+        <link rel="stylesheet" href="../../css/print.css" media="print">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="../../FontAwesome/css/font-awesome.css">
+        <link href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" rel="stylesheet" type="text/css">
+        <link href="https://fonts.googleapis.com/css?family=Source+Code+Pro:500" rel="stylesheet" type="text/css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="../../highlight.css">
+        <link rel="stylesheet" href="../../tomorrow-night.css">
+        <link rel="stylesheet" href="../../ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+        
+
+        
+    </head>
+    <body>
+        <!-- Provide site root to javascript -->
+        <script type="text/javascript">
+            var path_to_root = "../../";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "light" : "light";
+        </script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script type="text/javascript">
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script type="text/javascript">
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            var html = document.querySelector('html');
+            html.classList.remove('no-js')
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add('js');
+        </script>
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script type="text/javascript">
+            var html = document.querySelector('html');
+            var sidebar = 'hidden';
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            }
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <div id="sidebar-scrollbox" class="sidebar-scrollbox">
+                <ol class="chapter"><li class="expanded affix "><a href="../../intro.html">Intro</a></li><li class="expanded affix "><a href="../../structure.html">Structure</a></li><li class="expanded "><a href="../../1_sem/_index.html"><strong aria-hidden="true">1.</strong> Semester 1</a></li><li><ol class="section"><li class="expanded "><a href="../../1_sem/ip/_index.html"><strong aria-hidden="true">1.1.</strong> Imperative Programming</a></li><li class="expanded "><a href="../../1_sem/la/_index.html"><strong aria-hidden="true">1.2.</strong> Linear Algebra</a></li><li class="expanded "><a href="../../1_sem/pbl/_index.html"><strong aria-hidden="true">1.3.</strong> Problem Based Learning</a></li></ol></li><li class="expanded "><a href="../../2_sem/_index.html"><strong aria-hidden="true">2.</strong> Semester 2</a></li><li><ol class="section"><li class="expanded "><a href="../../2_sem/cart/_index.html"><strong aria-hidden="true">2.1.</strong> Computer Architecture</a></li><li class="expanded "><a href="../../2_sem/dm/_index.html"><strong aria-hidden="true">2.2.</strong> Discrete Mathematics</a></li><li class="expanded "><a href="../../2_sem/oop/_index.html"><strong aria-hidden="true">2.3.</strong> Object Oriented Programming</a></li></ol></li><li class="expanded "><a href="../../3_sem/_index.html"><strong aria-hidden="true">3.</strong> Semester 3</a></li><li><ol class="section"><li class="expanded "><a href="../../3_sem/ad/_index.html"><strong aria-hidden="true">3.1.</strong> Algorithms and Datastructures</a></li><li class="expanded "><a href="../../3_sem/deb/_index.html"><strong aria-hidden="true">3.2.</strong> Design and Evaluation of User Interfaces</a></li><li class="expanded "><a href="../../3_sem/su/_index.html"><strong aria-hidden="true">3.3.</strong> System's Development</a></li></ol></li><li class="expanded "><a href="../../4_sem/_index.html"><strong aria-hidden="true">4.</strong> Semester 4</a></li><li><ol class="section"><li class="expanded "><a href="../../4_sem/loc/_index.html"><strong aria-hidden="true">4.1.</strong> Languages and Compilers</a></li><li class="expanded "><a href="../../4_sem/os/_index.html"><strong aria-hidden="true">4.2.</strong> Principles of Operating Systems and Concurrency</a></li><li class="expanded "><a href="../../4_sem/ss/_index.html"><strong aria-hidden="true">4.3.</strong> Syntax and Semantics</a></li></ol></li><li class="expanded "><a href="../../5_sem/_index.html"><strong aria-hidden="true">5.</strong> Semester 5</a></li><li><ol class="section"><li class="expanded "><a href="../../5_sem/cc/_index.html"><strong aria-hidden="true">5.1.</strong> Computability and Complexity</a></li><li class="expanded "><a href="../../5_sem/mi/_index.html"><strong aria-hidden="true">5.2.</strong> Machine Intelligence</a></li><li class="expanded "><a href="../../5_sem/se/_index.html"><strong aria-hidden="true">5.3.</strong> Software Engineering</a></li></ol></li><li class="expanded "><a href="../../6_sem/_index.html"><strong aria-hidden="true">6.</strong> Semester 6</a></li><li><ol class="section"><li class="expanded "><a href="../../6_sem/aad/_index.html"><strong aria-hidden="true">6.1.</strong> Advanced Algorithms and Datastructures</a></li><li class="expanded "><a href="../../6_sem/db/_index.html"><strong aria-hidden="true">6.2.</strong> Database Systems</a></li><li class="expanded "><a href="../../6_sem/ts/_index.html"><strong aria-hidden="true">6.3.</strong> Theory of Science</a></li></ol></li><li class="expanded "><a href="../../7_sem/_index.html"><strong aria-hidden="true">7.</strong> Semester 7</a></li><li><ol class="section"><li class="expanded "><a href="../../7_sem/dis/_index.html"><strong aria-hidden="true">7.1.</strong> Distributed Systems</a></li><li><ol class="section"><li class="expanded "><a href="../../7_sem/dis/1_vim.html"><strong aria-hidden="true">7.1.1.</strong> Virtual Infrastructure Management</a></li><li class="expanded "><a href="../../7_sem/dis/2_gigfs.html"><strong aria-hidden="true">7.1.2.</strong> Google Infrastructure and GFS</a></li><li class="expanded "><a href="../../7_sem/dis/3_mapreduce.html"><strong aria-hidden="true">7.1.3.</strong> MapReduce</a></li><li class="expanded "><a href="../../7_sem/dis/4_dme.html"><strong aria-hidden="true">7.1.4.</strong> Distributed Mutual Exclusion</a></li><li class="expanded "><a href="../../7_sem/dis/5_multicast.html" class="active"><strong aria-hidden="true">7.1.5.</strong> Multicast</a></li><li class="expanded "><a href="../../7_sem/dis/6_replication_and_consistency.html"><strong aria-hidden="true">7.1.6.</strong> Replication and Consistency</a></li><li class="expanded "><a href="../../7_sem/dis/7_consensus.html"><strong aria-hidden="true">7.1.7.</strong> Consensus</a></li><li class="expanded "><a href="../../7_sem/dis/8_blockchain.html"><strong aria-hidden="true">7.1.8.</strong> Blockchain</a></li><li class="expanded "><a href="../../7_sem/dis/9_miniproject.html"><strong aria-hidden="true">7.1.9.</strong> Miniproject</a></li></ol></li><li class="expanded "><a href="../../7_sem/pp/_index.html"><strong aria-hidden="true">7.2.</strong> Programming Paradigms</a></li><li><ol class="section"><li class="expanded "><a href="../../7_sem/pp/scheme/1_part.html"><strong aria-hidden="true">7.2.1.</strong> Scheme - Part 1</a></li><li class="expanded "><a href="../../7_sem/pp/scheme/2_part.html"><strong aria-hidden="true">7.2.2.</strong> Scheme - Part 2</a></li><li class="expanded "><a href="../../7_sem/pp/scheme/3_part.html"><strong aria-hidden="true">7.2.3.</strong> Scheme - Part 3</a></li><li class="expanded "><a href="../../7_sem/pp/scheme/4_part.html"><strong aria-hidden="true">7.2.4.</strong> Scheme - Part 4</a></li><li class="expanded "><a href="../../7_sem/pp/haskell/1_part.html"><strong aria-hidden="true">7.2.5.</strong> Haskell - Part 1</a></li><li class="expanded "><a href="../../7_sem/pp/haskell/2_part.html"><strong aria-hidden="true">7.2.6.</strong> Haskell - Part 2</a></li><li class="expanded "><a href="../../7_sem/pp/haskell/3_part.html"><strong aria-hidden="true">7.2.7.</strong> Haskell - Part 3</a></li><li class="expanded "><a href="../../7_sem/pp/haskell/4_part.html"><strong aria-hidden="true">7.2.8.</strong> Haskell - Part 4</a></li><li class="expanded "><a href="../../7_sem/pp/prolog/1_part.html"><strong aria-hidden="true">7.2.9.</strong> Prolog - Part 1</a></li><li class="expanded "><a href="../../7_sem/pp/prolog/2_part.html"><strong aria-hidden="true">7.2.10.</strong> Prolog - Part 2</a></li><li class="expanded "><a href="../../7_sem/pp/prolog/3_part.html"><strong aria-hidden="true">7.2.11.</strong> Prolog - Part 3</a></li><li class="expanded "><a href="../../7_sem/pp/prolog/4_part.html"><strong aria-hidden="true">7.2.12.</strong> Prolog - Part 4</a></li></ol></li><li class="expanded "><a href="../../7_sem/tov/_index.html"><strong aria-hidden="true">7.3.</strong> Test and Verification</a></li></ol></li></ol>
+            </div>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                
+                <div id="menu-bar" class="menu-bar">
+                    <div id="menu-bar-sticky-container">
+                        <div class="left-buttons">
+                            <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                                <i class="fa fa-bars"></i>
+                            </button>
+                            <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                                <i class="fa fa-paint-brush"></i>
+                            </button>
+                            <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                                <li role="none"><button role="menuitem" class="theme" id="light">Light (default)</button></li>
+                                <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                                <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                                <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                                <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                            </ul>
+                            
+                            <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                                <i class="fa fa-search"></i>
+                            </button>
+                            
+                        </div>
+
+                        <h1 class="menu-title">Hilmar's Stay at Aalborg University</h1>
+
+                        <div class="right-buttons">
+                            <a href="../../print.html" title="Print this book" aria-label="Print this book">
+                                <i id="print-button" class="fa fa-print"></i>
+                            </a>
+                            
+                        </div>
+                    </div>
+                </div>
+
+                
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" name="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+                
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script type="text/javascript">
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <h1><a class="header" href="#topic-5-multicast" id="topic-5-multicast">Topic 5: Multicast</a></h1>
+<ul>
+<li>Why do you need multicast?</li>
+<li>Explain basic multicast assuming reliable 1:1 communication</li>
+<li>What are the requirements to reliable multicast and how do you implement it over basic multicast and IP-multicast?</li>
+<li>Explain the difference between FIFO, Total and Causal ordering? When is it important?</li>
+<li>Briefly explain the two ideas to implement TO-multicast. What can you say about reliability?</li>
+</ul>
+<p>Material: 5ed section 15.4.  (lecture 8)</p>
+<h2><a class="header" href="#why-multicast" id="why-multicast">Why Multicast?</a></h2>
+<p>Multicast serves the purpose of delivering a message from a single process to all processes belonging to a given group.</p>
+<h2><a class="header" href="#basic-multicast" id="basic-multicast">Basic Multicast</a></h2>
+<p>Two primitives and a guarantee: A correct process will eventually deliver the message, as long as the multicaster does not crash.</p>
+<ul>
+<li><code>B-multicast(g, m)</code>: for each process <code>p</code> in <code>g</code>, <code>send(p, m)</code></li>
+<li>On <code>receive(m)</code> at <code>p</code>: <code>B-deliver(m)</code> at <code>p</code>.</li>
+</ul>
+<p><strong>Problems</strong>:</p>
+<ul>
+<li>If run concurrently with a large number of receiving processes, liable to suffer from <code>ack-implosion</code>, or <em>acknowledgement-implosion</em>, where too many processes respond at the same time, causing the process to drop responses and waste more bandwidth trying to re-send the message.</li>
+<li>If the multicaster crashes, then some members of group <code>g</code> receive the message while other's don't.</li>
+</ul>
+<h2><a class="header" href="#reliable-multicast" id="reliable-multicast">Reliable Multicast</a></h2>
+<p>Reliable multicast has the following properties:</p>
+<ul>
+<li><strong>Integrity</strong>: A correct process <code>p</code> delivers a message <code>m</code> at most once.</li>
+<li><strong>Validity</strong>: If a correct process multicasts <code>m</code>, then it will eventually deliver <code>m</code>.</li>
+<li><strong>Agreement</strong>: If a correct process delivers message <code>m</code>, then all other correct processes in <code>group(m)</code> eventually deliver <code>m</code>.</li>
+</ul>
+<h3><a class="header" href="#over-basic-multicast" id="over-basic-multicast">Over Basic Multicast</a></h3>
+<p>The sender begins by B-multicasting to each member of group <code>g</code>, including itself.
+On delivering <code>m</code>, each member which did not send the original message calls <code>B-multicast</code> again, multicasting to all members of the group, and then <code>R-deliver</code>s the message.</p>
+<p>This guarantees that even if the original sender fails, as long as one correct process receives the message, it is forwarded again by each recipient.
+It should be assumed that duplicates are handled, since this means correct processes will receive the same message more than once.
+Not very practical, since each process receives each message |<code>g</code>| times.
+Guaranteed to work on even asynchronous systems.</p>
+<h3><a class="header" href="#over-ip-multicast" id="over-ip-multicast">Over IP Multicast</a></h3>
+<p>Each process maintains an array of sequence numbers.</p>
+<ol>
+<li>For each group a process belongs to, it maintains a sequence number of sent messages</li>
+<li>For each sender in each group it belongs to, it maintains a sequence number of received messages.</li>
+</ol>
+<p>For each message sent to the group, the sender adds the value S for the group and a list of acknowledgements, so that each member can verify that their S corresponds with the R provided in the message by the sender.
+This way, the recipients can see which messages they have not received, and request them from the sender, or from the node which sent them the acknowledgements.</p>
+<p>This implementation is not practical, since we cannot assume that the messages continue indefinitely (which is how we could guarantee agreement), or that copies of all messages are retained, so they can be re-sent.</p>
+<h2><a class="header" href="#fifo-total-and-causal-ordering" id="fifo-total-and-causal-ordering">FIFO, Total and Causal Ordering</a></h2>
+<p><strong>FIFO Ordering</strong>: if a correct process issues <code>multicast(g, m)</code> and then <code>multicast(g, m')</code>, then every correct process that delivers <code>m'</code> will deliver <code>m</code> first.</p>
+<p><strong>Causal Ordering</strong>: If <code>multicast(g, m)</code> → <code>multicast(g, m')</code>, where → is the happened-before relation incuded only by messages sent between the members of <code>g</code>, then any correct process that delivers <code>m'</code> will deliver <code>m</code> first.</p>
+<p><strong>Total Ordering</strong>: If a correct process delivers message <code>m</code> before it delivers <code>m'</code>, then any other correct process that delivers <code>m'</code> will deliver <code>m</code> first.</p>
+<h3><a class="header" href="#importance" id="importance">Importance</a></h3>
+<p>First of all, ordering does not imply reliability.
+A totally ordered multicast simply states that all processes deliver the messages in the same order.
+FIFO does not guarantee that the actual order in which different processes issued <code>multicast(g, m)</code> will be respected, etc.</p>
+<p>Ordering is especially important in applications such as decentralized messaging, where the order in which things are said is relevant.
+An alternative example is safety-critical systems, or banking, where certain operations only make sense in the context of previous operations.</p>
+<p>Consider for example the difference between 1.0 * 10 + 10 vs 1.0 + 10 * 10.</p>
+<h2><a class="header" href="#totally-ordered-multicast" id="totally-ordered-multicast">Totally Ordered Multicast</a></h2>
+<p>Assign totally ordered identifiers to multicast messages, so each process makes the same ordering decision based on these identifiers.</p>
+<p>Use the sequencers from the FIFO-multicast, but make them specific to the group, and not the process.
+This only works with non-overlapping groups.</p>
+<p>The first implementation depends on a sequencer process to assign the sequence.
+The sequencer assigns a sequence number to each message it receives (handling duplicates), and multicasts an order message to the group once it has B-delivered the message.</p>
+<p>The second implementation requires the processes to collectively agree on a sequence number.
+Each process maintains two sequences, and on receiving a message, they respond with a proposal, which is 1 + the larger number of</p>
+<ol>
+<li>The largest observed proposal in the group, or</li>
+<li>Their own largest proposal.
+The largest number wins, and is assigned to the message id, and multicast.
+Once messages have been assigned a number, they are moved from the hold-back queue into the delivery queue.</li>
+</ol>
+<p>These protocols are reliable if the implementations use R-multicast instead of B-multicast.</p>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                        
+                            <a rel="prev" href="../../7_sem/dis/4_dme.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+                        
+
+                        
+                            <a rel="next" href="../../7_sem/dis/6_replication_and_consistency.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+                        
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                
+                    <a href="../../7_sem/dis/4_dme.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+                
+
+                
+                    <a href="../../7_sem/dis/6_replication_and_consistency.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+                
+            </nav>
+
+        </div>
+
+        
+
+        
+
+        
+        
+        
+        <script type="text/javascript">
+            window.playpen_copyable = true;
+        </script>
+        
+
+        
+
+        
+        <script src="../../elasticlunr.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../../mark.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../../searcher.js" type="text/javascript" charset="utf-8"></script>
+        
+
+        <script src="../../clipboard.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../../highlight.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../../book.js" type="text/javascript" charset="utf-8"></script>
+
+        <!-- Custom JS scripts -->
+        
+
+        
+
+    </body>
+</html>
