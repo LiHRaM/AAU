@@ -1,4 +1,4 @@
-# Topic 8 - Blockchain
+# Topic 8: Blockchain
 
 * Explain the characteristics of the blocks in a blockchain (e.g.: immutability, linear growth)
 * Explain how the crypto tools used in blockchain work (hash function, signature, merkle tree, hash pointer) and how they are used in the blockchain
@@ -8,9 +8,11 @@
 
 Material: blockchain slides, Bitcoin paper, Solidity tutorial (lecture 13)
 
-# What is a blockchain
-    A blockchain is a digitized, decentralized public ledge of cryptocurrency transactions
-## characteristics of the blocks in a blockchain
+# The Blockchain
+The Blockchain is a digitized, decentralized public ledger of cryptocurrency transactions.
+
+## Block Characteristics
+A block 
 * ** Blocks are the individual "links" of the chain of transactions.
 * ** A block designates a single transaction
 * ** A block is typically composed of the following elements:
@@ -81,19 +83,19 @@ A miner does the following:
   2.  Compute the Merkle root hash for the transactions
   3.  Solve the puzzle on the previous block,  for immutability
   4.  Broadcast the new header
-  5.  Go on collecting new transactions for next blockMiners  receive  compensation  for  computing  then ext block.  
+  5.  Go on collecting new transactions for next blockMiners receive compensation for computing the next block.  
 ## Smart Contracts: gas prices for different primities, Solidity
-* ** Smart contracts are computer protocols that facilitate, verify or enforce the negotiation or performance of a contract, or that make a contractual clause unneccessary.
-* ** The rules are penalties are defined around an agreement, same as with traditional contracts, but automatically enforces those contracts.
-* ** Smart contracts are code that are added to the blockchain.
+* Smart contracts are computer protocols that facilitate, verify or enforce the negotiation or performance of a contract, or that make a contractual clause unneccessary.
+* The rules are penalties are defined around an agreement, same as with traditional contracts, but automatically enforces those contracts.
+* Smart contracts are code that are added to the blockchain.
 ### Ethereum
-* ** Ethereum is a smart contract based blockchain. Contracts live in the distributed network, and has its own balance of Ether, the currency/ fuel, memory and code.
-* ** Every time a transaction is sent to a contract, the code for the contract is executed
-  * ** The contract can perform transactions, store data and interact with other contracts.
-* ** To run contracts, a transaction with Ether is made to the contract, optionally with additional input.
-* ** The contract runs until it completes or runs out of Ether.
-* ** Ether is awarded to the winning miner.
-* ** Each miner runs the smart contract, and produces the same output.
+* Ethereum is a smart contract based blockchain. Contracts live in the distributed network, and has its own balance of Ether, the currency/ fuel, memory and code.
+* Every time a transaction is sent to a contract, the code for the contract is executed
+  * The contract can perform transactions, store data and interact with other contracts.
+* To run contracts, a transaction with Ether is made to the contract, optionally with additional input.
+* The contract runs until it completes or runs out of Ether.
+* Ether is awarded to the winning miner.
+* Each miner runs the smart contract, and produces the same output.
 ### Solidity
-* ** An object oriented language for implementing smart contracts.
-* ** Used in Ethereum.
+* An object oriented language for implementing smart contracts.
+* Used in Ethereum.

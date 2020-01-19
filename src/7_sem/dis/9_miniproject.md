@@ -1,4 +1,4 @@
-# Hadoop-Rs - Programming Assignment
+# Hadoop-Rs: Programming Assignment
 
 ## Goals
 There are five tasks in all.
