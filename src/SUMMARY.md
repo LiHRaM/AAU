@@ -42,6 +42,7 @@
         - [Scheme - Part 2](./7_sem/pp/scheme/2_part.md)
         - [Scheme - Part 3](./7_sem/pp/scheme/3_part.md)
         - [Scheme - Part 4](./7_sem/pp/scheme/4_part.md)
+        - [Scheme - Miniproject](./7_sem/pp/scheme/miniproject.md)
         - [Haskell - Part 1](./7_sem/pp/haskell/1_part.md)
         - [Haskell - Part 2](./7_sem/pp/haskell/2_part.md)
         - [Haskell - Part 3](./7_sem/pp/haskell/3_part.md)

@@ -1,15 +1,23 @@
 # Scheme - Part 1
 
-Lisp, or List Processing Language is a homoiconic, functional language.
-Scheme is one of its variants.
-Simple addition in scheme looks like the following:
+## Literature
+- [The Scheme Programming Language](https://www.scheme.com/tspl4/)
+- [An Introduction to Functional Programming Through Lambda Calculus](https://people.cs.aau.dk/~normark/pp-*/gjm.lambook88-3.pdf)
+
+## Learning Goals
+Establish an overall understanding of functional programming to understand the basic characteristics of Lisp.
+
+* Expressions
+    * Symbolic Expressions
+    * Lambda Expressions
+* Data Types
+    * Lists
+* Functions
+* Name Bindings
+
+## Notes
 ```scheme
+;; This is a comment
 (+ 1 1)
+;; => 2
 ```
-
-## Homoiconic
-One of the fundamental traits of Lisp languages, is that data and functions have the same shape, they are both written as lists.
-Functions differ from data only in whether the first item of the list is an operator.
-
-## Functional
-The functional programming paradigm is 
