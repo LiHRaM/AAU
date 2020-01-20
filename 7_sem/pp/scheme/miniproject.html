@@ -155,7 +155,61 @@ The core concepts of the project are <em><strong>student</strong></em>, <em><str
 <p>Program various ways to make project groups, in the context of PBL group work at AAU.</p>
 </blockquote>
 <h2><a class="header" href="#student" id="student">Student</a></h2>
-<p>A student has the following properties.</p>
+<p>The structure of a student object is described in the following table.</p>
+<table><thead><tr><th>Property</th><th>Description</th></tr></thead><tbody>
+<tr><td>Student-id</td><td>A unique identifier for the student.</td></tr>
+<tr><td>Name</td><td>The full name of the student.</td></tr>
+<tr><td>Sex</td><td>The gender, i.e. &quot;male&quot; or &quot;female&quot;.</td></tr>
+<tr><td>Nationality</td><td>E.g. &quot;Danish&quot;, &quot;Icelandic&quot;.</td></tr>
+</tbody></table>
+<h2><a class="header" href="#group" id="group">Group</a></h2>
+<p>A group ties students together with a group id. The conceptual structure is described by the following table.</p>
+<table><thead><tr><th>Property</th><th>Description</th></tr></thead><tbody>
+<tr><td>Group-id</td><td>A unique identifier for the group.</td></tr>
+<tr><td>Students</td><td>A list of students, or student-ids.</td></tr>
+</tbody></table>
+<h2><a class="header" href="#grouping" id="grouping">Grouping</a></h2>
+<p>A grouping is a collection of groups. A high-level abstraction could be described by the following table.</p>
+<table><thead><tr><th>Property</th><th>Description</th></tr></thead><tbody>
+<tr><td>Groups</td><td>A collection of groups, each containing a list of students.</td></tr>
+</tbody></table>
+<p>The problem with this structure, however, is that it cannot be sorted by students - only by groups. An alternative solution would be to create an association list, such as the following code snippet.</p>
+<pre><code class="language-scheme">;; Association list. The first element is the group id,
+;; the second is the student id.
+((1 . a) (1 . e) (2 . b) (1 . c) (2 . d))
+
+;; In other words
+((1 (a e c)) (2 (b d)))
+</code></pre>
+<h2><a class="header" href="#the-assignment" id="the-assignment">The Assignment</a></h2>
+<p>There exists a sample population of 200 students. For this population, write the following functions:</p>
+<ul>
+<li>A function that returns a given group from a grouping.
+<ul>
+<li>A function that returns the number of groups in a grouping</li>
+<li>A function that returns the maximum group size in a grouping</li>
+<li>A function that returns the minimum group size in a grouping</li>
+</ul>
+</li>
+<li>A constructor, predicate, and selection functions for a single student.</li>
+<li>A constructor, and predicate for a single group.</li>
+<li>A selection function which returns the students in a group.</li>
+<li>A selection function that returns the group id.</li>
+<li>A predicate for a grouping.</li>
+<li>Constructors for groupings.
+<ul>
+<li><strong>Random grouping</strong>: Given a list of students <code>sl</code> and a list of desired group sizes <code>gsl</code>, program a grouping function that forms <code>(length gsl)</code> groups, of the sizes prescribed in <code>gsl</code>. 
+<ul>
+<li>Assert that <code>gls</code> is a list of positive integers, whose sum is equal to <code>(length sl)</code>.</li>
+<li>Should be recursive.</li>
+</ul>
+</li>
+<li><strong>Grouping by counting</strong>: Given a list of students <code>sl</code> and a single group size <code>k</code>, iteratively assign a single group number to each student in increasing order, resetting at <code>k</code>. </li>
+<li><strong>Balanced grouping by counting</strong>: Using the same parameters as the previous function, return a grouping such that there is an equal distribution of sex and ethnicity.</li>
+<li><strong>Random grouping with group predicate</strong>: Using the same parameters as the random grouping function plus a predicate and a retry value, try applying the predicate on each randomly generated grouping. If the predicate fails, then reject the group, and form another random group. Each successful application of the predicate results in the group being added to the grouping. The retry value determines how many times random groups are created before the program stops.</li>
+</ul>
+</li>
+</ul>
 
                     </main>
 
