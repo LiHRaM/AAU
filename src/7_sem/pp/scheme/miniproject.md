@@ -64,3 +64,16 @@ There exists a sample population of 200 students. For this population, write the
   * **Grouping by counting**: Given a list of students `sl` and a single group size `k`, iteratively assign a single group number to each student in increasing order, resetting at `k`. 
   * **Balanced grouping by counting**: Using the same parameters as the previous function, return a grouping such that there is an equal distribution of sex and ethnicity.
   * **Random grouping with group predicate**: Using the same parameters as the random grouping function plus a predicate and a retry value, try applying the predicate on each randomly generated grouping. If the predicate fails, then reject the group, and form another random group. Each successful application of the predicate results in the group being added to the grouping. The retry value determines how many times random groups are created before the program stops.
+
+## Requirements
+
+- ***Language***: The program must be written in Scheme
+- ***Quality***: The functional program must be well-written, well-structured and well-explained.
+- ***Modularity***: Large functions, solving large problems, must be decomposed appropriately.
+- ***Purity***: Use only pure functions, with the exception of print, file IO and random.
+- ***Higher-Order Functions***: Use them!
+- ***Abstraction***: `car` and `cdr` should be abstracted away into accessor functions for your datatypes.
+- ***Comments***: Use them to document the program.
+- ***Plagiarism***: Not allowed.
+
+The program should be unique and written alone.
