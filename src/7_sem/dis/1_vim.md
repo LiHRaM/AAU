@@ -22,16 +22,38 @@ Manages users, storage, networks, interfaces, etc.
 
 ## Life-cycle of a VM and migrating a VM
 
-### Life-cycle
+### Manual Lifecycle
+For the manual lifecycle, someone would have to go through these step for each request received for provisioning.
 
-**Simple**: Request, Provision, Operation, Release.
+```mermaid
+stateDiagram
+    Request --> Provision
+    Provision --> Operation
+    Operation --> Release
+    Release --> Request
+```
 
-**Automatic**:
-Pending -> Prolog -> Boot -> Running -> Shutdown -> Epilog -> Done
+### Automatic Lifecycle
+The automatic lifecycle allows self-service style businesses to supply virtual machines on demand, which leads to a slightly more complex lifecycle, but much faster service.
 
-Pending <-> Hold
+```mermaid
+stateDiagram
+    Pending --> Prolog
+    Prolog --> Boot
+    Boot --> Running
+    Running --> Shutdown
+    Shutdown --> Epilog
+    Epilog --> Done
+    Pending --> Hold
+    Hold --> Pending
+    Running --> Migrate
+    Running --> Suspended
+    Running --> Stopped
+    Migrate --> Running
+    Suspended --> Running
+    Stopped --> Running
+```
 
-Running <-> Migrate | Suspended | Stopped
 
 ### Migrating a VM
 There are three main methods for VM migration:

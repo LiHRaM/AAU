@@ -6,4 +6,10 @@ src = "src"
 title = "Hilmar's Stay at Aalborg University"
 
 
+[preprocessor.mermaid]
+command = "mdbook-mermaid"
+renderer = ["html"]
+
 [output.html]
+# additional-css = ["mermaid.css"]
+additional-js = ["mermaid.min.js", "mermaid-init.js"]
