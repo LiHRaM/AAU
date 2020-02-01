@@ -15,7 +15,7 @@ jobs:
         fetch-depth: 1
 
     - name: Fetch mdbook-mermaid
-    - run: cargo install -f mdbook-mermaid
+      run: cargo install -f mdbook-mermaid
 
     - name: Setup mdBook
       uses: peaceiris/actions-mdbook@v1
