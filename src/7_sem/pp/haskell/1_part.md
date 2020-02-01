@@ -79,6 +79,6 @@ f a b = a `plus` b
         plus = (+)
 ```
 #### Let
-```haskell
+```hs
 f a b = let plus = (+) in a `plus` b
 ```

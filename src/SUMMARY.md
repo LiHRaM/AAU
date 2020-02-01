@@ -53,4 +53,6 @@
         - [Prolog - Part 3](./7_sem/pp/prolog/3_part.md)
         - [Prolog - Part 4](./7_sem/pp/prolog/4_part.md)
         - [Prolog - Miniproject](./7_sem/pp/prolog/miniproject.md)
-    - [Test and Verification](./7_sem/tov/index.md)
+    - [Tests and Verification](./7_sem/tov/index.md)
+        - [Tests](./7_sem/tov/tests.md)
+        - [Verification](./7_sem/tov/verification.md)
