@@ -172,12 +172,32 @@ Essentially, how can we utilize all this raw computing power available to us to 
 <p>Typically a master-slave architecture, where a node can be physical or virtual.
 Manages users, storage, networks, interfaces, etc.</p>
 <h2><a class="header" href="#life-cycle-of-a-vm-and-migrating-a-vm" id="life-cycle-of-a-vm-and-migrating-a-vm">Life-cycle of a VM and migrating a VM</a></h2>
-<h3><a class="header" href="#life-cycle" id="life-cycle">Life-cycle</a></h3>
-<p><strong>Simple</strong>: Request, Provision, Operation, Release.</p>
-<p><strong>Automatic</strong>:
-Pending -&gt; Prolog -&gt; Boot -&gt; Running -&gt; Shutdown -&gt; Epilog -&gt; Done</p>
-<p>Pending &lt;-&gt; Hold</p>
-<p>Running &lt;-&gt; Migrate | Suspended | Stopped</p>
+<h3><a class="header" href="#manual-lifecycle" id="manual-lifecycle">Manual Lifecycle</a></h3>
+<p>For the manual lifecycle, someone would have to go through these step for each request received for provisioning.</p>
+<pre><code class="language-mermaid">stateDiagram
+    Request --&gt; Provision
+    Provision --&gt; Operation
+    Operation --&gt; Release
+    Release --&gt; Request
+</code></pre>
+<h3><a class="header" href="#automatic-lifecycle" id="automatic-lifecycle">Automatic Lifecycle</a></h3>
+<p>The automatic lifecycle allows self-service style businesses to supply virtual machines on demand, which leads to a slightly more complex lifecycle, but much faster service.</p>
+<pre><code class="language-mermaid">stateDiagram
+    Pending --&gt; Prolog
+    Prolog --&gt; Boot
+    Boot --&gt; Running
+    Running --&gt; Shutdown
+    Shutdown --&gt; Epilog
+    Epilog --&gt; Done
+    Pending --&gt; Hold
+    Hold --&gt; Pending
+    Running --&gt; Migrate
+    Running --&gt; Suspended
+    Running --&gt; Stopped
+    Migrate --&gt; Running
+    Suspended --&gt; Running
+    Stopped --&gt; Running
+</code></pre>
 <h3><a class="header" href="#migrating-a-vm" id="migrating-a-vm">Migrating a VM</a></h3>
 <p>There are three main methods for VM migration:</p>
 <ul>
@@ -1046,6 +1066,10 @@ https://www.digitalocean.com/community/tutorials/how-to-install-hadoop-in-stand-
         <script src="../../book.js" type="text/javascript" charset="utf-8"></script>
 
         <!-- Custom JS scripts -->
+        
+        <script type="text/javascript" src="../../mermaid.min.js"></script>
+        
+        <script type="text/javascript" src="../../mermaid-init.js"></script>
         
 
         
