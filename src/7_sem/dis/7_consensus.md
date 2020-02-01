@@ -9,7 +9,7 @@
 * Present clearly your assumptions on system model, failures, and message signing.
 * Discuss impossibility in asynchronous systems and practical workarounds.
 
-[DS5ed] 15.5
+* DS 5ed 15.5
 
 ## The Consensus Problem
 The Consensus problem is a type of Agreement problem, which generally is for processes to agree on a value after one or more of the processes has proposed what that value should be.

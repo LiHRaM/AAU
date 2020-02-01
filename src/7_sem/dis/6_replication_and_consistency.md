@@ -8,9 +8,9 @@
 
 Material: slides on the above topics, and DS book: Chapter on Replication. 
 
-* [DS 5ed] Sections 18.1-18.3 (replication)
-* [DS 5ed] Section 18.4.1 (the gossip architecture)
-* [DS 5ed] Section 17.1-17.3 (Distributed Transactions)
+* DS 5ed Sections 18.1-18.3 (replication)
+* DS 5ed Section 18.4.1 (the gossip architecture)
+* DS 5ed Section 17.1-17.3 (Distributed Transactions)
 
 ## The Need for Replication
 Replication allows services to provide high availability and fault tolerance *despite* different types of failures, lag, etc.
