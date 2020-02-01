@@ -1,0 +1,1639 @@
+<!DOCTYPE HTML>
+<html lang="en" class="sidebar-visible no-js light">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>Hilmar's Stay at Aalborg University</title>
+        
+        <meta name="robots" content="noindex" />
+        
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff" />
+
+        <link rel="shortcut icon" href="favicon.png">
+        <link rel="stylesheet" href="css/variables.css">
+        <link rel="stylesheet" href="css/general.css">
+        <link rel="stylesheet" href="css/chrome.css">
+        <link rel="stylesheet" href="css/print.css" media="print">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="FontAwesome/css/font-awesome.css">
+        <link href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" rel="stylesheet" type="text/css">
+        <link href="https://fonts.googleapis.com/css?family=Source+Code+Pro:500" rel="stylesheet" type="text/css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="highlight.css">
+        <link rel="stylesheet" href="tomorrow-night.css">
+        <link rel="stylesheet" href="ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+        
+
+        
+    </head>
+    <body>
+        <!-- Provide site root to javascript -->
+        <script type="text/javascript">
+            var path_to_root = "";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "light" : "light";
+        </script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script type="text/javascript">
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script type="text/javascript">
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            var html = document.querySelector('html');
+            html.classList.remove('no-js')
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add('js');
+        </script>
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script type="text/javascript">
+            var html = document.querySelector('html');
+            var sidebar = 'hidden';
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            }
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <div id="sidebar-scrollbox" class="sidebar-scrollbox">
+                <ol class="chapter"><li class="expanded affix "><a href="intro.html">Intro</a></li><li class="expanded affix "><a href="structure.html">Structure</a></li><li class="expanded "><a href="1_sem/index.html"><strong aria-hidden="true">1.</strong> Semester 1</a></li><li><ol class="section"><li class="expanded "><a href="1_sem/ip/index.html"><strong aria-hidden="true">1.1.</strong> Imperative Programming</a></li><li class="expanded "><a href="1_sem/la/index.html"><strong aria-hidden="true">1.2.</strong> Linear Algebra</a></li><li class="expanded "><a href="1_sem/pbl/index.html"><strong aria-hidden="true">1.3.</strong> Problem Based Learning</a></li></ol></li><li class="expanded "><a href="2_sem/index.html"><strong aria-hidden="true">2.</strong> Semester 2</a></li><li><ol class="section"><li class="expanded "><a href="2_sem/cart/index.html"><strong aria-hidden="true">2.1.</strong> Computer Architecture</a></li><li class="expanded "><a href="2_sem/dm/index.html"><strong aria-hidden="true">2.2.</strong> Discrete Mathematics</a></li><li class="expanded "><a href="2_sem/oop/index.html"><strong aria-hidden="true">2.3.</strong> Object Oriented Programming</a></li></ol></li><li class="expanded "><a href="3_sem/index.html"><strong aria-hidden="true">3.</strong> Semester 3</a></li><li><ol class="section"><li class="expanded "><a href="3_sem/ad/index.html"><strong aria-hidden="true">3.1.</strong> Algorithms and Datastructures</a></li><li class="expanded "><a href="3_sem/deb/index.html"><strong aria-hidden="true">3.2.</strong> Design and Evaluation of User Interfaces</a></li><li class="expanded "><a href="3_sem/su/index.html"><strong aria-hidden="true">3.3.</strong> System's Development</a></li></ol></li><li class="expanded "><a href="4_sem/index.html"><strong aria-hidden="true">4.</strong> Semester 4</a></li><li><ol class="section"><li class="expanded "><a href="4_sem/loc/index.html"><strong aria-hidden="true">4.1.</strong> Languages and Compilers</a></li><li class="expanded "><a href="4_sem/os/index.html"><strong aria-hidden="true">4.2.</strong> Principles of Operating Systems and Concurrency</a></li><li class="expanded "><a href="4_sem/ss/index.html"><strong aria-hidden="true">4.3.</strong> Syntax and Semantics</a></li></ol></li><li class="expanded "><a href="5_sem/index.html"><strong aria-hidden="true">5.</strong> Semester 5</a></li><li><ol class="section"><li class="expanded "><a href="5_sem/cc/index.html"><strong aria-hidden="true">5.1.</strong> Computability and Complexity</a></li><li class="expanded "><a href="5_sem/mi/index.html"><strong aria-hidden="true">5.2.</strong> Machine Intelligence</a></li><li class="expanded "><a href="5_sem/se/index.html"><strong aria-hidden="true">5.3.</strong> Software Engineering</a></li></ol></li><li class="expanded "><a href="6_sem/index.html"><strong aria-hidden="true">6.</strong> Semester 6</a></li><li><ol class="section"><li class="expanded "><a href="6_sem/aad/index.html"><strong aria-hidden="true">6.1.</strong> Advanced Algorithms and Datastructures</a></li><li class="expanded "><a href="6_sem/db/index.html"><strong aria-hidden="true">6.2.</strong> Database Systems</a></li><li class="expanded "><a href="6_sem/ts/index.html"><strong aria-hidden="true">6.3.</strong> Theory of Science</a></li></ol></li><li class="expanded "><a href="7_sem/index.html"><strong aria-hidden="true">7.</strong> Semester 7</a></li><li><ol class="section"><li class="expanded "><a href="7_sem/dis/index.html"><strong aria-hidden="true">7.1.</strong> Distributed Systems</a></li><li class="expanded "><a href="7_sem/pp/index.html"><strong aria-hidden="true">7.2.</strong> Programming Paradigms</a></li><li class="expanded "><a href="7_sem/tov/index.html"><strong aria-hidden="true">7.3.</strong> Tests and Verification</a></li></ol></li></ol>
+            </div>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                
+                <div id="menu-bar" class="menu-bar">
+                    <div id="menu-bar-sticky-container">
+                        <div class="left-buttons">
+                            <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                                <i class="fa fa-bars"></i>
+                            </button>
+                            <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                                <i class="fa fa-paint-brush"></i>
+                            </button>
+                            <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                                <li role="none"><button role="menuitem" class="theme" id="light">Light (default)</button></li>
+                                <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                                <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                                <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                                <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                            </ul>
+                            
+                            <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                                <i class="fa fa-search"></i>
+                            </button>
+                            
+                        </div>
+
+                        <h1 class="menu-title">Hilmar's Stay at Aalborg University</h1>
+
+                        <div class="right-buttons">
+                            <a href="print.html" title="Print this book" aria-label="Print this book">
+                                <i id="print-button" class="fa fa-print"></i>
+                            </a>
+                            
+                        </div>
+                    </div>
+                </div>
+
+                
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" name="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+                
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script type="text/javascript">
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <h1><a class="header" href="#intro" id="intro">Intro</a></h1>
+<p>This is a collection of the notes and assignments I've written during my stay at Aalborg University.
+I use it for personal purposes during the exam period, or as a point of reference for courses which depend on material already studied.
+Anyone is welcome to submit a PR against the source code, which is available at <a href="https://github.com/lihram/aau">https://github.com/lihram/aau</a>.</p>
+<h1><a class="header" href="#structure" id="structure">Structure</a></h1>
+<p>This book is composed of 10 semesters, i.e. the undergraduate + graduate studies.
+Each semester contains 3 courses, and optionally a project.
+The last two semesters are different, as the project counts for more ECTS than in previous semesters.</p>
+<h1><a class="header" href="#semester-1" id="semester-1">Semester 1</a></h1>
+<h1><a class="header" href="#imperative-programming" id="imperative-programming">Imperative Programming</a></h1>
+<p>Programming in C</p>
+<h1><a class="header" href="#linear-algebra" id="linear-algebra">Linear Algebra</a></h1>
+<p>Matrices.</p>
+<h1><a class="header" href="#problem-based-learning" id="problem-based-learning">Problem Based Learning</a></h1>
+<p>This course is basically useless, but the concept is good.</p>
+<h1><a class="header" href="#semester-2" id="semester-2">Semester 2</a></h1>
+<h1><a class="header" href="#computer-architecture" id="computer-architecture">Computer Architecture</a></h1>
+<h1><a class="header" href="#discrete-mathematics" id="discrete-mathematics">Discrete Mathematics</a></h1>
+<h1><a class="header" href="#object-oriented-programming" id="object-oriented-programming">Object Oriented Programming</a></h1>
+<h1><a class="header" href="#semester-3" id="semester-3">Semester 3</a></h1>
+<h1><a class="header" href="#algorithms-and-datastructures" id="algorithms-and-datastructures">Algorithms and Datastructures</a></h1>
+<h1><a class="header" href="#design-and-evaluation-of-user-interfaces" id="design-and-evaluation-of-user-interfaces">Design and Evaluation of User Interfaces</a></h1>
+<h1><a class="header" href="#systems-development" id="systems-development">System's Development</a></h1>
+<h1><a class="header" href="#semester-4" id="semester-4">Semester 4</a></h1>
+<h1><a class="header" href="#languages-and-compilers" id="languages-and-compilers">Languages and Compilers</a></h1>
+<h1><a class="header" href="#principles-of-operating-systems-and-concurrency" id="principles-of-operating-systems-and-concurrency">Principles of Operating Systems and Concurrency</a></h1>
+<h1><a class="header" href="#syntax-and-semantics" id="syntax-and-semantics">Syntax and Semantics</a></h1>
+<h1><a class="header" href="#semester-5" id="semester-5">Semester 5</a></h1>
+<h1><a class="header" href="#computability-and-complexity" id="computability-and-complexity">Computability and Complexity</a></h1>
+<h1><a class="header" href="#machine-intelligence" id="machine-intelligence">Machine Intelligence</a></h1>
+<h1><a class="header" href="#software-engineering" id="software-engineering">Software Engineering</a></h1>
+<h1><a class="header" href="#semester-6" id="semester-6">Semester 6</a></h1>
+<h1><a class="header" href="#advanced-algorithms-and-datastructures" id="advanced-algorithms-and-datastructures">Advanced Algorithms and Datastructures</a></h1>
+<h1><a class="header" href="#database-systems" id="database-systems">Database Systems</a></h1>
+<h1><a class="header" href="#theory-of-science" id="theory-of-science">Theory of Science</a></h1>
+<h1><a class="header" href="#semester-7" id="semester-7">Semester 7</a></h1>
+<h1><a class="header" href="#distributed-systems" id="distributed-systems">Distributed Systems</a></h1>
+<p>Research into effective use of distributed computation, with topics such as big data, distributed file systems, decentralized consensus, etc.
+Essentially, how can we utilize all this raw computing power available to us to solve big problems?</p>
+<h1><a class="header" href="#topic-1-virtual-infrastructure-management" id="topic-1-virtual-infrastructure-management">Topic 1: Virtual Infrastructure Management</a></h1>
+<ul>
+<li>What are the tasks of VIM?</li>
+<li>Describe the structure of a typical VIM solution</li>
+<li>What is the life-cycle of a VM and how do you migrate a VM?</li>
+<li>How do you control placement and scheduling of VMs? (not: SLA-driven management)</li>
+</ul>
+<p>Material: slides on VIM and VIM migration, CC book chapter 1, 5 and 6, not section 6.4.</p>
+<h2><a class="header" href="#tasks" id="tasks">Tasks</a></h2>
+<p>Virtual Infrastructure Management has the same overall goals as a single-computer operating system, but tries to satisfy them for distributed stacks.</p>
+<ul>
+<li><strong>Provide Uniform View to Virtualized Resources</strong></li>
+<li><strong>Provide VM Management</strong></li>
+<li><strong>Provide Resource Allocation, Scheduling, Balancing</strong></li>
+<li><strong>Provide Monitoring, Fault-Tolerance, Maintenance Support</strong></li>
+<li><strong>Provide Interfaces/APIs</strong></li>
+</ul>
+<h2><a class="header" href="#structure-of-vim-solution" id="structure-of-vim-solution">Structure of VIM Solution</a></h2>
+<p>Typically a master-slave architecture, where a node can be physical or virtual.
+Manages users, storage, networks, interfaces, etc.</p>
+<h2><a class="header" href="#life-cycle-of-a-vm-and-migrating-a-vm" id="life-cycle-of-a-vm-and-migrating-a-vm">Life-cycle of a VM and migrating a VM</a></h2>
+<h3><a class="header" href="#life-cycle" id="life-cycle">Life-cycle</a></h3>
+<p><strong>Simple</strong>: Request, Provision, Operation, Release.</p>
+<p><strong>Automatic</strong>:
+Pending -&gt; Prolog -&gt; Boot -&gt; Running -&gt; Shutdown -&gt; Epilog -&gt; Done</p>
+<p>Pending &lt;-&gt; Hold</p>
+<p>Running &lt;-&gt; Migrate | Suspended | Stopped</p>
+<h3><a class="header" href="#migrating-a-vm" id="migrating-a-vm">Migrating a VM</a></h3>
+<p>There are three main methods for VM migration:</p>
+<ul>
+<li><strong>Live Migration</strong>: The migration of a running VM. This ensures high availability and a disruption for only a few milliseconds.</li>
+<li><strong>Regular or Cold Migration</strong>: The migration of a powered-off VM.</li>
+<li><strong>Live Storage Migration of VM</strong>: Moving the configuration file or virtual disks of a VM without disrupting its services.</li>
+</ul>
+<p><strong>Live Migration</strong> is the most interesting of these, as it isn't trivial to implement, but has the most positive outcome, i.e. no visible down-time for the users.</p>
+<h2><a class="header" href="#controlling-placement-and-scheduling" id="controlling-placement-and-scheduling">Controlling Placement and Scheduling</a></h2>
+<p>A VI manager typically has configuration options for this. OpenNebula, for example, assumes that there is a base image repository which holds the images to use, and allows different ways to access it, such as HTTP, FTP, or even the NFS.</p>
+<p>Scheduling is different depending on the assumptions of the provider.
+Big providers such as Amazon can use the immediate provisioning model, since they can assume they have infinite resources.
+Private clouds can configure scheduling via e.g. Haizea, which uses a lease-based resource provisioning model. Alternatives are best-effort, or pre-reservations.</p>
+<p>TL;DR: The scheduler is typically separate from the VI manager, and can be configured to use some specified model for scheduling images. (Haizea allows this configuration to be written in Python!)</p>
+<h1><a class="header" href="#topic-2-google-infrastructure-and-gfs" id="topic-2-google-infrastructure-and-gfs">Topic 2: Google Infrastructure and GFS</a></h1>
+<ul>
+<li>
+<p>What are the design principles behind the Google Infrastructure?</p>
+</li>
+<li>
+<p>Go into depth with  GFS </p>
+</li>
+<li>
+<p>What kind of infrastructure does GFS target? What are the key assumptions and design goals behind it?</p>
+</li>
+<li>
+<p>Explain the architecture, consistency model, replication, fault tolerance</p>
+</li>
+<li>
+<p>What are its advantages and disadvantages?</p>
+</li>
+</ul>
+<p>Material: slides on Google infrastructure, GFS paper, “Web-search for a planet” paper</p>
+<h2><a class="header" href="#design-principles" id="design-principles">Design Principles</a></h2>
+<p>Energy efficiency and price-performance ratio. (Web-search for a planet, page 1)</p>
+<h2><a class="header" href="#gfs" id="gfs">GFS</a></h2>
+<p>GFS targets an infrastructure composed of many commodity hardware components.</p>
+<p>GFS was created with the following assumptions:</p>
+<ul>
+<li>Failures are the norm</li>
+<li>Files are typically very large (multi-gigabyte)</li>
+<li>Large streaming reads (sequential) and small random reads (often buffered, also sequential)</li>
+<li>Write operations are typically append, they are typically large and sequential</li>
+<li>Support concurrent appending to a file with well-defined semantics</li>
+<li>High sustained bandwidth is more important than latency</li>
+</ul>
+<h3><a class="header" href="#architecture" id="architecture">Architecture</a></h3>
+<p>The high-level architecture is composed of three actors:
+One master, many chunkservers, many clients. All run Linux.</p>
+<p>The master acts as a DNS server for clients, i.e. it takes a request and returns an address to a chunkserver.
+Chunks are 64MB each, and have unique 64-bit identifiers: <em>chunk handles</em>.</p>
+<h3><a class="header" href="#consistenty-model" id="consistenty-model">Consistenty Model</a></h3>
+<p>The paper describes the model as a &quot;relaxed consistency model&quot;.
+Garbage is collected lazily.
+It guarantees:</p>
+<ul>
+<li>Atomic file namespace mutations, such as file creation.</li>
+<li>A file region is:
+<ul>
+<li><em>Consistent</em> if all clients see the same data from all replicas.</li>
+<li><em>Defined</em> if consistent and clients see their writes in their entirety.</li>
+</ul>
+</li>
+<li>Records are appended atomically at least once somewhere</li>
+<li>Applications can handle inconsistent regions</li>
+</ul>
+<h3><a class="header" href="#replication" id="replication">Replication</a></h3>
+<p>Replicas are spread across different racks.
+This makes them very resistant to faults, but increases the time it takes to write.
+The user defines a replication goal, which is typically 3.</p>
+<p>Replicas are created for three reasons:</p>
+<ol>
+<li><strong>Creation</strong>: Initially, the replicas are empty</li>
+<li><strong>Re-replication</strong>: When replicas are lost, or replication goal redefined.</li>
+<li><strong>Rebalancing</strong>: Periodical rebalancing</li>
+</ol>
+<p>Considerations: Resource utilization, recent creates, and separate racks.</p>
+<h3><a class="header" href="#fault-tolerance" id="fault-tolerance">Fault Tolerance</a></h3>
+<ol>
+<li>Constant monitoring</li>
+<li>Replicating crucial data</li>
+<li>Fast and automatic recovery</li>
+</ol>
+<h3><a class="header" href="#conclusion" id="conclusion">Conclusion</a></h3>
+<p>Only appropriate for very specific stacks.
+Does not support small files very well.
+High latency, especially with writes.</p>
+<h1><a class="header" href="#topic-3-mapreduce" id="topic-3-mapreduce">Topic 3: MapReduce</a></h1>
+<ul>
+<li>Explain the MapReduce paradigm and programming model</li>
+<li>Explain the system architecture</li>
+<li>Explain a concrete example application and how it is executed</li>
+<li>Explain how to optimize the performance and how worker failures can be handled</li>
+</ul>
+<p>Material: CC book chapter 14, MapReduce slides, and MapReduce paper</p>
+<h2><a class="header" href="#mapreduce-paradigm--programming-model" id="mapreduce-paradigm--programming-model">MapReduce Paradigm &amp; Programming Model</a></h2>
+<p>MapReduce is a computation model whose goal is to make it possible to parallelize computation simply, using two computation primitives: Map and Reduce.
+The actual logic for making these primitives run in parallel on distributed systems should then be abstracted away by the library.</p>
+<p>The computation takes a set of input key/value pairs and produces a set out output key/value pairs.</p>
+<h3><a class="header" href="#map" id="map">Map</a></h3>
+<p>Map is the first function which the user must define. Its responsibility is to produce an intermediate set of key/value pairs.</p>
+<h3><a class="header" href="#between-map-and-reduce" id="between-map-and-reduce">Between Map and Reduce</a></h3>
+<p>The MapReduce library aggregates all values for a given key before passing it on to the Reducer.</p>
+<h3><a class="header" href="#reduce" id="reduce">Reduce</a></h3>
+<p>Reduce is the second function which the user must define. It receives a key and the set of its values, and produces the output key/value pairs.</p>
+<h2><a class="header" href="#system-architecture" id="system-architecture">System Architecture</a></h2>
+<p>There is one master node, many workers, M Map tasks and R Reduce tasks.
+They share access to a global file system, such as GFS or HDFS, etc.
+The input data is split into M segments, and workers are assigned Map or Reduce tasks by the master.
+The Map worker stores the intermediate data locally, and the master assigns a Reduce worker to read it and compute the final result.
+The result is stored in the global file system.</p>
+<h2><a class="header" href="#example-application--execution" id="example-application--execution">Example Application &amp; Execution</a></h2>
+<p>WordCount is a classic example, where we want to count the occurrence of words in large or many documents.</p>
+<p>The Map function receives a list of words, and emits <code>&lt;word&gt;/1</code> for each word.
+The Reduce function receives the word, and a list of 1's, emitting <code>&lt;word&gt;/&lt;list.length()&gt;</code> for each word, where <code>list.length()</code> is the length of the list of 1's.</p>
+<h3><a class="header" href="#execution" id="execution">Execution</a></h3>
+<ol>
+<li>Split the data into M pieces. Fork the program.</li>
+<li>The master assigns M map tasks and R reduce tasks to available workers.</li>
+<li>Each Map worker performs the Map function, storing the result in memory.</li>
+<li>Periodically, these values are written to disk, and their location is reported to the master node.</li>
+<li>A reduce worker is notified by the master about the locations, and uses RPC to read the data. It then sorts the data.</li>
+<li>For each unique key, the reduce function passes they key and its values to the user's reduce function. The result is emitted to the final output.</li>
+<li>Once all tasks are completed, the master returns.</li>
+</ol>
+<h2><a class="header" href="#optimizing-performance" id="optimizing-performance">Optimizing Performance</a></h2>
+<ul>
+<li>Specifying a custom partitioning function for mapping intermediate key values to the reduce shards.</li>
+<li>Custom combiner functions after mapping tasks to reduce the intermediate data sent from a mapping worker to a reducer.</li>
+<li>Enabling backup tasks to reduce slowdown by stragglers.</li>
+</ul>
+<h2><a class="header" href="#handling-worker-failures" id="handling-worker-failures">Handling Worker Failures</a></h2>
+<p>The master marks a worker as failed if it does not respond to pings within a certain amount of time.
+All in-progress tasks are reset to idle, and become available for scheduling on other workers. All mapping tasks completed by the failed worker are marked as idle as well, since their result is stored on the worker and not the global file system.</p>
+<h1><a class="header" href="#topic-4-distributed-mutual-exclusion" id="topic-4-distributed-mutual-exclusion">Topic 4: Distributed Mutual Exclusion</a></h1>
+<ul>
+<li>What is DME and what are the requirements to a DME algorithm?</li>
+<li>What are the criteria to evaluate DME algorithms?</li>
+<li>Explain the centralized, token ring, and Ricart and Agrawala’s algorithms, and compare them. What are their advantages/disadvantages?</li>
+</ul>
+<p>Material: DS book: 5ed Sections 15.1 and 15.2, slides on distributed mutual exclusion (lecture 7)</p>
+<h2><a class="header" href="#dme--requirements" id="dme--requirements">DME &amp; Requirements</a></h2>
+<p>DME is where distributed process wish to exclusively access a shared resource.</p>
+<h3><a class="header" href="#requirements" id="requirements">Requirements</a></h3>
+<ul>
+<li><strong>Safety</strong>: one at a time</li>
+<li><strong>Liveness</strong>: requests always succeed</li>
+<li><strong>Ordering</strong>: requests are handled in the same order they are received</li>
+</ul>
+<h2><a class="header" href="#criteria-for-evaluation" id="criteria-for-evaluation">Criteria for Evaluation</a></h2>
+<ul>
+<li><strong>Fault tolerance</strong></li>
+<li><strong>Performance</strong>
+<ul>
+<li><em>Bandwidth</em>: Number of messages required for entry and exit.</li>
+<li><em>Client delay</em>: The delay caused by each entry and exit.</li>
+<li><em>Throughput</em>: Synchronization delay, delay between one process exiting and the next entering.</li>
+</ul>
+</li>
+</ul>
+<h2><a class="header" href="#central-server-algorithm" id="central-server-algorithm">Central Server Algorithm</a></h2>
+<p>Simplest method. A central server queues requests and grants an access token to the oldest request. </p>
+<p>It delays other requests, and delivers tokens if </p>
+<ol>
+<li>there are no requests in queue when a request is received, or</li>
+<li>when it receives a release token from the process with current access.</li>
+</ol>
+<h2><a class="header" href="#token-ring-algorithm" id="token-ring-algorithm">Token Ring Algorithm</a></h2>
+<p>Simplest method without an additional process.
+Arrange N processes into a logical ring.
+Each process has a communication channel to the next process in the ring.
+Exclusion is obtained from the previous process, and sent to the next process once done.</p>
+<h2><a class="header" href="#multicast-and-logical-clock-algorithm" id="multicast-and-logical-clock-algorithm">Multicast and Logical Clock Algorithm</a></h2>
+<p>Processes that require entry multicast a request message, and can enter it only when all the other processes have replied to the message.
+Each process has a unique identifier and a Lamport clock, which satisfies LC1 and LC2 from DS 14.4. (Note, a Lamport clock is a logical clock, which increments the timestamp every time a message is sent. It sends the timestamp along with the event. When it receives events, it sets the logical clock to be the max of it's internal clock vs the one received.)
+When a process is in the RELEASED state, it responds immediately to other processes requesting access.
+When a process is in the HELD state, it does not respond until it is done.
+When two or more processes request access at the same time, they are sorted first by the message timestamp, and then by their identifier.
+A process defers responding to other processes once it has sent its request and recorded the timestamp.</p>
+<h2><a class="header" href="#property-comparison" id="property-comparison">Property Comparison</a></h2>
+<table><thead><tr><th align="center">Algorithm</th><th align="center">Central Server</th><th align="center">Token Ring</th><th align="center">R&amp;A</th></tr></thead><tbody>
+<tr><td align="center">ME1: Safety</td><td align="center"><br>Yes</td><td align="center">Yes</td><td align="center">Yes</td></tr>
+<tr><td align="center">ME2: Liveness</td><td align="center">Yes</td><td align="center">Yes</td><td align="center">Yes</td></tr>
+<tr><td align="center">ME3: Ordering</td><td align="center">No</td><td align="center">No, ordering is based on ring topology</td><td align="center">Yes</td></tr>
+<tr><td align="center">Bandwidth</td><td align="center">Enter: 2<br/>Exit: 1</td><td align="center">Enter: 0..N<br/>Exit: 1</td><td align="center">Enter: 2(N-1) without multicast<br/>Exit: 0</td></tr>
+<tr><td align="center">Client delay</td><td align="center">Enter: Length of queue<br/>Exit: None.</td><td align="center">0..N</td><td align="center">Entry: Round-trip</td></tr>
+<tr><td align="center">Synch Delay</td><td align="center">Round-trip</td><td align="center">1..N</td><td align="center">1, but with N points of failure</td></tr>
+</tbody></table>
+<h1><a class="header" href="#topic-5-multicast" id="topic-5-multicast">Topic 5: Multicast</a></h1>
+<ul>
+<li>Why do you need multicast?</li>
+<li>Explain basic multicast assuming reliable 1:1 communication</li>
+<li>What are the requirements to reliable multicast and how do you implement it over basic multicast and IP-multicast?</li>
+<li>Explain the difference between FIFO, Total and Causal ordering? When is it important?</li>
+<li>Briefly explain the two ideas to implement TO-multicast. What can you say about reliability?</li>
+</ul>
+<p>Material: 5ed section 15.4.  (lecture 8)</p>
+<h2><a class="header" href="#why-multicast" id="why-multicast">Why Multicast?</a></h2>
+<p>Multicast serves the purpose of delivering a message from a single process to all processes belonging to a given group.</p>
+<h2><a class="header" href="#basic-multicast" id="basic-multicast">Basic Multicast</a></h2>
+<p>Two primitives and a guarantee: A correct process will eventually deliver the message, as long as the multicaster does not crash.</p>
+<ul>
+<li><code>B-multicast(g, m)</code>: for each process <code>p</code> in <code>g</code>, <code>send(p, m)</code></li>
+<li>On <code>receive(m)</code> at <code>p</code>: <code>B-deliver(m)</code> at <code>p</code>.</li>
+</ul>
+<p><strong>Problems</strong>:</p>
+<ul>
+<li>If run concurrently with a large number of receiving processes, liable to suffer from <code>ack-implosion</code>, or <em>acknowledgement-implosion</em>, where too many processes respond at the same time, causing the process to drop responses and waste more bandwidth trying to re-send the message.</li>
+<li>If the multicaster crashes, then some members of group <code>g</code> receive the message while other's don't.</li>
+</ul>
+<h2><a class="header" href="#reliable-multicast" id="reliable-multicast">Reliable Multicast</a></h2>
+<p>Reliable multicast has the following properties:</p>
+<ul>
+<li><strong>Integrity</strong>: A correct process <code>p</code> delivers a message <code>m</code> at most once.</li>
+<li><strong>Validity</strong>: If a correct process multicasts <code>m</code>, then it will eventually deliver <code>m</code>.</li>
+<li><strong>Agreement</strong>: If a correct process delivers message <code>m</code>, then all other correct processes in <code>group(m)</code> eventually deliver <code>m</code>.</li>
+</ul>
+<h3><a class="header" href="#over-basic-multicast" id="over-basic-multicast">Over Basic Multicast</a></h3>
+<p>The sender begins by B-multicasting to each member of group <code>g</code>, including itself.
+On delivering <code>m</code>, each member which did not send the original message calls <code>B-multicast</code> again, multicasting to all members of the group, and then <code>R-deliver</code>s the message.</p>
+<p>This guarantees that even if the original sender fails, as long as one correct process receives the message, it is forwarded again by each recipient.
+It should be assumed that duplicates are handled, since this means correct processes will receive the same message more than once.
+Not very practical, since each process receives each message |<code>g</code>| times.
+Guaranteed to work on even asynchronous systems.</p>
+<h3><a class="header" href="#over-ip-multicast" id="over-ip-multicast">Over IP Multicast</a></h3>
+<p>Each process maintains an array of sequence numbers.</p>
+<ol>
+<li>For each group a process belongs to, it maintains a sequence number of sent messages</li>
+<li>For each sender in each group it belongs to, it maintains a sequence number of received messages.</li>
+</ol>
+<p>For each message sent to the group, the sender adds the value S for the group and a list of acknowledgements, so that each member can verify that their S corresponds with the R provided in the message by the sender.
+This way, the recipients can see which messages they have not received, and request them from the sender, or from the node which sent them the acknowledgements.</p>
+<p>This implementation is not practical, since we cannot assume that the messages continue indefinitely (which is how we could guarantee agreement), or that copies of all messages are retained, so they can be re-sent.</p>
+<h2><a class="header" href="#fifo-total-and-causal-ordering" id="fifo-total-and-causal-ordering">FIFO, Total and Causal Ordering</a></h2>
+<p><strong>FIFO Ordering</strong>: if a correct process issues <code>multicast(g, m)</code> and then <code>multicast(g, m')</code>, then every correct process that delivers <code>m'</code> will deliver <code>m</code> first.</p>
+<p><strong>Causal Ordering</strong>: If <code>multicast(g, m)</code> → <code>multicast(g, m')</code>, where → is the happened-before relation incuded only by messages sent between the members of <code>g</code>, then any correct process that delivers <code>m'</code> will deliver <code>m</code> first.</p>
+<p><strong>Total Ordering</strong>: If a correct process delivers message <code>m</code> before it delivers <code>m'</code>, then any other correct process that delivers <code>m'</code> will deliver <code>m</code> first.</p>
+<h3><a class="header" href="#importance" id="importance">Importance</a></h3>
+<p>First of all, ordering does not imply reliability.
+A totally ordered multicast simply states that all processes deliver the messages in the same order.
+FIFO does not guarantee that the actual order in which different processes issued <code>multicast(g, m)</code> will be respected, etc.</p>
+<p>Ordering is especially important in applications such as decentralized messaging, where the order in which things are said is relevant.
+An alternative example is safety-critical systems, or banking, where certain operations only make sense in the context of previous operations.</p>
+<p>Consider for example the difference between 1.0 * 10 + 10 vs 1.0 + 10 * 10.</p>
+<h2><a class="header" href="#totally-ordered-multicast" id="totally-ordered-multicast">Totally Ordered Multicast</a></h2>
+<p>Assign totally ordered identifiers to multicast messages, so each process makes the same ordering decision based on these identifiers.</p>
+<p>Use the sequencers from the FIFO-multicast, but make them specific to the group, and not the process.
+This only works with non-overlapping groups.</p>
+<p>The first implementation depends on a sequencer process to assign the sequence.
+The sequencer assigns a sequence number to each message it receives (handling duplicates), and multicasts an order message to the group once it has B-delivered the message.</p>
+<p>The second implementation requires the processes to collectively agree on a sequence number.
+Each process maintains two sequences, and on receiving a message, they respond with a proposal, which is 1 + the larger number of</p>
+<ol>
+<li>The largest observed proposal in the group, or</li>
+<li>Their own largest proposal.
+The largest number wins, and is assigned to the message id, and multicast.
+Once messages have been assigned a number, they are moved from the hold-back queue into the delivery queue.</li>
+</ol>
+<p>These protocols are reliable if the implementations use R-multicast instead of B-multicast.</p>
+<h1><a class="header" href="#topic-6-replication-and-consistency" id="topic-6-replication-and-consistency">Topic 6: Replication and Consistency</a></h1>
+<ul>
+<li>Why do you need replication?</li>
+<li>Explain the challenges resulting from replication</li>
+<li>What consistency models exist?</li>
+<li>Explain the consistency model and compare them</li>
+<li>Present an execution which is sequentially consistent but not linearizable</li>
+</ul>
+<p>Material: slides on the above topics, and DS book: Chapter on Replication. </p>
+<ul>
+<li>DS 5ed Sections 18.1-18.3 (replication)</li>
+<li>DS 5ed Section 18.4.1 (the gossip architecture)</li>
+<li>DS 5ed Section 17.1-17.3 (Distributed Transactions)</li>
+</ul>
+<h2><a class="header" href="#the-need-for-replication" id="the-need-for-replication">The Need for Replication</a></h2>
+<p>Replication allows services to provide high availability and fault tolerance <em>despite</em> different types of failures, lag, etc.</p>
+<h2><a class="header" href="#replication-challenges" id="replication-challenges">Replication Challenges</a></h2>
+<h3><a class="header" href="#cap-theorem" id="cap-theorem">CAP Theorem:</a></h3>
+<ul>
+<li>
+<p><strong>Consistency</strong></p>
+</li>
+<li>
+<p><strong>Availabilty</strong></p>
+</li>
+<li>
+<p><strong>Partition Tolerance</strong></p>
+</li>
+<li>
+<p>It is impossible for a distributed computer system to simultaneously provide Consistency, Availability and Partition Tolerance.</p>
+<ul>
+<li>** A distributed system can satisfy any two at the same time, but not all three.</li>
+</ul>
+</li>
+<li>
+<p>** Means a choice must be made if and when there is a partition</p>
+<ul>
+<li>Either become less available, or allow the data seen by multiple clients to be inconsistent</li>
+<li>This depends on the exact application
+<ul>
+<li>Web stores are likely to prefer Availability, while Safety critical systems prefer Consistency.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h2><a class="header" href="#existing-consistency-models" id="existing-consistency-models">Existing Consistency Models</a></h2>
+<p>A consistency model specifies the guarantees of DSM system.</p>
+<ul>
+<li><strong>Strong Consistency</strong>:
+<ul>
+<li>After an update of Process A completes, any subsequent access (by any process) will return the updated value</li>
+</ul>
+</li>
+<li><strong>Weak consistency</strong>:
+<ul>
+<li>System does not guarantee that subsequent access will return the latest value.</li>
+</ul>
+</li>
+</ul>
+<h2><a class="header" href="#comparison-of-consistency-models" id="comparison-of-consistency-models">Comparison of Consistency Models</a></h2>
+<p>The two main correctness criteria for replicated objects are Linearizability and Sequential Consistency. Linearizability is the stronger of the two correctness criteria, but is also unrealistic wrt performance considerations.</p>
+<p>Linearizability must satisfy two conditions:</p>
+<ul>
+<li>The sequence of operations meets the specification of a correct copy of the object, i.e. the operations need to make logical sense.</li>
+<li>The order of operations needs to be the same as the real time order of operations.</li>
+</ul>
+<p>Sequential consistency shares the first condition, but ignores the real time property of the second condition, requiring instead that the sequence of operations must happen in the same order as it happens on the clients.</p>
+<h2><a class="header" href="#sequentially-consistent-but-not-linearizable" id="sequentially-consistent-but-not-linearizable">Sequentially Consistent, but not Linearizable</a></h2>
+<p>The example given in the slides of a service that is sequentially consistent but not Linearizable:</p>
+<table><thead><tr><th>Client1</th><th align="center">Client 2</th></tr></thead><tbody>
+<tr><td>SetBalanced(x,1)</td><td align="center"></td></tr>
+<tr><td></td><td align="center">GetBalance(y) = 0</td></tr>
+<tr><td></td><td align="center">GetBalance(x) = 0</td></tr>
+<tr><td>SetBalanced(y,2)</td><td align="center"></td></tr>
+</tbody></table>
+<p>For this execution, the real time property of Linearlizability does not hold, i.e. this is not correct wrt a banking system.
+However, will the less strict Sequentially Consistent model, one could shuffle the second event to occur in front of the first, and in this case have a consistent model.</p>
+<h2><a class="header" href="#active-vs-passive-replication" id="active-vs-passive-replication">Active vs. Passive Replication</a></h2>
+<p>Passive replication uses a master-slave architecture and is linearizable under certain conditions.
+Active replication uses multicast, and performs better, but is not linearizable, only sequentially consistent.</p>
+<h2><a class="header" href="#the-gossip-architecture" id="the-gossip-architecture">The Gossip Architecture</a></h2>
+<p>Focuses on high availability, where Replication Managers share gossip messages with each other.
+Each RM is guaranteed to become consistent over time.</p>
+<h1><a class="header" href="#topic-7-consensus" id="topic-7-consensus">Topic 7: Consensus</a></h1>
+<ul>
+<li>
+<p>Explain the consensus problem</p>
+</li>
+<li>
+<p>Solution in synchronous system</p>
+</li>
+<li>
+<p>Explain the Byzantine generals problem.</p>
+</li>
+<li>
+<p>Present impossibility result for 3 Byzantine generals, 1 faulty (argue carefully!)</p>
+</li>
+<li>
+<p>Present the solution for 4 Byzantine generals, 1 faulty.</p>
+</li>
+<li>
+<p>Present clearly your assumptions on system model, failures, and message signing.</p>
+</li>
+<li>
+<p>Discuss impossibility in asynchronous systems and practical workarounds.</p>
+</li>
+<li>
+<p>DS 5ed 15.5</p>
+</li>
+</ul>
+<h2><a class="header" href="#the-consensus-problem" id="the-consensus-problem">The Consensus Problem</a></h2>
+<p>The Consensus problem is a type of Agreement problem, which generally is for processes to agree on a value after one or more of the processes has proposed what that value should be.</p>
+<p>More concretely, all processes begin in the <em>undecided</em> state.
+Each process proposes a value, and proposes a value.
+The processes communicate, and then each process enters the <em>decided</em> state.</p>
+<p>Consensus algorithms require the following:</p>
+<ul>
+<li><strong>Termination</strong>, eventually each correct process P_i sets its decision variable D_i</li>
+<li><strong>Agreement</strong>, the decision variable value of all correct processes are the same: if P_i and P_j are correct and have entered their decided state, then D_i = D_j (for all i,j ∈ 1..N)</li>
+<li><strong>Integrity</strong>, if the correct processes all proposed the same value, then any correct process in the decided state has chosen that value. (Could be a weaker definition for certain applications.)</li>
+</ul>
+<h2><a class="header" href="#consensus-in-a-synchronous-system" id="consensus-in-a-synchronous-system">Consensus in a Synchronous System</a></h2>
+<p>Very simple, if no failures:</p>
+<ul>
+<li>
+<p>Each process multicasts its value to all processes</p>
+</li>
+<li>
+<p>Waits until a values are received from all processes.</p>
+</li>
+<li>
+<p>Makes a decision.</p>
+</li>
+<li>
+<p><em>f</em>-resilient consensus algorithm</p>
+<ul>
+<li>** Solves consensus for <em>f</em> failed proceses</li>
+</ul>
+</li>
+<li>
+<p>** Example: <em>f+1</em> rounds</p>
+<ul>
+<li><strong>Round 1</strong>:
+<ul>
+<li>Each process multicasts its value</li>
+<li>Wait for values from other processes</li>
+</ul>
+</li>
+<li><strong>Round 2</strong>:
+<ul>
+<li>Each process multicasts the values received from other processes in round 1</li>
+<li>Wait for values</li>
+</ul>
+</li>
+<li>...</li>
+<li><strong>Round <em>f+1</em></strong>:
+<ul>
+<li>Select the minimum value received as the decision value.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p>Requires atleast <em>f+1</em> rounds, <em>f</em> being the number of failed processes.</p>
+</li>
+<li>
+<p>When a round is reached with no failure, every process would decide on the same value.</p>
+</li>
+</ul>
+<h2><a class="header" href="#the-byzantine-generals-problem" id="the-byzantine-generals-problem">The Byzantine Generals Problem</a></h2>
+<p>Three or more generals are to agree on whether they should attack or retreat.
+One is a commander, and he issues the order.
+The others are lieutenants, and must decide whether they attack or retreat.
+A process may be treacherous, in which case it issues different signals to different peers.</p>
+<p>This differs from consensus, since there is a single process whose value the others must agree on.</p>
+<p>Also requires</p>
+<ul>
+<li><strong>Termination</strong>: Eventually each correct process sets its decision variable.</li>
+<li><strong>Agreement</strong>: The decision value of all correct processes is the same.</li>
+<li><strong>Integrity</strong>: If the commander is correct, then all correct processes decide on the value that the commander proposed.</li>
+</ul>
+<ul>
+<li>** Is based around the turkish invasion into Byzantium.</li>
+<li>** generals must agree to <em>attack</em> or <em>retreat</em>, while only being able to communicate by messengers.</li>
+<li>** Messages are safe, they cannot be intercepted or tampered with.</li>
+<li>** Traitor generals can exist
+<ul>
+<li>Traitors can omit answering messages from generals</li>
+<li>Send arbitrary messages
+<ul>
+<li>Byzantine failures = arbitrary faults including:
+<ul>
+<li>Omission failures, crash failures, send different values to different processes</li>
+<li>Being intentionally malicious, buggy</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>** Attacking with only one army means defeat.</li>
+</ul>
+<h3><a class="header" href="#cost-of-byzantine-generals" id="cost-of-byzantine-generals">Cost of Byzantine Generals</a></h3>
+<ul>
+<li>** Requires f+1 rounds, in the general case, f&gt;=1</li>
+<li>** Sends O(N^f+n) messages.
+<ul>
+<li>** If using digital signatures, a solution exist with only O(N^2) messages, still f+1 rounds)
+<ul>
+<li>If a process says another process said something else, it can be detected.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>** As cost is high, only use if threat is great.</li>
+<li>** If the source of failures is known, use specialized solutions instead.</li>
+</ul>
+<h3><a class="header" href="#impossibility-result-for-the-3-byzantine-generals-problem-1-faulty" id="impossibility-result-for-the-3-byzantine-generals-problem-1-faulty">Impossibility result for the 3 byzantine generals problem, 1 faulty</a></h3>
+<ul>
+<li>
+<p>** There are not f-resilient algorithm if the number of processes are N&lt;=3</p>
+</li>
+<li>
+<ul>
+<li>** Shows that no consensus algorithm for N&lt;=3f exists.</li>
+</ul>
+</li>
+<li>
+<p>** If the commanding process is correct, but one of the receives are faulty, the other receiver would receive conflicting information</p>
+<ul>
+<li>P1 says V, P2 says P1 said W, P3 received conflict.</li>
+</ul>
+</li>
+<li>
+<p>If the commanding process, the one broadcasting the order is the traitor</p>
+<ul>
+<li>P2 and P3 received different information</li>
+</ul>
+</li>
+<li>
+<p>** A consensus algorithm cannot distinguish between the above scenarios, meaning that both Integrity and Agreement cannot be achieved</p>
+</li>
+</ul>
+<h3><a class="header" href="#solution-for-4-byzantine-generals-problem-1-faulty" id="solution-for-4-byzantine-generals-problem-1-faulty">Solution for 4 Byzantine generals problem, 1 faulty.</a></h3>
+<ul>
+<li>** For 4 processes the result is different:</li>
+<li>** If the issuer, P1 is correct, but P4 is false.:
+<ul>
+<li>The P2 and P3 will both say that P1 said the same thing, meaning they can reach consensus</li>
+</ul>
+</li>
+<li>** If the issuer, P1 is a traitor/ faulty:
+<ul>
+<li>P2, P3, P4 will receive different values, and will be able to decide on a default value instead</li>
+</ul>
+</li>
+</ul>
+<h2><a class="header" href="#assumptions-about-the-system-model-failures-and-message-signing" id="assumptions-about-the-system-model-failures-and-message-signing">Assumptions about the system model, failures, and message signing.</a></h2>
+<p>Collection of processes communicating via message passing.
+Consensus should be reached despite faults.
+We consider both Byzantine failures and crash failures.
+If processes sign their messages, then a faulty process is limited in the harm it can do.
+I.e. where signing is used, a process cannot make a false claim about the message a correct process sent to it.</p>
+<h2><a class="header" href="#impossibility-in-asynchronous-systems" id="impossibility-in-asynchronous-systems">Impossibility in Asynchronous Systems</a></h2>
+<p>Since we cannot distinguish a failed system from a slow one, we can't make the same assumptions as we can in a synchronous system.</p>
+<ul>
+<li>No algorithm can exist that is <em>guaranteed</em> to reach consensus in asynchronous systems.
+<ul>
+<li>Even if we allow 1 crash without byzantine failures or communication failures
+<ul>
+<li>Failed processes cannot be distinguished from slow processes.</li>
+<li>There is always a program continuation that avoids consensus</li>
+</ul>
+</li>
+<li>Consensus can be reached, but not guaranteed.</li>
+</ul>
+</li>
+</ul>
+<h3><a class="header" href="#practical-workarounds" id="practical-workarounds">Practical Workarounds</a></h3>
+<ul>
+<li><strong>Fault Masking</strong>: By using persistent storage and restarting failed programs, all failures are fixed and simply treated like slow programs. This way, we circumvent the impossibility result.</li>
+<li><strong>Failure Detectors</strong>: Processes deem a suspect process as failed and ignore its future messages.</li>
+<li><strong>Randomization</strong>: Introduce randomization, so processes become slightly unpredictable.
+This reduces the power of adversaries to predictably manipulate the system.</li>
+</ul>
+<ul>
+<li>Nearly synchronous systems:
+<ul>
+<li>Uses Paxos Algorithm '98, completely-safe and largely-live consensus protocol for asynchronous systems.</li>
+<li>Used &quot;part-time parliament&quot; analogy but took 9 years before it was published, updated in &quot;Paxos made simple&quot; paper.</li>
+<li>&quot;Asynchronous consensus algorithms like Paxos maintain safety despite asynchrony, but are guaranteed to make progress only when the system becomes synchronous - meaning that messages are delivered in a bounded length of time.“</li>
+</ul>
+</li>
+</ul>
+<h3><a class="header" href="#paxos" id="paxos">Paxos</a></h3>
+<ul>
+<li>Paxos is named after the Parliament on the fictitious Greek island of Paxos.</li>
+<li>Paxos is a family of algorithms (by Leslie Lamport) for distributed consensus in an asynchronous system</li>
+<li>In Paxos termination / liveness is not guaranteed, but happens in “reasonable environments”</li>
+<li>Different roles exist:
+<ul>
+<li>Proposer: Offers proposals, with multiple proposers at once, they instead compete to reach approval first.</li>
+<li>Acceptors: Accepts or rejects proposals</li>
+<li>Learners: Simply learns the agreed upon proposals</li>
+</ul>
+</li>
+<li>Proposals must have majority to be accepted.</li>
+<li>Paxos Consensus works by sending a prepare request to some acceptors (other participants of the blockchain)
+<ul>
+<li>The acceptors accept the proposal</li>
+<li>The proposer sends a commit request</li>
+<li>The acceptors accept the commit.</li>
+</ul>
+</li>
+<li>Paxos only requires a majority to accept, meaning half the participants of the blockchain can never answer, and Paxos will still work.</li>
+</ul>
+<h1><a class="header" href="#topic-8-blockchain" id="topic-8-blockchain">Topic 8: Blockchain</a></h1>
+<ul>
+<li>Explain the characteristics of the blocks in a blockchain (e.g.: immutability, linear growth)</li>
+<li>Explain how the crypto tools used in blockchain work (hash function, signature, merkle tree, hash pointer) and how they are used in the blockchain</li>
+<li>Explain why Paxos consensus is not enough for a blockchain, e.g.: to protect against the double spending conundrum</li>
+<li>Bitcoin: explain the structure of the transaction and how they are verified by the miner</li>
+<li>Smart contracts: discuss the gas prices for different primitives, e.g.: for Solidity</li>
+</ul>
+<p>Material: blockchain slides, Bitcoin paper, Solidity tutorial (lecture 13)</p>
+<h1><a class="header" href="#the-blockchain" id="the-blockchain">The Blockchain</a></h1>
+<p>The Blockchain is a digitized, decentralized public ledger of cryptocurrency transactions.</p>
+<h2><a class="header" href="#block-characteristics" id="block-characteristics">Block Characteristics</a></h2>
+<p>A block </p>
+<ul>
+<li>** Blocks are the individual &quot;links&quot; of the chain of transactions.</li>
+<li>** A block designates a single transaction</li>
+<li>** A block is typically composed of the following elements:
+<ul>
+<li>** Data</li>
+<li>** A hash pointer</li>
+<li>** A timestamp</li>
+</ul>
+</li>
+<li>** Blocks are added to the chain, the chronological lists of transactions.</li>
+<li>** This allows participants to keep track of the transactions, without a central recorded database.</li>
+</ul>
+<h2><a class="header" href="#how-crypto-tools-used-in-blockchain" id="how-crypto-tools-used-in-blockchain">How Crypto tools used in blockchain:</a></h2>
+<p>Crypto tools ensure the integrity of the blockchain</p>
+<h3><a class="header" href="#how-they-work" id="how-they-work">How they Work</a></h3>
+<h4><a class="header" href="#hash-functions" id="hash-functions">Hash functions</a></h4>
+<ul>
+<li>A  hash  functionHtakes  binary  input  of  arbitrary length, and creates fixed-length output of it.
+<ul>
+<li>** H:X={0,1}∗→{0,1}L</li>
+<li>typically where L ∈ {128,160,256,512} </li>
+</ul>
+</li>
+<li>**For security purposes, it is important that a small change in the input results in a large change in the output.<br />
+Collisions  exist, but they are hard to find with this property.</li>
+</ul>
+<h4><a class="header" href="#merkle-trees" id="merkle-trees">Merkle Trees</a></h4>
+<ul>
+<li>**Merkle trees, or Hash trees, which are a data structure for summarizing information about a collection of data, with the intent of checking the content.</li>
+<li>** Is a combination of hash functions with the binary tree structure.</li>
+<li>** Uses a Hash function H (SHA1, MD5)
+<ul>
+<li>** Leaves are H applied to the initial symbols.</li>
+<li>** Internal nodes are H applied to children of a node.</li>
+</ul>
+</li>
+</ul>
+<h3><a class="header" href="#how-they-are-used" id="how-they-are-used">How they are used</a></h3>
+<p>Asymmetric Cryptography allows users of the blockchain to both sign and verify blocks.</p>
+<ul>
+<li>** Keygen, an algorithm which returns two keys; 
+<ul>
+<li>a public key, used to identify the user</li>
+<li>A private key, which is used to apply a signature to a transaction, to express consent</li>
+</ul>
+</li>
+<li>** Sign, An algorithm which computes the signature of som input, based on the secret key, and some data (typically a hash)</li>
+<li>** Verify, Decrypts the signature using the public key, and compare the result with a hash of the received data.</li>
+</ul>
+<h2><a class="header" href="#paxos-consensus" id="paxos-consensus">Paxos consensus</a></h2>
+<ul>
+<li>**A blockchain network is completely asynchronous and decentralized. </li>
+<li>**For currency, this requires the solving of the problem of double-spending, i.e. being able to spend the same money more than once.</li>
+<li>Paxos is named after the Parliament on the fictitious Greek island of Paxos.</li>
+<li>Paxos is a family of algorithms (by Leslie Lamport) for distributed consensus in an asynchronous system</li>
+<li>** In Paxos termination / liveness is not guaranteed, but happens in “reasonable environments”</li>
+<li>
+<ul>
+<li>** Different roles exist:</li>
+<li>Proposer: Offers proposals, with multiple proposers at once, they instead compete to reach approval first.</li>
+<li>Acceptors: Accepts or rejects proposals</li>
+<li>Learners: Simply learns the agreed upon proposals</li>
+</ul>
+</li>
+<li>Proposals must have majority to be accepted.</li>
+<li>** Paxos Consensus works by sending a prepare request to some acceptors (other participants of the blockchain)
+<ul>
+<li>** The acceptors accept the proposal</li>
+<li>** The proposer sends a commit request</li>
+<li>** The acceptors accept the commit.</li>
+</ul>
+</li>
+<li>** Paxos only requires a majority to accept, meaning half the participants of the blockchain can never answer, and Paxos will still work.</li>
+</ul>
+<h2><a class="header" href="#bitcoin-the-structure-of-the-transaction-and-how-they-are-verified-by-the-miner" id="bitcoin-the-structure-of-the-transaction-and-how-they-are-verified-by-the-miner">Bitcoin: The structure of the transaction and how they are verified by the miner</a></h2>
+<h3><a class="header" href="#transactions" id="transactions">Transactions</a></h3>
+<ul>
+<li>** A transaction contains the following data:
+<ul>
+<li>**A list of input transactions</li>
+<li>**A list of tuples of the recipient public key, and the amount to send.</li>
+<li>**Personal signature, signed with private key</li>
+</ul>
+</li>
+<li>In order to verify a transaction, one must:
+<ol>
+<li>Verify the signature using the public key of the sender</li>
+<li>Verify the signatures of each of the input transactions</li>
+<li>Ensure that the money has not been spent between the input transactions and the new transaction.</li>
+</ol>
+</li>
+<li>As transactions are signed using the private key, only the owner of the identity can transfer the money from that point.</li>
+<li>A single user can have any number of identities.</li>
+</ul>
+<h3><a class="header" href="#miners" id="miners">Miners</a></h3>
+<p>A miner does the following:</p>
+<ol>
+<li>Verify all the transactions by looking that input transactions are covered and properly signed</li>
+<li>Compute the Merkle root hash for the transactions</li>
+<li>Solve the puzzle on the previous block,  for immutability</li>
+<li>Broadcast the new header</li>
+<li>Go on collecting new transactions for next blockMiners receive compensation for computing the next block.</li>
+</ol>
+<h2><a class="header" href="#smart-contracts-gas-prices-for-different-primities-solidity" id="smart-contracts-gas-prices-for-different-primities-solidity">Smart Contracts: gas prices for different primities, Solidity</a></h2>
+<ul>
+<li>Smart contracts are computer protocols that facilitate, verify or enforce the negotiation or performance of a contract, or that make a contractual clause unneccessary.</li>
+<li>The rules are penalties are defined around an agreement, same as with traditional contracts, but automatically enforces those contracts.</li>
+<li>Smart contracts are code that are added to the blockchain.</li>
+</ul>
+<h3><a class="header" href="#ethereum" id="ethereum">Ethereum</a></h3>
+<ul>
+<li>Ethereum is a smart contract based blockchain. Contracts live in the distributed network, and has its own balance of Ether, the currency/ fuel, memory and code.</li>
+<li>Every time a transaction is sent to a contract, the code for the contract is executed
+<ul>
+<li>The contract can perform transactions, store data and interact with other contracts.</li>
+</ul>
+</li>
+<li>To run contracts, a transaction with Ether is made to the contract, optionally with additional input.</li>
+<li>The contract runs until it completes or runs out of Ether.</li>
+<li>Ether is awarded to the winning miner.</li>
+<li>Each miner runs the smart contract, and produces the same output.</li>
+</ul>
+<h3><a class="header" href="#solidity" id="solidity">Solidity</a></h3>
+<ul>
+<li>An object oriented language for implementing smart contracts.</li>
+<li>Used in Ethereum.</li>
+</ul>
+<h1><a class="header" href="#hadoop-rs-programming-assignment" id="hadoop-rs-programming-assignment">Hadoop-Rs: Programming Assignment</a></h1>
+<h2><a class="header" href="#goals" id="goals">Goals</a></h2>
+<p>There are five tasks in all.
+I have modified the original tasks from the programming assignment to fit my datasets.</p>
+<h3><a class="header" href="#task-1" id="task-1">Task 1</a></h3>
+<p>Study centrality metrics: degree centrality, PageRank centrality, k-core centrality.</p>
+<h3><a class="header" href="#task-2" id="task-2">Task 2</a></h3>
+<p>Compute the most highly cited <em>paper</em> using degree centrality with focus on in-degrees, i.e. most influential paper.</p>
+<h3><a class="header" href="#task-3" id="task-3">Task 3</a></h3>
+<p>Compute the most influential nodes using the PageRank algorithm.</p>
+<h3><a class="header" href="#task-4" id="task-4">Task 4</a></h3>
+<p>Compute the most influential nodes using the k-core centrality metric.</p>
+<h3><a class="header" href="#task-5" id="task-5">Task 5</a></h3>
+<p>Repeat tasks 2-4 with Apache Giraph.</p>
+<h2><a class="header" href="#overview" id="overview">Overview</a></h2>
+<p>The project uses the Rust programming language to create mappers and reducers for Hadoop.
+The Streaming tool provided by the Hadoop project is used to call the mappers and reducers (see more in <code>tools/hadoop.sh</code>).
+This project uses a small dataset (5.6MB of edges) and a standalone installation of Hadoop.
+Two datasets are used, the larger one from http://snap.stanford.edu/data/cit-Patents.html and the smaller one from http://snap.stanford.edu/data/cit-HepPh.html.
+Both are citation networks.</p>
+<h3><a class="header" href="#accomplishments" id="accomplishments">Accomplishments</a></h3>
+<p>I completed the first three tasks, i.e. studied centrality, and calculated InDegrees and PageRank for the datasets.</p>
+<h2><a class="header" href="#interesting-aspects" id="interesting-aspects">Interesting Aspects</a></h2>
+<ul>
+<li>
+<p>** Uses the streaming Jar instead.</p>
+<ul>
+<li>** Simply a wrapper allowing Hadoop to call executables directly.</li>
+<li>** Meaning we can use any language we want to write our mappers and reducers. </li>
+</ul>
+</li>
+<li>
+<p><strong>Hadoop</strong> Installing Hadoop is very different depending on the PC. I tried installing it a number of times (back in october, but that install died), and again in january, where I did it with group mates. My installation is not running just yet.</p>
+</li>
+<li>
+<p><strong>Debugging</strong> - Debugging distributed applications is difficult. Finding out how the MapReduce framework works like Unix pipes helped isolate where things were going wrong.</p>
+</li>
+<li>
+<p><strong>Data Formatting</strong> - In order to calculate the PageRank for the dataset, I needed to change its format. I was able to do this using a simple IdentityMapper + AppendReducer to quickly reformat the dataset into an adjacency matrix from an adjacency list.</p>
+</li>
+<li>
+<p><strong>Sorting and Shuffling</strong> - The PageRank algorithm requires repetition until convergence, i.e. that certain steps be repeated until the output is stable. As far as I'm aware, it only does this for transfers from Mappers to Reducers, which means I can't just feed the output of one reducer into another.</p>
+</li>
+<li>
+<p><strong>Small data-set</strong> - means that hadoop would only start a single node anyways.</p>
+</li>
+<li>
+<p>** The data we used is instead just a list of nodes, with a list of nodes that are related to that key-node so:
+1   2 3 4
+2   1 2
+Is </p>
+</li>
+</ul>
+<p>Antallet af delta skulle gerne være lig med det totale antal nodes.</p>
+<h2><a class="header" href="#key-items" id="key-items">Key Items</a></h2>
+<p>The relevant files are listed in <code>src/mappers</code> and <code>src/reducers</code>.</p>
+<h3><a class="header" href="#" id=""></a></h3>
+<h2><a class="header" href="#alt-i-bin" id="alt-i-bin">Alt i bin</a></h2>
+<p>Filer i bin er filer der er brugt til at interface med Hadoop</p>
+<h2><a class="header" href="#results" id="results">Results</a></h2>
+<p>Use the provided tools and view the results in the output directory.</p>
+<h2><a class="header" href="#makefile" id="makefile">Makefile:</a></h2>
+<p>Simply describes how the project should be run should run.
+Is called by doing: &quot;make <which thing to run>&quot;
+The makefile designates which mapper and which reducer to use.</p>
+<h2><a class="header" href="#pagerank" id="pagerank">Pagerank</a></h2>
+<p>Preprocessing is done by combining keys of the same value, and simply adding the related values to that &quot;master&quot; key
+Should be run a number of times.
+To run pagerank</p>
+<ol>
+<li>Ensure file is in data folder and that file is updated in makefile </li>
+<li>Open terminal in project</li>
+<li>run &quot;make pagerank-preprocess&quot;, wait for it to finish</li>
+<li>run &quot;make pagerank-first&quot;</li>
+<li>run &quot;make pagerank-intermediate&quot;, can be run a number of times, to close approximate the exact pagerank</li>
+<li>run &quot;make pagerank-sum&quot;, to sum up the deltas.</li>
+</ol>
+<h2><a class="header" href="#preprocessing-is-only-be-used-to-page-rank" id="preprocessing-is-only-be-used-to-page-rank">Preprocessing is only be used to page-rank</a></h2>
+<p>Is only used to join keys of the same value, so that key</p>
+<h3><a class="header" href="#combiner" id="combiner">Combiner</a></h3>
+<p>Simply combines all the deltas, reducing the complete</p>
+<h2><a class="header" href="#degree-centrality" id="degree-centrality">Degree centrality:</a></h2>
+<p>Simple counts the number of nodes that point to a specific node.
+Is actually only wordcount, there is nothing to find the max :(</p>
+<h2><a class="header" href="#hadoopsh" id="hadoopsh">Hadoop.sh</a></h2>
+<p>Used to check for all the relevant requirements, hvis hadoop er installeret til usr/local behøves path ikke blive sat (følg digital ocean guiden.)
+https://www.digitalocean.com/community/tutorials/how-to-install-hadoop-in-stand-alone-mode-on-ubuntu-16-04</p>
+<h2><a class="header" href="#reducer-modtager-en-liste-af-key-med-en-liste-af-values-til-hver-key" id="reducer-modtager-en-liste-af-key-med-en-liste-af-values-til-hver-key">Reducer modtager en liste af key, med en liste af values til hver key.</a></h2>
+<h1><a class="header" href="#programming-paradigms" id="programming-paradigms">Programming Paradigms</a></h1>
+<h1><a class="header" href="#scheme---part-1" id="scheme---part-1">Scheme - Part 1</a></h1>
+<h2><a class="header" href="#literature" id="literature">Literature</a></h2>
+<ul>
+<li><a href="https://www.scheme.com/tspl4/">The Scheme Programming Language</a></li>
+<li><a href="https://people.cs.aau.dk/%7Enormark/pp-*/gjm.lambook88-3.pdf">An Introduction to Functional Programming Through Lambda Calculus</a></li>
+</ul>
+<h2><a class="header" href="#learning-goals" id="learning-goals">Learning Goals</a></h2>
+<p>Establish an overall understanding of functional programming to understand the basic characteristics of Lisp.</p>
+<ul>
+<li>Expressions
+<ul>
+<li>Symbolic Expressions</li>
+<li>Lambda Expressions</li>
+</ul>
+</li>
+<li>Data Types
+<ul>
+<li>Lists</li>
+</ul>
+</li>
+<li>Functions</li>
+<li>Name Bindings</li>
+</ul>
+<h2><a class="header" href="#notes" id="notes">Notes</a></h2>
+<pre><code class="language-scheme">;; This is a comment
+(+ 1 1)
+;; =&gt; 2
+</code></pre>
+<p>Defining a function using <code>define</code>.</p>
+<pre><code class="language-scheme">;;; Define a function `plus`, which returns the sum of `param1` and `param2`.
+(define (plus param1 param2) (+ param1 param2))
+</code></pre>
+<p>Alternatively:</p>
+<pre><code class="language-scheme">&gt; (define plus (λ (param1 param2) (+ param1 param2)))
+&gt; 
+</code></pre>
+<p>Using an arbitrary number of parameters, <code>x</code> is bound to the first, and <code>y</code> is bound to the rest.</p>
+<pre><code class="language-scheme">&gt; (define (func x . y)
+        y)
+&gt; (func 1 2 3 4)
+'(2 3 4)
+</code></pre>
+<h2><a class="header" href="#symbolic-expression" id="symbolic-expression">Symbolic Expression</a></h2>
+<p>A Symbolic Expression, or an S-Expression, is one of two things:</p>
+<ol>
+<li>An atom, or</li>
+<li>a pair <code>(a . b)</code> where both <code>a</code> and <code>b</code> are S-expressions.</li>
+</ol>
+<h2><a class="header" href="#lambda-expression" id="lambda-expression">Lambda Expression</a></h2>
+<p>The Lambda Expression is a procedure which returns a procedure.</p>
+<pre><code class="language-scheme">(λ (param) ; The body begins once the parameter parens is closed.
+    param) ; Here we just return the parameter.
+</code></pre>
+<h2><a class="header" href="#name-binding" id="name-binding">Name Binding</a></h2>
+<p>There are three types of name binding: <code>let</code>, <code>let*</code> and <code>letrec</code>.</p>
+<pre><code class="language-scheme">;;; Let binding syntax
+(let ((n1 m1)
+     ...
+     (nk mk))
+     (body))
+
+;;; Let binding example
+(let ((a 1)
+      (b 2))
+    (+ a b))
+</code></pre>
+<p><code>let</code> bindings are syntactic sugar for lambda expressions, which provide the name bindings.
+The above program is therefore rewritten as:</p>
+<pre><code class="language-scheme">;;; Let syntax transformed to lambda
+((λ (n1 .. nk) (body)) m1 .. mk)
+
+;;; Let binding example transformed to lambda
+((λ (a b) (+ a b)) 1 2)
+</code></pre>
+<p>Note that <code>letrec</code> is <em><strong>impure</strong></em>.</p>
+<h1><a class="header" href="#scheme---part-2" id="scheme---part-2">Scheme - Part 2</a></h1>
+<h2><a class="header" href="#tail-call-recursion" id="tail-call-recursion">Tail Call Recursion</a></h2>
+<p>As opposed to normal recursion, tail call recursion requires the recursive call to be in the tail position.</p>
+<pre><code class="language-scheme">
+</code></pre>
+<p>Scheme requires tail calls to be implemented as jumps, i.e. that no frames are wasted.</p>
+<h2><a class="header" href="#higher-order-functions" id="higher-order-functions">Higher Order Functions</a></h2>
+<p>Higher order functions are functions of order 2 or above, meaning they take parameters of order 1 or above.
+In other words, higher order functions can take and return functions.</p>
+<h3><a class="header" href="#map-1" id="map-1">Map</a></h3>
+<p>Map takes a list, applies a function to each element and returns a list of the same length.</p>
+<h3><a class="header" href="#filter" id="filter">Filter</a></h3>
+<p>Filter takes a list and a predicate, returning a second list with only the elements where the predicate returns true.</p>
+<h3><a class="header" href="#reduce-1" id="reduce-1">Reduce</a></h3>
+<p>Reduce takes a list and a reduce function, folding the list until only a single element remains.</p>
+<h3><a class="header" href="#zip" id="zip">Zip</a></h3>
+<p>Zip takes two lists and a function, and uses the function to merge the two lists into a single list, which it returns.
+The lists have to have the same length.</p>
+<h2><a class="header" href="#currying" id="currying">Currying</a></h2>
+<p>The idea behind currying is that each function only takes a single parameter.
+Instead of the following:</p>
+<pre><code class="language-scheme">(λ (a b c) (+ a b c))
+</code></pre>
+<p>A function would be implemented as a cascade of functions, such that:</p>
+<pre><code class="language-scheme">(λ (a)
+    (λ (b) 
+        (λ (c) 
+        (+ a b c))))
+</code></pre>
+<p>By then calling the function with less than 3 parameters, we receive a new function, which takes the rest of the parameters.
+This allows us to compose functions more lazily, and is known as currying, after Haskell Curry.</p>
+<h1><a class="header" href="#scheme---part-3" id="scheme---part-3">Scheme - Part 3</a></h1>
+<h2><a class="header" href="#continuations" id="continuations">Continuations</a></h2>
+<blockquote>
+<p>A continuation of an expression <code>E</code> in a surrounding context <code>C</code> represents the future of the computation, which waits for, and depends on the value of <code>E</code>.
+A contiuation is materialized as a function which takes a single parameter.</p>
+</blockquote>
+<p>Consider the snippet below, where the expression <code>(* 4 3)</code> is inside the context <code>(+ 5 E)</code>.
+The continuation of <code>E</code> is <em>adding five to...</em>.</p>
+<pre><code class="language-scheme">(+ 5 (* 4 3))
+</code></pre>
+<p>In other words:</p>
+<pre><code class="language-scheme">(λ (E) (+ 5 E))
+</code></pre>
+<p>Explicitly capturing the expression <code>E</code> in the context <code>C</code>:</p>
+<pre><code class="language-scheme">(+ 5 (call/cc (λ (cc) (* 4 3))))
+</code></pre>
+<p>Using the context <code>C</code> within the expression <code>E</code>:</p>
+<pre><code class="language-scheme">&gt; (+ 5 (call/cc (λ (cc) (* 4 (cc 4)))))
+9
+</code></pre>
+<p><em><strong>Note</strong></em>: In the above snippet, the only part which is actually evaluated is <code>(cc 4)</code>, where <code>cc</code> is the continuation <code>(+ 5 E)</code>, i.e. the expression is evaluated as <code>(+ 5 4)</code>.</p>
+<h1><a class="header" href="#scheme---part-4" id="scheme---part-4">Scheme - Part 4</a></h1>
+<h2><a class="header" href="#evaluation-order" id="evaluation-order">Evaluation Order</a></h2>
+<p>Consider the following snippet:</p>
+<pre><code class="language-scheme">(define (infinite-calculation)
+    (infinite-calculation))
+    
+((λ (x) 1) (infinite-calculation))
+</code></pre>
+<p>What is the result of evaluating the fourth line?
+Well, due to the evaluation order of Scheme, evaluation will loop forever, as the parameter is evaluated eagerly, i.e. before it is passed to the function.</p>
+<h3><a class="header" href="#rewrite-rules" id="rewrite-rules">Rewrite Rules</a></h3>
+<blockquote>
+<p>The rewrite rules define semantic preserving transformations of expressions</p>
+</blockquote>
+<h4><a class="header" href="#alpha-rule" id="alpha-rule">Alpha Rule</a></h4>
+<p>Formal parameters of a lambda expression can be substituted with other names which are not used as free names in the body.</p>
+<h4><a class="header" href="#beta-rule" id="beta-rule">Beta Rule</a></h4>
+<p>An application of a function can be substituted by the function body, in which the formal parameters are substituted by the corresponding actual parameters.
+For example, consider the following snippet:</p>
+<pre><code class="language-scheme">((λ (x) (+ x 1) 1) ; &lt;=&gt; (+ 1 1)
+</code></pre>
+<h4><a class="header" href="#eta-rule" id="eta-rule">Eta Rule</a></h4>
+<p>A function <code>f</code>, which only passes its parameters on to another function <code>e</code>, can be substituted by <code>e</code>.
+For example, consider the following snippet:</p>
+<pre><code class="language-scheme">(λ (x) (e x)) ; &lt;=&gt; e
+              ; where e is an other function
+</code></pre>
+<h4><a class="header" href="#normal-form" id="normal-form">Normal Form</a></h4>
+<p>An expression is in <em>normal form</em> if it cannot be reduced further by beta and eta rewrites.
+A normal form represents our intuition of the value of an expression.</p>
+<h3><a class="header" href="#order-of-reductions" id="order-of-reductions">Order of Reductions</a></h3>
+<p>Using the rewrite rules can be done in several ways, which is why the order of reductions has been standardized.</p>
+<p>In order to demonstrate the difference between the two, consider the following snippet:</p>
+<pre><code class="language-scheme">((λ (x y) (+ (* x x) (* y y)))
+    (fak 5)
+    (fib 10))
+</code></pre>
+<h4><a class="header" href="#normal-order" id="normal-order">Normal Order</a></h4>
+<p>The first reduction to perform is the one at the outer level of the expression, i.e. evaluation by need.</p>
+<ol>
+<li>Beta rewrite lambda expression</li>
+</ol>
+<pre><code class="language-scheme">(+ (* (fak 5) (fak 5) (* (fib 10) (fib 10))))
+</code></pre>
+<ol start="2">
+<li>Attempt to evaluate the plus function, notice that inner values need evaluation first.</li>
+<li>Attempt to evaluate <code>(* (fak 5) (fak 5))</code>, again, the two inner values need evaluation first.</li>
+<li>Evaluate <code>(fak 5)</code>, then again, then evaluate the result squared.</li>
+<li>Etc.</li>
+</ol>
+<h4><a class="header" href="#applicative-order" id="applicative-order">Applicative Order</a></h4>
+<p>The first reduction to perform is the inner leftmost reduction, i.e. eager evaluation, which sometimes must be controlled explicitly.</p>
+<ol>
+<li>Attempt to evaluate <code>(fak 5)</code>.</li>
+<li>Attempt to evaluate <code>(fib 10)</code>.</li>
+<li>Evaluate the function object, i.e:</li>
+</ol>
+<pre><code class="language-scheme">&gt; (function-object 120 55)
+
+;;; Resulting in
+(+ (* 120 120) (* 55 55))
+</code></pre>
+<ol start="4">
+<li>Attempt to evaluate <code>(* 120 120)</code>.</li>
+<li>Etc.</li>
+</ol>
+<h2><a class="header" href="#delayed-evaluation-and-streams" id="delayed-evaluation-and-streams">Delayed Evaluation and Streams</a></h2>
+<p>Scheme is implemented with applicative-order evaluation.</p>
+<h3><a class="header" href="#delayed-evaluation" id="delayed-evaluation">Delayed Evaluation</a></h3>
+<p>We introduce two new primitives:</p>
+<ul>
+<li>Delay, and</li>
+<li>Force.</li>
+</ul>
+<p>The following snippet describes the semantics of these primitives:</p>
+<pre><code>(delay expr) =&gt; promise
+(force promise) =&gt; value
+</code></pre>
+<p>In fact, these are easy to implement in Scheme:</p>
+<pre><code class="language-scheme">(define (delay expr)
+    (λ () expr))
+
+(define (force promise)
+    (promise))
+</code></pre>
+<h1><a class="header" href="#scheme---miniproject" id="scheme---miniproject">Scheme - Miniproject</a></h1>
+<p>The Scheme miniproject is based on one of the exercises from the course.
+The core concepts of the project are <em><strong>student</strong></em>, <em><strong>group</strong></em> and <em><strong>grouping</strong></em>.</p>
+<blockquote>
+<p>Program various ways to make project groups, in the context of PBL group work at AAU.</p>
+</blockquote>
+<h2><a class="header" href="#student" id="student">Student</a></h2>
+<p>The structure of a student object is described in the following table.</p>
+<table><thead><tr><th>Property</th><th>Description</th></tr></thead><tbody>
+<tr><td>Student-id</td><td>A unique identifier for the student.</td></tr>
+<tr><td>Name</td><td>The full name of the student.</td></tr>
+<tr><td>Sex</td><td>The gender, i.e. &quot;male&quot; or &quot;female&quot;.</td></tr>
+<tr><td>Nationality</td><td>E.g. &quot;Danish&quot;, &quot;Icelandic&quot;.</td></tr>
+</tbody></table>
+<h2><a class="header" href="#group" id="group">Group</a></h2>
+<p>A group ties students together with a group id. The conceptual structure is described by the following table.</p>
+<table><thead><tr><th>Property</th><th>Description</th></tr></thead><tbody>
+<tr><td>Group-id</td><td>A unique identifier for the group.</td></tr>
+<tr><td>Students</td><td>A list of students, or student-ids.</td></tr>
+</tbody></table>
+<h2><a class="header" href="#grouping" id="grouping">Grouping</a></h2>
+<p>A grouping is a collection of groups. A high-level abstraction could be described by the following table.</p>
+<table><thead><tr><th>Property</th><th>Description</th></tr></thead><tbody>
+<tr><td>Groups</td><td>A collection of groups, each containing a list of students.</td></tr>
+</tbody></table>
+<p>The problem with this structure, however, is that it cannot be sorted by students - only by groups. An alternative solution would be to create an association list, such as the following code snippet.</p>
+<pre><code class="language-scheme">;; Association list. The first element is the group id,
+;; the second is the student id.
+((1 . a) (1 . e) (2 . b) (1 . c) (2 . d))
+
+;; In other words
+((1 (a e c)) (2 (b d)))
+</code></pre>
+<h2><a class="header" href="#the-assignment" id="the-assignment">The Assignment</a></h2>
+<p>There exists a sample population of 200 students. For this population, write the following functions:</p>
+<ul>
+<li>A function that returns a given group from a grouping.
+<ul>
+<li>A function that returns the number of groups in a grouping</li>
+<li>A function that returns the maximum group size in a grouping</li>
+<li>A function that returns the minimum group size in a grouping</li>
+</ul>
+</li>
+<li>A constructor, predicate, and selection functions for a single student.</li>
+<li>A constructor, and predicate for a single group.</li>
+<li>A selection function which returns the students in a group.</li>
+<li>A selection function that returns the group id.</li>
+<li>A predicate for a grouping.</li>
+<li>Constructors for groupings.
+<ul>
+<li><strong>Random grouping</strong>: Given a list of students <code>sl</code> and a list of desired group sizes <code>gsl</code>, program a grouping function that forms <code>(length gsl)</code> groups, of the sizes prescribed in <code>gsl</code>. 
+<ul>
+<li>Assert that <code>gls</code> is a list of positive integers, whose sum is equal to <code>(length sl)</code>.</li>
+<li>Should be recursive.</li>
+</ul>
+</li>
+<li><strong>Grouping by counting</strong>: Given a list of students <code>sl</code> and a single group size <code>k</code>, iteratively assign a single group number to each student in increasing order, resetting at <code>k</code>. </li>
+<li><strong>Balanced grouping by counting</strong>: Using the same parameters as the previous function, return a grouping such that there is an equal distribution of sex and ethnicity.</li>
+<li><strong>Random grouping with group predicate</strong>: Using the same parameters as the random grouping function plus a predicate and a retry value, try applying the predicate on each randomly generated grouping. If the predicate fails, then reject the group, and form another random group. Each successful application of the predicate results in the group being added to the grouping. The retry value determines how many times random groups are created before the program stops.</li>
+</ul>
+</li>
+</ul>
+<h2><a class="header" href="#requirements-1" id="requirements-1">Requirements</a></h2>
+<ul>
+<li><em><strong>Language</strong></em>: The program must be written in Scheme</li>
+<li><em><strong>Quality</strong></em>: The functional program must be well-written, well-structured and well-explained.</li>
+<li><em><strong>Modularity</strong></em>: Large functions, solving large problems, must be decomposed appropriately.</li>
+<li><em><strong>Purity</strong></em>: Use only pure functions, with the exception of print, file IO and random.</li>
+<li><em><strong>Higher-Order Functions</strong></em>: Use them!</li>
+<li><em><strong>Abstraction</strong></em>: <code>car</code> and <code>cdr</code> should be abstracted away into accessor functions for your datatypes.</li>
+<li><em><strong>Comments</strong></em>: Use them to document the program.</li>
+<li><em><strong>Plagiarism</strong></em>: Not allowed.</li>
+</ul>
+<p>The program should be unique and written alone.</p>
+<h1><a class="header" href="#haskell---part-1" id="haskell---part-1">Haskell - Part 1</a></h1>
+<h2><a class="header" href="#types" id="types">Types</a></h2>
+<ul>
+<li>Type class: A family of types who shares a property defined by the type class.
+<ul>
+<li>Show: Class of types whose values can be displayed</li>
+<li>Eq: Class of types whose values can be compared wrt <code>=</code></li>
+<li>Num: Class of number types.</li>
+<li>Ord: Class of types whose values can be ordered wrt <code>&lt;</code></li>
+</ul>
+</li>
+</ul>
+<h3><a class="header" href="#simple-types" id="simple-types">Simple Types</a></h3>
+<blockquote>
+<p>Types that are not composed of other types</p>
+</blockquote>
+<ul>
+<li>Bool</li>
+<li>Int</li>
+</ul>
+<h4><a class="header" href="#numerals" id="numerals">Numerals</a></h4>
+<ul>
+<li>Int</li>
+<li>Integer</li>
+<li>Float</li>
+<li>Double</li>
+</ul>
+<h3><a class="header" href="#composite-types" id="composite-types">Composite Types</a></h3>
+<blockquote>
+<p>Types that are built with simpler types</p>
+</blockquote>
+<ul>
+<li><code>(Bool, Int)</code></li>
+<li><code>[Char]</code></li>
+</ul>
+<h3><a class="header" href="#simple-terms" id="simple-terms">Simple Terms</a></h3>
+<h3><a class="header" href="#composite-terms" id="composite-terms">Composite Terms</a></h3>
+<h2><a class="header" href="#functions" id="functions">Functions</a></h2>
+<p>A lambda function is defined as follows:</p>
+<pre><code class="language-haskell">\x -&gt; x + 1
+</code></pre>
+<p>All functions in Haskell accept only one parameter, but they can be curried.</p>
+<pre><code class="language-haskell">f a = a + 1
+
+f = \a -&gt; a + 1
+
+f a b = a + b
+
+f = \a -&gt; \b -&gt; a + b
+</code></pre>
+<p>All curried functions are higher order functions, as they accept in their body a function as a parameter.</p>
+<h3><a class="header" href="#pattern-matching" id="pattern-matching">Pattern Matching</a></h3>
+<p>Instead of using convoluted if expressions, we may use pattern matching.
+Consider the following snippet:</p>
+<pre><code class="language-haskell">f lst = if list == [] then 0 else (+ 1) . length $ tail lst
+
+f [] = 0
+f (x:xs) = ...
+</code></pre>
+<h3><a class="header" href="#local-declarations" id="local-declarations">Local Declarations</a></h3>
+<p>Functions may be simplified by creating intermediate steps using let declarations</p>
+<h4><a class="header" href="#where" id="where">Where</a></h4>
+<pre><code class="language-haskell">f a b = a `plus` b
+    where
+        plus = (+)
+</code></pre>
+<h4><a class="header" href="#let" id="let">Let</a></h4>
+<pre><code class="language-hs">f a b = let plus = (+) in a `plus` b
+</code></pre>
+<h1><a class="header" href="#haskell---part-2" id="haskell---part-2">Haskell - Part 2</a></h1>
+<p>Haskell uses lazy evaluation by default.</p>
+<h2><a class="header" href="#lazy-evaluation" id="lazy-evaluation">Lazy Evaluation</a></h2>
+<p>Due to the default of Haskell being lazy evaluation, it has some nice properties:</p>
+<ul>
+<li>It is natural to define infinite structures</li>
+<li>It is natural to utilize infinite structures in functions</li>
+</ul>
+<p>The stream of ones in Haskell is defined as:</p>
+<pre><code class="language-haskell">ones = 1 : ones
+</code></pre>
+<h3><a class="header" href="#map-2" id="map-2">Map</a></h3>
+<pre><code class="language-haskell">map :: (a -&gt; b) -&gt; [a] -&gt; [b]
+</code></pre>
+<h3><a class="header" href="#filter-1" id="filter-1">Filter</a></h3>
+<pre><code class="language-haskell">filter :: (a -&gt; Bool) -&gt; [a] -&gt; [a]
+</code></pre>
+<h3><a class="header" href="#foldl" id="foldl">Foldl</a></h3>
+<pre><code class="language-haskell">foldl :: Foldable t =&gt; (b -&gt; a -&gt; b) -&gt; b -&gt; t a -&gt; b
+</code></pre>
+<h3><a class="header" href="#foldr" id="foldr">Foldr</a></h3>
+<pre><code class="language-haskell">foldr :: Foldable t =&gt; (a -&gt; b -&gt; b) -&gt; b -&gt; t a -&gt; b
+</code></pre>
+<h2><a class="header" href="#recursive-functions-and-datatypes" id="recursive-functions-and-datatypes">Recursive Functions and Datatypes</a></h2>
+<pre><code class="language-haskell">type String = [Char]
+</code></pre>
+<p>In the following snippet, <code>True</code> and <code>False</code> are called term constructors.
+<em>Constructors are functions.</em>
+Term constructors always start with a capital letter.</p>
+<pre><code class="language-haskell">data Boolean = True | False
+</code></pre>
+<p>A binary tree might be represented like so:</p>
+<pre><code class="language-haskell">data Tree = Leaf Int | Branch Tree Tree
+    deriving Show
+</code></pre>
+<p>In the above snippet, the Tree is recursively defined in terms of itself, or leaves.</p>
+<h3><a class="header" href="#term-and-type-constructors" id="term-and-type-constructors">Term and Type Constructors</a></h3>
+<p>Consider the snippet below:</p>
+<pre><code class="language-haskell">data Tree a = Leaf a | Branch (Tree a, Tree a)
+</code></pre>
+<p><code>Tree</code> in this case is a type constructor, as it can be used to construct a tree type with a variable type a, such as <code>Tree Int</code>, where each leaf will contain an integer.
+<code>Leaf</code> and <code>Branch</code>, however, are term constructors.</p>
+<h3><a class="header" href="#functions-on-recursive-structures" id="functions-on-recursive-structures">Functions on Recursive Structures</a></h3>
+<p>Essentially, recursive structures are naturally parsed via recursive functions and pattern matching.
+The <code>Tree</code> example could be expanded to include a function which counts the number of nodes, for example.</p>
+<pre><code class="language-haskell">count_nodes :: Tree -&gt; Int
+count_nodes (Leaf a) = 1
+count_nodes (Branch (a, b)) = (count_nodes a) + (count_nodes b)
+</code></pre>
+<h2><a class="header" href="#list-comprehensions-and-ranges" id="list-comprehensions-and-ranges">List Comprehensions and Ranges</a></h2>
+<p>List Comprehensions make it easy to express Set Expressions.</p>
+<pre><code class="language-haskell">evens = [2*i | i &lt;- [1..]]
+</code></pre>
+<p>Such a simple list comprehension has two parts:</p>
+<ol>
+<li>The function</li>
+<li>The generator</li>
+</ol>
+<p>Basically, this works like a map function.
+Given a list (created by the generator), we apply the function to each element and return the result.</p>
+<p>In the case of the <code>evens</code> function, the generator is the range of all integers starting with one.
+The function applied to this list is <code>i*2</code>, which neatly creates all even numbers.</p>
+<p>Optionally, you may also use a guard, which is a predicate function for filtering the results of the list comprehension.
+Consider the following snippet:</p>
+<pre><code class="language-haskell">evensevens = [2*i | i &lt;- [1..], i `mod` 7 == 0]
+</code></pre>
+<h1><a class="header" href="#haskell---part-3" id="haskell---part-3">Haskell - Part 3</a></h1>
+<h2><a class="header" href="#parametric-and-ad-hoc-polymorphism" id="parametric-and-ad-hoc-polymorphism">Parametric and Ad Hoc Polymorphism</a></h2>
+<p>There are two kinds of Polymorphism in Haskell.
+Parametric polymorphism is supported by the type system, and typified by the following snippet:</p>
+<pre><code class="language-haskell">func :: a -&gt; a
+</code></pre>
+<p>Ad hoc polymorphism is supported by type classes, and is shown in the following snippet:</p>
+<pre><code class="language-haskell">func :: Num a =&gt; a -&gt; a
+</code></pre>
+<h2><a class="header" href="#type-classes-in-haskell" id="type-classes-in-haskell">Type Classes in Haskell</a></h2>
+<blockquote>
+<p>Type Class = Family of Types
+A type class in Haskell is an interface, rather than an implementation.</p>
+</blockquote>
+<pre><code class="language-haskell">class Eq a where
+    (==) :: a -&gt; a -&gt; Bool
+</code></pre>
+<p>Implementing an instance of a type class is done as follows:</p>
+<pre><code class="language-haskell">instance Eq Integer where
+    x == y = x `integerEq` y
+</code></pre>
+<p>Showing a dependency between type classes is done as follows:</p>
+<pre><code class="language-haskell">instance (Eq a) =&gt; (Ord a) where
+    (&lt;), (&lt;=), (&gt;=), (&gt;) :: a -&gt; a -&gt; Bool
+    max, min :: a -&gt; a -&gt; a
+</code></pre>
+<h2><a class="header" href="#specialization-generalization-and-principal-types" id="specialization-generalization-and-principal-types">Specialization, Generalization and Principal Types</a></h2>
+<p>Consider the following Lambda Calculus snippet:
+Specialization is &quot;implementing&quot; a general type, i.e.</p>
+<pre><code class="language-haskell">-- General type
+f :: Num a =&gt; a -&gt; a
+
+-- Specialized type
+f :: Int -&gt; Int
+</code></pre>
+<p>A principal type is the most general type for an expression.</p>
+<h2><a class="header" href="#hindley-milner-type-system" id="hindley-milner-type-system">Hindley-Milner Type System</a></h2>
+<p>The HM type system contains two specialized rules: <code>project</code> and <code>close</code>, where <code>project</code> finds the specialized case, and <code>close</code> finds the general case.</p>
+<h1><a class="header" href="#haskell---part-4" id="haskell---part-4">Haskell - Part 4</a></h1>
+<h2><a class="header" href="#type-inference-or-the-w-algorithm" id="type-inference-or-the-w-algorithm">Type Inference, or the W Algorithm</a></h2>
+<blockquote>
+<p>There exists an algorithm that will take any expression <code>e</code> and attempt to compute the type of <code>e</code>.</p>
+</blockquote>
+<ul>
+<li>Moreover: The algorithm finds a type for <code>e</code> &lt;=&gt; <code>e</code> has a type.</li>
+<li>The type that the algorithm finds is the principal type of <code>e</code>.</li>
+</ul>
+<p>In other words, we consider parametric polymorphism.</p>
+<p>The W algorithm takes an environment and an expression, returning a type.</p>
+<pre><code>W(E, e) = t
+</code></pre>
+<p>W stands for <em>well-typed</em>.
+The algorithm is recursive.</p>
+<p>If the algorithm succeeds, it returns a type substitution.
+Example:</p>
+<pre><code>δ = [a ↦ Int, b ↦ (Bool -&gt; Bool)]
+</code></pre>
+<h3><a class="header" href="#unification" id="unification">Unification</a></h3>
+<p>Sometimes the W algorithm will have to solve an equation over types.</p>
+<p>Consider the following type equation:</p>
+<pre><code class="language-haskell">a -&gt; Int = Bool -&gt; b
+</code></pre>
+<p>For this equation, the unifier could be:</p>
+<pre><code>δ = [a ↦ Bool, b ↦ Int]
+</code></pre>
+<p>Resulting in:</p>
+<pre><code class="language-haskell">Bool -&gt; Int
+</code></pre>
+<p>The Unification algorithm takes two type expressions and returns a δ, iff t_1δ = t_2δ</p>
+<h3><a class="header" href="#w-algorithm" id="w-algorithm">W Algorithm</a></h3>
+<p>Takes EXPTIME, that's all you need to know, innit?
+Usually this is not so bad, however.</p>
+<h2><a class="header" href="#type-classes-in-the-type-system" id="type-classes-in-the-type-system">Type Classes in the Type System</a></h2>
+<blockquote>
+<p>Types are sets of values. Type classes are sets of types.</p>
+</blockquote>
+<h2><a class="header" href="#io-in-haskell" id="io-in-haskell">I/O in Haskell</a></h2>
+<p>Input/Output in Haskell is enabled by IO actions.
+A function which gets a line from input, for example, could be implemented like so:</p>
+<pre><code class="language-haskell">getLine' = do
+  w &lt;- getChar
+  case w of
+    '\n' -&gt; return []
+    _    -&gt; do
+      ws &lt;- getLine'
+      return (w:ws)
+</code></pre>
+<p>A dialog could be programmed as follows:</p>
+<pre><code class="language-haskell">main = do
+    w &lt;- getLine
+    putStrLn $ &quot;You wrote &quot; ++ w
+</code></pre>
+<h1><a class="header" href="#haskell---miniproject" id="haskell---miniproject">Haskell - Miniproject</a></h1>
+<p>The Haskell miniproject has the goal of implementing the Huffman encoding algorithm.</p>
+<h2><a class="header" href="#the-assignment-1" id="the-assignment-1">The Assignment</a></h2>
+<ul>
+<li>Read an arbitrary text from input</li>
+<li>Compute the optimal prefix code from input based on the frequency of its characters</li>
+<li>Compress the input string and return the compressed version in an appropriate way</li>
+<li>Decompress a bit sequence known to be written using a specific prefix code and write the decompressed text to output</li>
+</ul>
+<h1><a class="header" href="#prolog---part-1" id="prolog---part-1">Prolog - Part 1</a></h1>
+<p>Prolog is a logic programming language, which is a subset of declarative programming.</p>
+<blockquote>
+<p>It's about the WHAT, and now the HOW.</p>
+</blockquote>
+<p>Prolog can be thought of as a layered language, where the simplest version is Datalog.</p>
+<h2><a class="header" href="#syntax" id="syntax">Syntax</a></h2>
+<p>You could split a logic program into two principles: Facts and Rules.
+However, strictly speaking, </p>
+<h1><a class="header" href="#prolog---part-2" id="prolog---part-2">Prolog - Part 2</a></h1>
+<h1><a class="header" href="#prolog---part-3" id="prolog---part-3">Prolog - Part 3</a></h1>
+<h1><a class="header" href="#prolog---part-4" id="prolog---part-4">Prolog - Part 4</a></h1>
+<h1><a class="header" href="#prolog---miniproject" id="prolog---miniproject">Prolog - Miniproject</a></h1>
+<h1><a class="header" href="#tests-and-verification" id="tests-and-verification">Tests and Verification</a></h1>
+<p>Learn about techniques and software-tools that can be used to assess the quality and correctness of software systems.</p>
+<h1><a class="header" href="#tests" id="tests">Tests</a></h1>
+<p>Literature: Software Testing - Rob Patton</p>
+<h2><a class="header" href="#testing-concepts" id="testing-concepts">Testing Concepts</a></h2>
+<h2><a class="header" href="#blackbox-testing" id="blackbox-testing">Blackbox Testing</a></h2>
+<h2><a class="header" href="#whitebox-testing" id="whitebox-testing">Whitebox Testing</a></h2>
+<h2><a class="header" href="#planning-writing-and-tracking-test-cases" id="planning-writing-and-tracking-test-cases">Planning, Writing and Tracking Test Cases</a></h2>
+<h2><a class="header" href="#model-based-testing" id="model-based-testing">Model-based Testing</a></h2>
+<h2><a class="header" href="#mutation-testing" id="mutation-testing">Mutation Testing</a></h2>
+<h2><a class="header" href="#testing-in-practice" id="testing-in-practice">Testing in Practice</a></h2>
+<h2><a class="header" href="#projects" id="projects">Projects</a></h2>
+<h1><a class="header" href="#verification" id="verification">Verification</a></h1>
+<h2><a class="header" href="#model-checking-uppaal-1" id="model-checking-uppaal-1">Model Checking: UPPAAL 1</a></h2>
+<h2><a class="header" href="#scalability--model-checking-uppaal-2" id="scalability--model-checking-uppaal-2">Scalability &amp; Model Checking: UPPAAL 2</a></h2>
+<h2><a class="header" href="#tapaal-and-timed-arc-petri-nets" id="tapaal-and-timed-arc-petri-nets">TAPAAL and Timed Arc Petri Nets</a></h2>
+<h2><a class="header" href="#static-analysis" id="static-analysis">Static Analysis</a></h2>
+<h2><a class="header" href="#bounded-model-checking" id="bounded-model-checking">Bounded Model Checking</a></h2>
+<h2><a class="header" href="#quantitative-model-checking" id="quantitative-model-checking">Quantitative Model Checking</a></h2>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                        
+
+                        
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                
+
+                
+            </nav>
+
+        </div>
+
+        
+
+        
+
+        
+        
+        
+        <script type="text/javascript">
+            window.playpen_copyable = true;
+        </script>
+        
+
+        
+
+        
+        <script src="elasticlunr.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="mark.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="searcher.js" type="text/javascript" charset="utf-8"></script>
+        
+
+        <script src="clipboard.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="highlight.js" type="text/javascript" charset="utf-8"></script>
+        <script src="book.js" type="text/javascript" charset="utf-8"></script>
+
+        <!-- Custom JS scripts -->
+        
+
+        
+        
+        <script type="text/javascript">
+        window.addEventListener('load', function() {
+            window.setTimeout(window.print, 100);
+        });
+        </script>
+        
+        
+
+    </body>
+</html>
