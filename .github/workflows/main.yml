@@ -14,14 +14,19 @@ jobs:
       with:
         fetch-depth: 1
 
-    - name: Fetch mdbook-mermaid
-      run: cargo install -f mdbook-mermaid
+    - name: Download CLI
+      uses: Legion2/download-release-action@v2.1.0
+      with:
+        repository: badboy/mdbook-mermaid
+        tag: '0.2.2'
+        path: ~/.cargo/bin
+        file: mdbook-mermaid-0.2.2-x86_64-unknown-linux-gnu.tar.gz
+        
 
     - name: Setup mdBook
       uses: peaceiris/actions-mdbook@v1
       with:
         mdbook-version: '0.3.5'
-        # mdbook-version: 'latest'
 
     - run: mdbook build
 
