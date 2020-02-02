@@ -212,30 +212,30 @@ Manages users, storage, networks, interfaces, etc.</p>
 <h2><a class="header" href="#life-cycle-of-a-vm-and-migrating-a-vm" id="life-cycle-of-a-vm-and-migrating-a-vm">Life-cycle of a VM and migrating a VM</a></h2>
 <h3><a class="header" href="#manual-lifecycle" id="manual-lifecycle">Manual Lifecycle</a></h3>
 <p>For the manual lifecycle, someone would have to go through these step for each request received for provisioning.</p>
-<pre><code class="language-mermaid">stateDiagram
-    Request --&gt; Provision
-    Provision --&gt; Operation
-    Operation --&gt; Release
-    Release --&gt; Request
-</code></pre>
+<pre class="mermaid">stateDiagram
+    Request --> Provision
+    Provision --> Operation
+    Operation --> Release
+    Release --> Request
+</pre>
 <h3><a class="header" href="#automatic-lifecycle" id="automatic-lifecycle">Automatic Lifecycle</a></h3>
 <p>The automatic lifecycle allows self-service style businesses to supply virtual machines on demand, which leads to a slightly more complex lifecycle, but much faster service.</p>
-<pre><code class="language-mermaid">stateDiagram
-    Pending --&gt; Prolog
-    Prolog --&gt; Boot
-    Boot --&gt; Running
-    Running --&gt; Shutdown
-    Shutdown --&gt; Epilog
-    Epilog --&gt; Done
-    Pending --&gt; Hold
-    Hold --&gt; Pending
-    Running --&gt; Migrate
-    Running --&gt; Suspended
-    Running --&gt; Stopped
-    Migrate --&gt; Running
-    Suspended --&gt; Running
-    Stopped --&gt; Running
-</code></pre>
+<pre class="mermaid">stateDiagram
+    Pending --> Prolog
+    Prolog --> Boot
+    Boot --> Running
+    Running --> Shutdown
+    Shutdown --> Epilog
+    Epilog --> Done
+    Pending --> Hold
+    Hold --> Pending
+    Running --> Migrate
+    Running --> Suspended
+    Running --> Stopped
+    Migrate --> Running
+    Suspended --> Running
+    Stopped --> Running
+</pre>
 <h3><a class="header" href="#migrating-a-vm" id="migrating-a-vm">Migrating a VM</a></h3>
 <p>There are three main methods for VM migration:</p>
 <ul>
@@ -673,15 +673,26 @@ A process may be treacherous, in which case it issues different signals to diffe
 <p>This differs from consensus, since there is a single process whose value the others must agree on.</p>
 <p>Also requires</p>
 <ul>
-<li><strong>Termination</strong>: Eventually each correct process sets its decision variable.</li>
-<li><strong>Agreement</strong>: The decision value of all correct processes is the same.</li>
-<li><strong>Integrity</strong>: If the commander is correct, then all correct processes decide on the value that the commander proposed.</li>
-</ul>
-<ul>
-<li>** Is based around the turkish invasion into Byzantium.</li>
-<li>** generals must agree to <em>attack</em> or <em>retreat</em>, while only being able to communicate by messengers.</li>
-<li>** Messages are safe, they cannot be intercepted or tampered with.</li>
-<li>** Traitor generals can exist
+<li>
+<p><strong>Termination</strong>: Eventually each correct process sets its decision variable.</p>
+</li>
+<li>
+<p><strong>Agreement</strong>: The decision value of all correct processes is the same.</p>
+</li>
+<li>
+<p><strong>Integrity</strong>: If the commander is correct, then all correct processes decide on the value that the commander proposed.</p>
+</li>
+<li>
+<p>** Is based around the turkish invasion into Byzantium.</p>
+</li>
+<li>
+<p>** generals must agree to <em>attack</em> or <em>retreat</em>, while only being able to communicate by messengers.</p>
+</li>
+<li>
+<p>** Messages are safe, they cannot be intercepted or tampered with.</p>
+</li>
+<li>
+<p>** Traitor generals can exist</p>
 <ul>
 <li>Traitors can omit answering messages from generals</li>
 <li>Send arbitrary messages
@@ -696,7 +707,9 @@ A process may be treacherous, in which case it issues different signals to diffe
 </li>
 </ul>
 </li>
-<li>** Attacking with only one army means defeat.</li>
+<li>
+<p>** Attacking with only one army means defeat.</p>
+</li>
 </ul>
 <h3><a class="header" href="#cost-of-byzantine-generals" id="cost-of-byzantine-generals">Cost of Byzantine Generals</a></h3>
 <ul>
@@ -776,13 +789,18 @@ I.e. where signing is used, a process cannot make a false claim about the messag
 </ul>
 <h3><a class="header" href="#practical-workarounds" id="practical-workarounds">Practical Workarounds</a></h3>
 <ul>
-<li><strong>Fault Masking</strong>: By using persistent storage and restarting failed programs, all failures are fixed and simply treated like slow programs. This way, we circumvent the impossibility result.</li>
-<li><strong>Failure Detectors</strong>: Processes deem a suspect process as failed and ignore its future messages.</li>
-<li><strong>Randomization</strong>: Introduce randomization, so processes become slightly unpredictable.
-This reduces the power of adversaries to predictably manipulate the system.</li>
-</ul>
-<ul>
-<li>Nearly synchronous systems:
+<li>
+<p><strong>Fault Masking</strong>: By using persistent storage and restarting failed programs, all failures are fixed and simply treated like slow programs. This way, we circumvent the impossibility result.</p>
+</li>
+<li>
+<p><strong>Failure Detectors</strong>: Processes deem a suspect process as failed and ignore its future messages.</p>
+</li>
+<li>
+<p><strong>Randomization</strong>: Introduce randomization, so processes become slightly unpredictable.
+This reduces the power of adversaries to predictably manipulate the system.</p>
+</li>
+<li>
+<p>Nearly synchronous systems:</p>
 <ul>
 <li>Uses Paxos Algorithm '98, completely-safe and largely-live consensus protocol for asynchronous systems.</li>
 <li>Used &quot;part-time parliament&quot; analogy but took 9 years before it was published, updated in &quot;Paxos made simple&quot; paper.</li>
