@@ -19,7 +19,7 @@ jobs:
       with:
         repository: badboy/mdbook-mermaid
         tag: '0.2.2'
-        path: ~/.cargo/bin
+        path: /usr/local/bin
         file: mdbook-mermaid-0.2.2-x86_64-unknown-linux-gnu.tar.gz
         
 
