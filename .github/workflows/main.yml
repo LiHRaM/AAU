@@ -16,9 +16,8 @@ jobs:
 
     - name: Fetch mdbook-mermaid
       run: |
-      curl -L https://github.com/badboy/mdbook-mermaid/releases/download/0.2.2/mdbook-mermaid-0.2.2-x86_64-unknown-linux-gnu.tar.gz --output - | tar -xzv
-      mv mdbook-mermaid ~/.cargo/bin/mdbook-mermaid
-        
+        curl -L https://github.com/badboy/mdbook-mermaid/releases/download/0.2.2/mdbook-mermaid-0.2.2-x86_64-unknown-linux-gnu.tar.gz --output - | tar -xzv
+        mv mdbook-mermaid ~/.cargo/bin/mdbook-mermaid
 
     - name: Setup mdBook
       uses: peaceiris/actions-mdbook@v1
