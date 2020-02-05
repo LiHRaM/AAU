@@ -34,3 +34,4 @@
     - [Selected Topics in Programming](./8_sem/sp/README.md)
     - [Web Information Processing](./8_sem/wip/README.md)
     - [Mobile Data and Location-based Services](./8_sem/mdls/README.md)
+    - [Software Innovation](./8_sem/swi/README.md)
