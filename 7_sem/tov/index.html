@@ -155,17 +155,11 @@
 <ul>
 <li><a href="#testing-concepts">Testing Concepts</a>
 <ul>
-<li><a href="#unit-tests">Unit Tests</a></li>
-<li><a href="#integration-tests">Integration Tests</a>
-<ul>
-<li><a href="#top-down-test-stubs">Top-Down: Test Stubs</a></li>
-<li><a href="#bottom-up-test-drivers">Bottom-Up: Test Drivers</a></li>
+<li><a href="#examining-the-specification">Examining the Specification</a></li>
 </ul>
 </li>
-</ul>
-</li>
-<li><a href="#blackbox-testing">Blackbox Testing</a></li>
-<li><a href="#whitebox-testing">Whitebox Testing</a></li>
+<li><a href="#black-box-testing">Black Box Testing</a></li>
+<li><a href="#white-box-testing">White Box Testing</a></li>
 <li><a href="#planning-writing-and-tracking-test-cases">Planning, Writing and Tracking Test Cases</a></li>
 <li><a href="#model-based-testing">Model-based Testing</a></li>
 <li><a href="#mutation-testing">Mutation Testing</a></li>
@@ -187,33 +181,49 @@
 <h1><a class="header" href="#tests" id="tests">Tests</a></h1>
 <p>Literature: Software Testing - Rob Patton</p>
 <h2><a class="header" href="#testing-concepts" id="testing-concepts">Testing Concepts</a></h2>
+<ul>
+<li><strong>Product Specification</strong>: An agreement among the software development team. It defines the product they are creating, detailing what it will be, how it will act, what it will do, and what it won't do. This agreement can range in form from a simple verbal understanding, an email, or a scribble on a napkin, to a highly detailed, formalized written document.</li>
+<li><strong>Bug</strong>: A <em>software bug</em> occurs when one or more of the following five rules is true:
+<ol>
+<li>The software doesn't do something that the product specification says it should do.</li>
+<li>The software does something that the product specification says it shouldn't do.</li>
+<li>The software does something that the product specification doesn't mention.</li>
+<li>The software doesn't do something that the product speciication doesn't mention but should.</li>
+<li>The software is difficult to understand, hard to use, slow, or - in the software tester's eyes - will be viewed by the end user as just plain not right.</li>
+</ol>
+</li>
+</ul>
 <p>When discussing types of tests, there are several axes to consider.</p>
 <ul>
-<li><strong>Size</strong>
+<li><strong>Axis of Size</strong>
 <ul>
-<li><em>Unit</em>: A single unit is tested.</li>
-<li><em>Integration</em>: The interaction of two or more units is tested.</li>
+<li><em>Unit Testing</em>: A single unit is tested.</li>
+<li><em>Integration Testing</em>: The interaction of two or more units is tested.</li>
+<li><em>System Testing</em>: Modules, or the units of integration testing, are tested.</li>
 </ul>
 </li>
-<li><strong>Knowledge</strong>
+<li><strong>Axis of Knowledge</strong>
 <ul>
-<li><em>Blackbox</em>: The tester does not know how the code works.</li>
-<li><em>Whitebox</em>: The tester is aware of the internals of the code.</li>
+<li><em>Black Box Testing</em>: The tester does not know how the code works.</li>
+<li><em>White Box Testing</em>: The tester is aware of the internals of the code.</li>
 </ul>
 </li>
-<li><strong>Running</strong>
+<li><strong>Axis of Runtime</strong>
 <ul>
-<li><em>Static</em>: The test is performed without running code.</li>
-<li><em>Dynamic</em>: The test is performed by running code.</li>
+<li><em>Static Testing</em>: The test is performed without running code.</li>
+<li><em>Dynamic Testing</em>: The test is performed by running code.</li>
 </ul>
 </li>
 </ul>
-<h3><a class="header" href="#unit-tests" id="unit-tests">Unit Tests</a></h3>
-<h3><a class="header" href="#integration-tests" id="integration-tests">Integration Tests</a></h3>
-<h4><a class="header" href="#top-down-test-stubs" id="top-down-test-stubs">Top-Down: Test Stubs</a></h4>
-<h4><a class="header" href="#bottom-up-test-drivers" id="bottom-up-test-drivers">Bottom-Up: Test Drivers</a></h4>
-<h2><a class="header" href="#blackbox-testing" id="blackbox-testing">Blackbox Testing</a></h2>
-<h2><a class="header" href="#whitebox-testing" id="whitebox-testing">Whitebox Testing</a></h2>
+<p>For the following test types, I haven't come up with an axis yet.</p>
+<ul>
+<li><em>Configuration Testing</em>: The code is tested with hardware configurations.</li>
+<li><em>Compatibility Testing</em>: The code is tested for compatibility with other software.</li>
+<li><em>Model-Based Testing</em>: The activity of modeling a system/environment to derive test cases for the system.</li>
+</ul>
+<h3><a class="header" href="#examining-the-specification" id="examining-the-specification">Examining the Specification</a></h3>
+<h2><a class="header" href="#black-box-testing" id="black-box-testing">Black Box Testing</a></h2>
+<h2><a class="header" href="#white-box-testing" id="white-box-testing">White Box Testing</a></h2>
 <h2><a class="header" href="#planning-writing-and-tracking-test-cases" id="planning-writing-and-tracking-test-cases">Planning, Writing and Tracking Test Cases</a></h2>
 <h2><a class="header" href="#model-based-testing" id="model-based-testing">Model-based Testing</a></h2>
 <h2><a class="header" href="#mutation-testing" id="mutation-testing">Mutation Testing</a></h2>
