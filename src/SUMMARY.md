@@ -29,7 +29,7 @@
 - [Semester 7](./7_sem/README.md)
     - [Distributed Systems](./7_sem/dis/README.md)
     - [Programming Paradigms](./7_sem/pp/README.md)
-    - [Tests and Verification](./7_sem/tov/README.md)
+    - [Test and Verification](./7_sem/tov/README.md)
 - [Semester 8](./8_sem/README.md)
     - [Selected Topics in Programming](./8_sem/sp/README.md)
     - [Web Information Processing](./8_sem/wip/README.md)
