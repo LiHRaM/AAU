@@ -1661,7 +1661,14 @@ However, strictly speaking, </p>
 <li><a href="7_sem/tov/index.html#mbt-components">MBT Components</a></li>
 </ul>
 </li>
-<li><a href="7_sem/tov/index.html#mutation-testing">Mutation Testing</a></li>
+<li><a href="7_sem/tov/index.html#mutation-testing">Mutation Testing</a>
+<ul>
+<li><a href="7_sem/tov/index.html#motivation">Motivation</a></li>
+<li><a href="7_sem/tov/index.html#types-of-mutation-analysis">Types of Mutation Analysis</a></li>
+<li><a href="7_sem/tov/index.html#equivalent-mutants">Equivalent Mutants</a></li>
+<li><a href="7_sem/tov/index.html#mutation-analysis-metrics">Mutation Analysis Metrics</a></li>
+</ul>
+</li>
 </ul>
 </li>
 <li><a href="7_sem/tov/index.html#verification">Verification</a>
@@ -2031,6 +2038,37 @@ More formally, it performs <em>concretization</em> on test inputs, and <em>abstr
 The <em>adaptor</em> may be a part of the <em>test script</em>.</li>
 </ul>
 <h2><a class="header" href="#mutation-testing" id="mutation-testing">Mutation Testing</a></h2>
+<blockquote>
+<p>Mutation testing is modification of the program in order to test the test suite.</p>
+</blockquote>
+<p>The intuition behind mutation testing is that the test suite should catch all mutations in the source code and thus fail, assuming that the modification of the source code produces invalid, or buggy, code.</p>
+<h3><a class="header" href="#motivation" id="motivation">Motivation</a></h3>
+<p>It is based on two hypotheses:</p>
+<ul>
+<li><em>Competent programmer</em>: Most bugs in software are caused by small syntactic errors.</li>
+<li><em>Coupling effect</em>: Simple faults can cascade or <em>couple</em> to form other emergent faults.</li>
+</ul>
+<h3><a class="header" href="#types-of-mutation-analysis" id="types-of-mutation-analysis">Types of Mutation Analysis</a></h3>
+<p>In order for a test to <em>kill</em> a <em>mutant</em>, there are three requirements:</p>
+<ol>
+<li>The test must reach the mutated segment of code.</li>
+<li>The mutated segment must change the program state, thus <em>infecting</em> it.</li>
+<li>This <em>infection</em> must propagate to the program output and be detected by the test.</li>
+</ol>
+<ul>
+<li><em>Strong Mutation Analysis</em>: Uses external observation.
+Requires that all three properties are fulfilled.</li>
+<li><em>Weak Mutation Analysis</em>: Uses internal observation.
+Requires only that the first two properties are fulfilled, i.e. it does not need to check the program output, it may also verify infections in the state.</li>
+</ul>
+<h3><a class="header" href="#equivalent-mutants" id="equivalent-mutants">Equivalent Mutants</a></h3>
+<p>A mutant is equivalent if it does not change the behavior of a program.
+This is one of the tractability problems of mutation testing, since it can be difficult to analyze whether mutants are equivalent or not, especially when many are generated.</p>
+<h3><a class="header" href="#mutation-analysis-metrics" id="mutation-analysis-metrics">Mutation Analysis Metrics</a></h3>
+<p>In order to evaluate the quality of a test suite, the following metrics may be used:</p>
+<ul>
+<li>Mutants Killed / Total Non-Equivalent Mutants</li>
+</ul>
 <h1><a class="header" href="#verification" id="verification">Verification</a></h1>
 <h2><a class="header" href="#model-checking-uppaal-1" id="model-checking-uppaal-1">Model Checking: UPPAAL 1</a></h2>
 <h2><a class="header" href="#scalability--model-checking-uppaal-2" id="scalability--model-checking-uppaal-2">Scalability &amp; Model Checking: UPPAAL 2</a></h2>
@@ -2281,7 +2319,7 @@ Consider the different applications of the available data in mobile applications
 <li><strong>Complexity</strong>: interrelated, powerful actors, building strong forces, difficulty in controlling them,</li>
 <li><strong>Ambiguitity</strong>: cause and effect relationships between parts, how do they react with other parts.</li>
 </ul>
-<h2><a class="header" href="#motivation" id="motivation">Motivation</a></h2>
+<h2><a class="header" href="#motivation-1" id="motivation-1">Motivation</a></h2>
 <ul>
 <li>Development is an open-ended systems engineering process</li>
 <li>Calls for a problem oriented approach, due to increased complexity</li>
