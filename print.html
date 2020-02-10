@@ -1600,18 +1600,63 @@ However, strictly speaking, </p>
 <ul>
 <li><a href="7_sem/tov/index.html#tests">Tests</a>
 <ul>
-<li><a href="7_sem/tov/index.html#testing-concepts">Testing Concepts</a>
+<li><a href="7_sem/tov/index.html#testing-concepts">Testing Concepts</a></li>
+<li><a href="7_sem/tov/index.html#black-box-techniques">Black-Box Techniques</a>
 <ul>
-<li><a href="7_sem/tov/index.html#examining-the-specification">Examining the Specification</a></li>
+<li><a href="7_sem/tov/index.html#high-level-specification-review">High-Level Specification Review</a></li>
+<li><a href="7_sem/tov/index.html#low-level-specification-review">Low-Level Specification Review</a></li>
+<li><a href="7_sem/tov/index.html#test-to-pass-and-test-to-fail">Test-to-Pass and Test-to-Fail</a></li>
+<li><a href="7_sem/tov/index.html#equivalence-partitioning">Equivalence Partitioning</a></li>
+<li><a href="7_sem/tov/index.html#data-testing">Data Testing</a>
+<ul>
+<li><a href="7_sem/tov/index.html#boundary-analysis">Boundary Analysis</a></li>
+<li><a href="7_sem/tov/index.html#sub-boundary-conditions">Sub-Boundary Conditions</a></li>
+<li><a href="7_sem/tov/index.html#testing-the-boundary">Testing the Boundary</a></li>
+<li><a href="7_sem/tov/index.html#default-empty-blank-null-zero-and-none">Default, Empty, Blank, Null, Zero, and None</a></li>
+<li><a href="7_sem/tov/index.html#invalid-wrong-incorrect-and-garbage-data">Invalid, Wrong, Incorrect and Garbage Data</a></li>
 </ul>
 </li>
-<li><a href="7_sem/tov/index.html#black-box-testing">Black Box Testing</a></li>
-<li><a href="7_sem/tov/index.html#white-box-testing">White Box Testing</a></li>
-<li><a href="7_sem/tov/index.html#planning-writing-and-tracking-test-cases">Planning, Writing and Tracking Test Cases</a></li>
-<li><a href="7_sem/tov/index.html#model-based-testing">Model-based Testing</a></li>
+<li><a href="7_sem/tov/index.html#state-testing">State Testing</a></li>
+<li><a href="7_sem/tov/index.html#c">&amp;c.</a></li>
+</ul>
+</li>
+<li><a href="7_sem/tov/index.html#white-box-techniques">White-Box Techniques</a>
+<ul>
+<li><a href="7_sem/tov/index.html#design-and-code">Design and Code</a></li>
+<li><a href="7_sem/tov/index.html#formal-reviews">Formal Reviews</a>
+<ul>
+<li><a href="7_sem/tov/index.html#peer-reviews">Peer Reviews</a></li>
+<li><a href="7_sem/tov/index.html#walkthroughs">Walkthroughs</a></li>
+<li><a href="7_sem/tov/index.html#inspections">Inspections</a></li>
+</ul>
+</li>
+<li><a href="7_sem/tov/index.html#coding-standards-and-guidelines">Coding Standards and Guidelines</a></li>
+<li><a href="7_sem/tov/index.html#generic-code-review-checklist">Generic Code Review Checklist</a></li>
+<li><a href="7_sem/tov/index.html#unit-and-integration-testing">Unit and Integration Testing</a></li>
+<li><a href="7_sem/tov/index.html#code-coverage">Code Coverage</a></li>
+</ul>
+</li>
+<li><a href="7_sem/tov/index.html#planning-writing-and-tracking-test-cases">Planning, Writing and Tracking Test Cases</a>
+<ul>
+<li><a href="7_sem/tov/index.html#configuration-testing">Configuration Testing</a></li>
+<li><a href="7_sem/tov/index.html#compatibility-testing">Compatibility Testing</a></li>
+<li><a href="7_sem/tov/index.html#test-planning">Test Planning</a></li>
+<li><a href="7_sem/tov/index.html#test-writing-and-tracking">Test Writing and Tracking</a>
+<ul>
+<li><a href="7_sem/tov/index.html#planning-overview">Planning Overview</a></li>
+<li><a href="7_sem/tov/index.html#organization-and-tracking">Organization and Tracking</a></li>
+</ul>
+</li>
+<li><a href="7_sem/tov/index.html#test-reporting">Test Reporting</a>
+<ul>
+<li><a href="7_sem/tov/index.html#effective-bug-reporting">Effective Bug Reporting</a></li>
+<li><a href="7_sem/tov/index.html#isolating-and-reproducing-bugs">Isolating and Reproducing Bugs</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="7_sem/tov/index.html#model-based-testing">Model-Based Testing</a></li>
 <li><a href="7_sem/tov/index.html#mutation-testing">Mutation Testing</a></li>
-<li><a href="7_sem/tov/index.html#testing-in-practice">Testing in Practice</a></li>
-<li><a href="7_sem/tov/index.html#projects">Projects</a></li>
 </ul>
 </li>
 <li><a href="7_sem/tov/index.html#verification">Verification</a>
@@ -1629,8 +1674,11 @@ However, strictly speaking, </p>
 <p>Literature: Software Testing - Rob Patton</p>
 <h2><a class="header" href="#testing-concepts" id="testing-concepts">Testing Concepts</a></h2>
 <ul>
-<li><strong>Product Specification</strong>: An agreement among the software development team. It defines the product they are creating, detailing what it will be, how it will act, what it will do, and what it won't do. This agreement can range in form from a simple verbal understanding, an email, or a scribble on a napkin, to a highly detailed, formalized written document.</li>
-<li><strong>Bug</strong>: A <em>software bug</em> occurs when one or more of the following five rules is true:
+<li>
+<p><strong>Product Specification</strong>: An agreement among the software development team. It defines the product they are creating, detailing what it will be, how it will act, what it will do, and what it won't do. This agreement can range in form from a simple verbal understanding, an email, or a scribble on a napkin, to a highly detailed, formalized written document.</p>
+</li>
+<li>
+<p><strong>Bug</strong>: A <em>software bug</em> occurs when one or more of the following five rules is true:</p>
 <ol>
 <li>The software doesn't do something that the product specification says it should do.</li>
 <li>The software does something that the product specification says it shouldn't do.</li>
@@ -1639,43 +1687,336 @@ However, strictly speaking, </p>
 <li>The software is difficult to understand, hard to use, slow, or - in the software tester's eyes - will be viewed by the end user as just plain not right.</li>
 </ol>
 </li>
+<li>
+<p><em>Unit Testing</em>: A single unit is tested.</p>
+</li>
+<li>
+<p><em>Integration Testing</em>: The interaction of two or more units is tested.</p>
+</li>
+<li>
+<p><em>System Testing</em>: The system as a whole, or a large part, is tested.</p>
+</li>
+<li>
+<p><em>Black Box Testing</em>: The tester does not know how the code works.</p>
+</li>
+<li>
+<p><em>White Box Testing</em>: The tester is aware of the internals of the code.</p>
+</li>
+<li>
+<p><em>Static Testing</em>: The test is performed without running code.</p>
+</li>
+<li>
+<p><em>Dynamic Testing</em>: The test is performed by running code.</p>
+</li>
+<li>
+<p><em>Configuration Testing</em>: The code is tested with hardware configurations.</p>
+</li>
+<li>
+<p><em>Compatibility Testing</em>: The code is tested for compatibility with other software.</p>
+</li>
+<li>
+<p><em>Model-Based Testing</em>: The activity of modeling a system/environment to derive test cases for the system.</p>
+</li>
 </ul>
-<p>When discussing types of tests, there are several axes to consider.</p>
+<h2><a class="header" href="#black-box-techniques" id="black-box-techniques">Black-Box Techniques</a></h2>
+<h3><a class="header" href="#high-level-specification-review" id="high-level-specification-review">High-Level Specification Review</a></h3>
+<p>Specification review is a type of <em>static black-box</em> testing.
+Techniques include:</p>
 <ul>
-<li><strong>Axis of Size</strong>
+<li>Pretend to be the customer.</li>
+<li>Research existing standards and guidelines.</li>
+<li>Review and test similar software.</li>
+</ul>
+<h3><a class="header" href="#low-level-specification-review" id="low-level-specification-review">Low-Level Specification Review</a></h3>
 <ul>
-<li><em>Unit Testing</em>: A single unit is tested.</li>
-<li><em>Integration Testing</em>: The interaction of two or more units is tested.</li>
-<li><em>System Testing</em>: Modules, or the units of integration testing, are tested.</li>
+<li>Specification attributes checklist
+<ul>
+<li>Complete</li>
+<li>Accurate</li>
+<li>Precise, Unambiguous, and Clear</li>
+<li>Consistent</li>
+<li>Relevant</li>
+<li>Feasible</li>
+<li>Code-free</li>
+<li>Testable</li>
 </ul>
 </li>
-<li><strong>Axis of Knowledge</strong>
+<li>Specification terminology checklist
 <ul>
-<li><em>Black Box Testing</em>: The tester does not know how the code works.</li>
-<li><em>White Box Testing</em>: The tester is aware of the internals of the code.</li>
+<li>Always, Every, All, None, Never</li>
+<li>Certainly, Therefore, Clearly, Obviously, Evidently</li>
+<li>Some, Sometimes, Often, Usually, Ordinarily, Customarily, Most, Mostly</li>
+<li>Etc., And So Forth, And So On, Such As</li>
+<li>Good, Fast, Cheap, Efficient, Small, Stable</li>
+<li>Handled, Processed, Rejected, Skipped, Eliminated</li>
+<li>If...Then...(Missing Else)</li>
 </ul>
 </li>
-<li><strong>Axis of Runtime</strong>
+</ul>
+<h3><a class="header" href="#test-to-pass-and-test-to-fail" id="test-to-pass-and-test-to-fail">Test-to-Pass and Test-to-Fail</a></h3>
+<p><em>Test-to-pass</em> tests have the purpose of making sure that simple, typical cases function correctly.
+All testing efforts should begin with <em>test-to-pass</em> tests, as they cover the minimal functionality of the program.
+<em>Test-to-fail</em> tests follow up on the previous tests, where the tester tries everything he can think of to break the program, and force errors.</p>
+<p><strong>NB</strong>:
+The <em>spec</em> typically covers when the program should show errors.
+This kind of testing is a little of both <em>test-to-fail</em> and <em>test-to-pass</em>.</p>
+<h3><a class="header" href="#equivalence-partitioning" id="equivalence-partitioning">Equivalence Partitioning</a></h3>
+<p><em>Equivalence partitioning</em> is a method for selecting test cases.</p>
+<blockquote>
+<p>An equivalence class or partition is a set of test cases that tests the same thing or reveals the same bug.</p>
+</blockquote>
+<p>This method reduces the set of test cases by considering the grouping of three things:</p>
 <ul>
-<li><em>Static Testing</em>: The test is performed without running code.</li>
-<li><em>Dynamic Testing</em>: The test is performed by running code.</li>
+<li>Similar inputs,</li>
+<li>Similar outputs, and</li>
+<li>Similar operation of the software.</li>
+</ul>
+<h3><a class="header" href="#data-testing" id="data-testing">Data Testing</a></h3>
+<p>Data testing is where you test the program by inputting data via the available channels, such as text input, buttons, &amp;c.</p>
+<h4><a class="header" href="#boundary-analysis" id="boundary-analysis">Boundary Analysis</a></h4>
+<blockquote>
+<p>Boundary conditions are those situations at the edge of the planned operational limits of the software.</p>
+</blockquote>
+<ul>
+<li>Common Boundary Types:
+<ul>
+<li>Numeric,</li>
+<li>Character,</li>
+<li>Position,</li>
+<li>Quantity,</li>
+<li>Speed,</li>
+<li>Location,</li>
+<li>Size.</li>
+</ul>
+</li>
+<li>Common Type Characteristics:
+<ul>
+<li>First/Last,</li>
+<li>Start/Finish,</li>
+<li>Min/Max,</li>
+<li>Over/Under,</li>
+<li>Empty/Full,</li>
+<li>Slowest/Fastest,</li>
+<li>Largest/Smallest,</li>
+<li>Next-To/Farthest-From,</li>
+<li>Shortest/Longest,</li>
+<li>Soonest/Latest,</li>
+<li>Highest/Lowest.</li>
 </ul>
 </li>
 </ul>
-<p>For the following test types, I haven't come up with an axis yet.</p>
+<h4><a class="header" href="#sub-boundary-conditions" id="sub-boundary-conditions">Sub-Boundary Conditions</a></h4>
+<p>Sub-Boundary conditions are less obvious boundary conditions.
+Boundary conditions are stated in the <em>spec</em>, e.g. by saying how many characters a text box allows.
+Sub-boundary conditions are more specific to the implementation of the software, and two popular ones are Powers-of-Two and the ASCII table.</p>
+<h4><a class="header" href="#testing-the-boundary" id="testing-the-boundary">Testing the Boundary</a></h4>
+<ol>
+<li>Create two equivalence partitions.</li>
+<li>Select values on the inner edge of the boundary for the first, and</li>
+<li>Select values on the outer edge of the boundary for the second.</li>
+</ol>
+<h4><a class="header" href="#default-empty-blank-null-zero-and-none" id="default-empty-blank-null-zero-and-none">Default, Empty, Blank, Null, Zero, and None</a></h4>
+<p>Always check that programs can handle these values.</p>
+<h4><a class="header" href="#invalid-wrong-incorrect-and-garbage-data" id="invalid-wrong-incorrect-and-garbage-data">Invalid, Wrong, Incorrect and Garbage Data</a></h4>
+<p>Always check that programs can handle these values as well.</p>
+<h3><a class="header" href="#state-testing" id="state-testing">State Testing</a></h3>
+<blockquote>
+<p>Testing the states and their transitions.</p>
+</blockquote>
+<p>There are five approaches:</p>
+<ol>
+<li>Visit each state at least once</li>
+<li>Test hot paths</li>
+<li>Test least common paths</li>
+<li>Test all error states and recovering from errors</li>
+<li>Test random states.</li>
+</ol>
+<p>When testing a state, you'll want to consider:</p>
+<ol>
+<li>The state itself,
 <ul>
-<li><em>Configuration Testing</em>: The code is tested with hardware configurations.</li>
-<li><em>Compatibility Testing</em>: The code is tested for compatibility with other software.</li>
-<li><em>Model-Based Testing</em>: The activity of modeling a system/environment to derive test cases for the system.</li>
+<li>Variables,</li>
+<li>Conditions, and</li>
+<li>Functionality.</li>
 </ul>
-<h3><a class="header" href="#examining-the-specification" id="examining-the-specification">Examining the Specification</a></h3>
-<h2><a class="header" href="#black-box-testing" id="black-box-testing">Black Box Testing</a></h2>
-<h2><a class="header" href="#white-box-testing" id="white-box-testing">White Box Testing</a></h2>
+</li>
+<li>Race Conditions, Bad Timing, and</li>
+<li>Repetition, Stress, and Load.
+<ul>
+<li><em>Repetition testing</em> reveals memory leaks by repeatedly performing a task</li>
+<li><em>Stress testing</em> is running the system with limited resources, reveals external dependencies and hardware requirements</li>
+<li><em>Load testing</em> is feeding the system as large inputs as possible.</li>
+</ul>
+</li>
+</ol>
+<h3><a class="header" href="#c" id="c">&amp;c.</a></h3>
+<ul>
+<li>Behave like an idiot</li>
+<li>Look for bugs where you've already found them</li>
+<li>Think like a hacker</li>
+<li>Follow experience, intuition, and hunches</li>
+</ul>
+<h2><a class="header" href="#white-box-techniques" id="white-box-techniques">White-Box Techniques</a></h2>
+<h3><a class="header" href="#design-and-code" id="design-and-code">Design and Code</a></h3>
+<h3><a class="header" href="#formal-reviews" id="formal-reviews">Formal Reviews</a></h3>
+<p>All formal reviews should contain the following four elements:</p>
+<ol>
+<li>Look for problems during the review and preparation</li>
+<li>Set clear rules for the review and follow them</li>
+<li>Prepare for the review by looking through the code</li>
+<li>Write a report afterwards, detailing the results of the review</li>
+</ol>
+<h4><a class="header" href="#peer-reviews" id="peer-reviews">Peer Reviews</a></h4>
+<p>The programmer and one or more reviewers look through the code together.</p>
+<h4><a class="header" href="#walkthroughs" id="walkthroughs">Walkthroughs</a></h4>
+<p>The programmer walks through the code with five or so reviewers.</p>
+<h4><a class="header" href="#inspections" id="inspections">Inspections</a></h4>
+<p>Composed of a presenter, and inspectors.
+Requires formal training for each participant.
+The presenter is not the programmer who wrote the code.</p>
+<h3><a class="header" href="#coding-standards-and-guidelines" id="coding-standards-and-guidelines">Coding Standards and Guidelines</a></h3>
+<p>Following Standards and Guidelines has the following benefits:</p>
+<ol>
+<li><strong>Reliability</strong></li>
+<li><strong>Readability/Maintainability</strong></li>
+<li><strong>Portability</strong></li>
+</ol>
+<h3><a class="header" href="#generic-code-review-checklist" id="generic-code-review-checklist">Generic Code Review Checklist</a></h3>
+<ul>
+<li>Data Reference Errors</li>
+<li>Data Declaration Errors</li>
+<li>Computation Errors</li>
+<li>Comparison Errors</li>
+</ul>
+<h3><a class="header" href="#unit-and-integration-testing" id="unit-and-integration-testing">Unit and Integration Testing</a></h3>
+<p><em>Unit tests</em> are written for each module created.
+They test the smallest <em>unit</em> of code, hence the name.
+<em>Unit testing</em> is also called <em>module testing</em>.</p>
+<p><em>Integration tests</em> test groups of modules, and their interactions.
+There are two approaches to this:</p>
+<ol>
+<li><strong>Bottom-up integration testing</strong>: Test drivers simulate higher modules by calling the code in bottom modules.</li>
+<li><strong>Top-down integration testing</strong>: Bottom modules are replaced by <em>stubs</em>.</li>
+</ol>
+<p>In both cases, the replacements implement the interface of the module they replace.</p>
+<p><strong>NB</strong>: <em>System testing</em> is where you test the whole system, or large parts of it.</p>
+<h3><a class="header" href="#code-coverage" id="code-coverage">Code Coverage</a></h3>
+<p>Metrics for deciding how well your code is covered by tests.</p>
+<ul>
+<li><strong>Line Coverage</strong>: Each line is covered.</li>
+<li><strong>Branch Coverage</strong>: Each branch is covered.</li>
+<li><strong>Condition Coverage</strong>: Each condition of a branch is covered.</li>
+</ul>
 <h2><a class="header" href="#planning-writing-and-tracking-test-cases" id="planning-writing-and-tracking-test-cases">Planning, Writing and Tracking Test Cases</a></h2>
-<h2><a class="header" href="#model-based-testing" id="model-based-testing">Model-based Testing</a></h2>
+<blockquote>
+<p>Ch. 8, 9, 17, 18, 19</p>
+</blockquote>
+<h3><a class="header" href="#configuration-testing" id="configuration-testing">Configuration Testing</a></h3>
+<blockquote>
+<p>Making sure your software works with as many different hardware combinations as possible.</p>
+</blockquote>
+<ol>
+<li>Use equivalence partitioning to select the hardware to obtain</li>
+<li>Identify a subset of the tests which are relevant to each piece of hardware</li>
+<li>Determine if the error is a software or a hardware error, <em>nb</em>: you'll probably have to fix it either way</li>
+<li>$$$</li>
+</ol>
+<h3><a class="header" href="#compatibility-testing" id="compatibility-testing">Compatibility Testing</a></h3>
+<blockquote>
+<p>Making sure your software interacts correctly with other software.</p>
+</blockquote>
+<p>This includes software such as an operating system, device driver, and similar software, such as LibreOffice being compatible with MS Office.</p>
+<p>This is especially important for software which produces output of a format defined in an official specification, such as <code>.pdf</code>, or a written document type, such as <code>.docx</code>.</p>
+<h3><a class="header" href="#test-planning" id="test-planning">Test Planning</a></h3>
+<blockquote>
+<p>The test plan is a by-product of the detailed planning process that's undertaken to create it.
+It's the planning process that matters, not the resulting document.</p>
+</blockquote>
+<p><em><strong>Test Planning Topics</strong></em>:</p>
+<ul>
+<li>High-Level Expectations</li>
+<li>People, Places and Things</li>
+<li>Definitions</li>
+<li>Inter-Group Responsibilities</li>
+<li>What to Test</li>
+<li>Test Phases</li>
+<li>Test Strategy</li>
+<li>Resource Requirements</li>
+<li>Tester Assignments</li>
+<li>Test Schedule</li>
+<li>Test Cases</li>
+<li>Bug Reporting</li>
+<li>Metrics and Statistics</li>
+<li>Risks and Issues</li>
+</ul>
+<p>The main purpose of testing is to bring everyone on the product team together.</p>
+<h3><a class="header" href="#test-writing-and-tracking" id="test-writing-and-tracking">Test Writing and Tracking</a></h3>
+<p>There are four reasons for carefully planning your test cases:</p>
+<ol>
+<li>Organization</li>
+<li>Repeatability</li>
+<li>Tracking</li>
+<li>Proof of testing</li>
+</ol>
+<h4><a class="header" href="#planning-overview" id="planning-overview">Planning Overview</a></h4>
+<p>The test plan results in three types of artifacts:</p>
+<ol>
+<li>Test Design: A high level description of testable items and which testers are responsible for them.</li>
+<li>Test Case: Actual values for input along with expected output.</li>
+<li>Test Procedure: The steps required to operate the system and exercise the specified test cases.</li>
+</ol>
+<h4><a class="header" href="#organization-and-tracking" id="organization-and-tracking">Organization and Tracking</a></h4>
+<p>Store the test cases in the following places:</p>
+<ol>
+<li>In your head: Nope</li>
+<li>Paper/documents: Very old school</li>
+<li>Spreadsheet: If you're over 40</li>
+<li>Database: Yes baby!</li>
+</ol>
+<h3><a class="header" href="#test-reporting" id="test-reporting">Test Reporting</a></h3>
+<p>Many bugs don't get fixed, e.g. for the following reasons:</p>
+<ol>
+<li>There's not enough time</li>
+<li>It's really not a bug</li>
+<li>It's too risky to fix</li>
+<li>It's just not worth it</li>
+<li>Ineffective bug reporting</li>
+</ol>
+<h4><a class="header" href="#effective-bug-reporting" id="effective-bug-reporting">Effective Bug Reporting</a></h4>
+<ul>
+<li>Report Bugs ASAP: the earlier you discover it, the more time there is in the schedule to fix it.</li>
+<li>Effectively Describe the Bugs
+<ul>
+<li>Minimal</li>
+<li>Singular</li>
+<li>Obvious and general</li>
+<li>Reproducible</li>
+</ul>
+</li>
+<li>Be nonjudgmental in bug reports</li>
+<li>Follow up on bug reports</li>
+</ul>
+<h4><a class="header" href="#isolating-and-reproducing-bugs" id="isolating-and-reproducing-bugs">Isolating and Reproducing Bugs</a></h4>
+<p>Do your best to list the exact recipe for reproducing the bug, and try to make it as simple as possible to follow.
+If the bug is hard to reproduce, it might be due to all sorts of conditions in the context, such as the previous states, the available resources,
+timing problems, or memory leaks, etc.
+Try to exhaust each category of potential problems as you try to isolate the bug.
+But in the end, the most important thing is that you report the results, so that the programmer may try to debug the program.</p>
+<h2><a class="header" href="#model-based-testing" id="model-based-testing">Model-Based Testing</a></h2>
+<blockquote>
+<p><em>Model-based testing</em> is a variant of testing that relies on explicit behaviour models that encode the intended behaviours of an SUT and/or the behaviour of its environment. Test cases are generated from one of these models or their combination, and then executed on the SUT.</p>
+</blockquote>
+<p>Generic MBT Process:</p>
+<ol>
+<li>A <em>test model</em> of the SUT is constructed from the <em>informal requirements</em> or the <em>spec</em>. 
+This model should be seperate from a development model, if one is created, so as to not propagate errors from the development model into the tests.
+This model should also be simpler than the SUT, as it would otherwise take just as long to validate the model as the SUT.</li>
+<li>Test selection criteria are chosen to guide the test generation process.</li>
+<li>Test selection criteria are then transformed into <em>test case specifications</em>.</li>
+<li>A set of test cases are generated from the model and the test case specifications, with the aim of satisfying all the test case specifications. If this set is empty, the <em>test case spec</em> is said to be unsatisfiable.</li>
+<li>The generated test cases are run once the test suite has been generated.</li>
+</ol>
 <h2><a class="header" href="#mutation-testing" id="mutation-testing">Mutation Testing</a></h2>
-<h2><a class="header" href="#testing-in-practice" id="testing-in-practice">Testing in Practice</a></h2>
-<h2><a class="header" href="#projects" id="projects">Projects</a></h2>
 <h1><a class="header" href="#verification" id="verification">Verification</a></h1>
 <h2><a class="header" href="#model-checking-uppaal-1" id="model-checking-uppaal-1">Model Checking: UPPAAL 1</a></h2>
 <h2><a class="header" href="#scalability--model-checking-uppaal-2" id="scalability--model-checking-uppaal-2">Scalability &amp; Model Checking: UPPAAL 2</a></h2>
