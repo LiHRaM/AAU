@@ -302,3 +302,31 @@ But in the end, the most important thing is that you report the results, so that
     The _adaptor_ may be a part of the _test script_.
 
 ## Mutation Testing
+> Mutation testing is modification of the program in order to test the test suite.
+
+The intuition behind mutation testing is that the test suite should catch all mutations in the source code and thus fail, assuming that the modification of the source code produces invalid, or buggy, code.
+
+### Motivation
+It is based on two hypotheses:
+- _Competent programmer_: Most bugs in software are caused by small syntactic errors.
+- _Coupling effect_: Simple faults can cascade or _couple_ to form other emergent faults.
+
+### Types of Mutation Analysis
+In order for a test to _kill_ a _mutant_, there are three requirements:
+1. The test must reach the mutated segment of code.
+2. The mutated segment must change the program state, thus _infecting_ it.
+3. This _infection_ must propagate to the program output and be detected by the test.
+
+- _Strong Mutation Analysis_: Uses external observation.
+    Requires that all three properties are fulfilled.
+- _Weak Mutation Analysis_: Uses internal observation.
+    Requires only that the first two properties are fulfilled, i.e. it does not need to check the program output, it may also verify infections in the state.
+
+### Equivalent Mutants
+A mutant is equivalent if it does not change the behavior of a program.
+This is one of the tractability problems of mutation testing, since it can be difficult to analyze whether mutants are equivalent or not, especially when many are generated.
+
+### Mutation Analysis Metrics
+In order to evaluate the quality of a test suite, the following metrics may be used:
+
+- Mutants Killed / Total Non-Equivalent Mutants
