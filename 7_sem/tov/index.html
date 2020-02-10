@@ -208,7 +208,12 @@
 </li>
 </ul>
 </li>
-<li><a href="#model-based-testing">Model-Based Testing</a></li>
+<li><a href="#model-based-testing">Model-Based Testing</a>
+<ul>
+<li><a href="#generic-mbt-process">Generic MBT Process</a></li>
+<li><a href="#mbt-components">MBT Components</a></li>
+</ul>
+</li>
 <li><a href="#mutation-testing">Mutation Testing</a></li>
 </ul>
 </li>
@@ -559,7 +564,7 @@ But in the end, the most important thing is that you report the results, so that
 <blockquote>
 <p><em>Model-based testing</em> is a variant of testing that relies on explicit behaviour models that encode the intended behaviours of an SUT and/or the behaviour of its environment. Test cases are generated from one of these models or their combination, and then executed on the SUT.</p>
 </blockquote>
-<p>Generic MBT Process:</p>
+<h3><a class="header" href="#generic-mbt-process" id="generic-mbt-process">Generic MBT Process</a></h3>
 <ol>
 <li>A <em>test model</em> of the SUT is constructed from the <em>informal requirements</em> or the <em>spec</em>. 
 This model should be seperate from a development model, if one is created, so as to not propagate errors from the development model into the tests.
@@ -569,6 +574,15 @@ This model should also be simpler than the SUT, as it would otherwise take just 
 <li>A set of test cases are generated from the model and the test case specifications, with the aim of satisfying all the test case specifications. If this set is empty, the <em>test case spec</em> is said to be unsatisfiable.</li>
 <li>The generated test cases are run once the test suite has been generated.</li>
 </ol>
+<h3><a class="header" href="#mbt-components" id="mbt-components">MBT Components</a></h3>
+<ul>
+<li><em>Test execution environment</em>: If the test suite is run automatically, it is done by this component.
+It is responsible for executing the tests and recording the verdict.</li>
+<li><em>Adaptor</em>: This component is responsible for translating data from the abstract view of the model to the concrete view of the SUT.
+More formally, it performs <em>concretization</em> on test inputs, and <em>abstraction</em> on test outputs.</li>
+<li><em>Test script</em>: This component is some executable code that executes a test case, abstracts the output of the SUT, and then builds the verdict.
+The <em>adaptor</em> may be a part of the <em>test script</em>.</li>
+</ul>
 <h2><a class="header" href="#mutation-testing" id="mutation-testing">Mutation Testing</a></h2>
 <h1><a class="header" href="#verification" id="verification">Verification</a></h1>
 <h2><a class="header" href="#model-checking-uppaal-1" id="model-checking-uppaal-1">Model Checking: UPPAAL 1</a></h2>
