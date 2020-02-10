@@ -283,7 +283,7 @@ But in the end, the most important thing is that you report the results, so that
 ## Model-Based Testing
 > _Model-based testing_ is a variant of testing that relies on explicit behaviour models that encode the intended behaviours of an SUT and/or the behaviour of its environment. Test cases are generated from one of these models or their combination, and then executed on the SUT.
 
-Generic MBT Process:
+### Generic MBT Process
 1. A _test model_ of the SUT is constructed from the _informal requirements_ or the _spec_. 
     This model should be seperate from a development model, if one is created, so as to not propagate errors from the development model into the tests.
     This model should also be simpler than the SUT, as it would otherwise take just as long to validate the model as the SUT.
@@ -292,5 +292,13 @@ Generic MBT Process:
 4. A set of test cases are generated from the model and the test case specifications, with the aim of satisfying all the test case specifications. If this set is empty, the _test case spec_ is said to be unsatisfiable.
 5. The generated test cases are run once the test suite has been generated.
 
+
+### MBT Components
+- _Test execution environment_: If the test suite is run automatically, it is done by this component.
+    It is responsible for executing the tests and recording the verdict.
+- _Adaptor_: This component is responsible for translating data from the abstract view of the model to the concrete view of the SUT.
+    More formally, it performs _concretization_ on test inputs, and _abstraction_ on test outputs.
+- _Test script_: This component is some executable code that executes a test case, abstracts the output of the SUT, and then builds the verdict.
+    The _adaptor_ may be a part of the _test script_.
 
 ## Mutation Testing
