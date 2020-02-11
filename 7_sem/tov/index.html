@@ -230,7 +230,12 @@
 <li><a href="#scalability--model-checking-uppaal-2">Scalability &amp; Model Checking: UPPAAL 2</a></li>
 <li><a href="#tapaal-and-timed-arc-petri-nets">TAPAAL and Timed Arc Petri Nets</a></li>
 <li><a href="#static-analysis">Static Analysis</a></li>
-<li><a href="#bounded-model-checking">Bounded Model Checking</a></li>
+<li><a href="#bounded-model-checking">Bounded Model Checking</a>
+<ul>
+<li><a href="#amazon">Amazon</a></li>
+<li><a href="#facebook">Facebook</a></li>
+</ul>
+</li>
 <li><a href="#quantitative-model-checking">Quantitative Model Checking</a></li>
 </ul>
 </li>
@@ -624,10 +629,56 @@ This is one of the tractability problems of mutation testing, since it can be di
 </ul>
 <h1><a class="header" href="#verification" id="verification">Verification</a></h1>
 <h2><a class="header" href="#model-checking-uppaal-1" id="model-checking-uppaal-1">Model Checking: UPPAAL 1</a></h2>
+<blockquote>
+<p>The reliability of (Information and Communication Technology) ICT systems is a key issue in the system design process.</p>
+</blockquote>
 <h2><a class="header" href="#scalability--model-checking-uppaal-2" id="scalability--model-checking-uppaal-2">Scalability &amp; Model Checking: UPPAAL 2</a></h2>
 <h2><a class="header" href="#tapaal-and-timed-arc-petri-nets" id="tapaal-and-timed-arc-petri-nets">TAPAAL and Timed Arc Petri Nets</a></h2>
 <h2><a class="header" href="#static-analysis" id="static-analysis">Static Analysis</a></h2>
 <h2><a class="header" href="#bounded-model-checking" id="bounded-model-checking">Bounded Model Checking</a></h2>
+<h3><a class="header" href="#amazon" id="amazon">Amazon</a></h3>
+<blockquote>
+<p>Engineers use TLA+ to prevent serious but subtle bugs from reaching production</p>
+</blockquote>
+<p>The engineers use two languages for verification:</p>
+<ul>
+<li><em>TLA+</em>: The mathematical modelling language which can be used to verify properties of a model.</li>
+<li><em>PlusCal</em>: A programming language which can be transpiled to TLA+.
+Is not as expressive as TLA+, but can be more friendly for beginners.</li>
+</ul>
+<p>Typical process:</p>
+<ol>
+<li>Implement happy path</li>
+<li>Implement error handling for common errors</li>
+</ol>
+<p>TLA+ process:</p>
+<ol>
+<li>Define system properties</li>
+<li>Write TLA+/PlusCal code</li>
+<li>Verify properties</li>
+</ol>
+<p>&quot;What needs to go right&quot; vs. &quot;what could go wrong&quot;.</p>
+<p>This approach also allows engineers to test new optimizations on the model before releasing them into production.
+The model becomes a testing ground for &quot;what-if&quot; features.</p>
+<p>They complain that they do not know of a formal method for preventing <em>sustained emergent performance degradation</em>, where cascading events cause the server to become effectively unavailable.</p>
+<p>Key benefits of formal methods:</p>
+<ul>
+<li><em>Get the design right</em>: Formal tools can verify high-level designs.</li>
+<li><em>Gain better understanding</em>: Formal tools help engineers understand the design in a more intuitive fashion.</li>
+<li><em>Write better code</em>: Formal tools teach engineers to write self-diagnosing code.</li>
+</ul>
+<h3><a class="header" href="#facebook" id="facebook">Facebook</a></h3>
+<blockquote>
+<p>integrating a verification tool based on static analysis into the software development cycle</p>
+</blockquote>
+<p>The Facebook engineers brought a formal static analyzer tool, <a href="https://fbinfer.com/">Infer</a> from Monoidics, which applies separation logics on program artifacts.</p>
+<p>For example, it's possible to detect resource leaks, etc via the following command:</p>
+<pre><code>$ infer -- javac Program.java
+</code></pre>
+<p>The focus of the Facebook engineers is to provide fully automatic feedback on certain soundness bugs, such as memory safety and data races.
+As opposed to Amazon, this approach does not require engineers to be trained in formal methods, simply that they respond to the feedback of the tool.
+The tool works by inferring specification from the code, and ensuring that the program conforms with the inferred specification.</p>
+<p>It does not require whole-program analysis, which allows it to be very fast, and to operate on diffs.</p>
 <h2><a class="header" href="#quantitative-model-checking" id="quantitative-model-checking">Quantitative Model Checking</a></h2>
 
                     </main>
