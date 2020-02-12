@@ -226,12 +226,33 @@
 </li>
 <li><a href="#verification">Verification</a>
 <ul>
-<li><a href="#model-checking-uppaal-1">Model Checking: UPPAAL 1</a></li>
+<li><a href="#model-checking">Model Checking</a>
+<ul>
+<li><a href="#modelling-language">Modelling Language</a></li>
+<li><a href="#specification-language">Specification Language</a></li>
+</ul>
+</li>
 <li><a href="#scalability--model-checking-uppaal-2">Scalability &amp; Model Checking: UPPAAL 2</a></li>
-<li><a href="#tapaal-and-timed-arc-petri-nets">TAPAAL and Timed Arc Petri Nets</a></li>
+<li><a href="#tapaal-and-timed-arc-petri-nets">TAPAAL and Timed Arc Petri Nets</a>
+<ul>
+<li><a href="#petri-nets">Petri Nets</a>
+<ul>
+<li><a href="#inhibitor-arcs">Inhibitor Arcs</a></li>
+</ul>
+</li>
+<li><a href="#timed-arc-petri-nets">Timed-Arc Petri Nets</a>
+<ul>
+<li><a href="#age-invariants">Age Invariants</a></li>
+<li><a href="#transport-arcs">Transport Arcs</a></li>
+</ul>
+</li>
+</ul>
+</li>
 <li><a href="#static-analysis">Static Analysis</a></li>
 <li><a href="#bounded-model-checking">Bounded Model Checking</a>
 <ul>
+<li><a href="#sat">SAT</a></li>
+<li><a href="#smt">SMT</a></li>
 <li><a href="#amazon">Amazon</a></li>
 <li><a href="#facebook">Facebook</a></li>
 </ul>
@@ -531,9 +552,9 @@ It's the planning process that matters, not the resulting document.</p>
 <h4><a class="header" href="#planning-overview" id="planning-overview">Planning Overview</a></h4>
 <p>The test plan results in three types of artifacts:</p>
 <ol>
-<li>Test Design: A high level description of testable items and which testers are responsible for them.</li>
-<li>Test Case: Actual values for input along with expected output.</li>
-<li>Test Procedure: The steps required to operate the system and exercise the specified test cases.</li>
+<li><em>Test Design</em>: A high level description of testable items and which testers are responsible for them.</li>
+<li><em>Test Case</em>: Actual values for input along with expected output.</li>
+<li><em>Test Procedure</em>: The steps required to operate the system and exercise the specified test cases.</li>
 </ol>
 <h4><a class="header" href="#organization-and-tracking" id="organization-and-tracking">Organization and Tracking</a></h4>
 <p>Store the test cases in the following places:</p>
@@ -628,14 +649,106 @@ This is one of the tractability problems of mutation testing, since it can be di
 <li>Mutants Killed / Total Non-Equivalent Mutants</li>
 </ul>
 <h1><a class="header" href="#verification" id="verification">Verification</a></h1>
-<h2><a class="header" href="#model-checking-uppaal-1" id="model-checking-uppaal-1">Model Checking: UPPAAL 1</a></h2>
-<blockquote>
-<p>The reliability of (Information and Communication Technology) ICT systems is a key issue in the system design process.</p>
-</blockquote>
+<p><em>Verification</em> is the process of ensuring that a model conforms to a specification.</p>
+<h2><a class="header" href="#model-checking" id="model-checking">Model Checking</a></h2>
+<p><em>Model Checking</em> is the automated process of verifying that a given property holds for a given model.</p>
+<h3><a class="header" href="#modelling-language" id="modelling-language">Modelling Language</a></h3>
+<p>Definitions of the <em>Networks of Timed Automata</em> modelling language.</p>
+<p><strong>Notation</strong>:</p>
+<ul>
+<li><em>Location</em>: a place in a single template or process</li>
+<li><em>State</em>: the state of the complete system including clock valuations and variable values</li>
+<li><em>Edge</em>: a step between two locations</li>
+<li><em>Transition</em>: a change of the global state of the system</li>
+</ul>
+<p>There are four kinds of locations in UPPAAL.
+From left to right, these are: <em>Normal</em>, <em>Initial</em>, <em>Urgent</em>, and <em>Committed</em>.</p>
+<img src="images/locations.png" alt="" height="70px">
+<p>An edge is always between two locations.
+The two locations can be the same location, i.e. from itself to itself.</p>
+<img src="images/edge.png" alt="" height="70px">
+<ul>
+<li><em>Invariant</em>: Something that must be true in a given location.
+<ul>
+<li>If it is not true, we must leave, or else we deadlock.</li>
+<li>If it is not true, we cannot enter the state.</li>
+</ul>
+</li>
+<li><em>Guard</em>: A condition that must be true in order for an edge to be enabled.</li>
+<li><em>Synchronization</em>: The label on which the edge synchronizes with another edge.
+<ul>
+<li>If nothing is present, we call it a :tau: transition.</li>
+</ul>
+</li>
+<li><em>Broadcast channels</em>: A method of synchronization.
+<ul>
+<li>One broadcaster at a time.</li>
+<li>Multiple receivers.</li>
+<li>All that can participate must participate.</li>
+</ul>
+</li>
+<li><em>Urgent channels</em>: A method of synchronization.
+<ul>
+<li>Does not allow clock guards on its edges.</li>
+<li>Must synchronize as soon as possible.</li>
+</ul>
+</li>
+<li><em>Initial location</em>: The location in which a given process starts.</li>
+<li><em>Committed location</em>: A committed location is a location which requires that if it is a part of the current state, the next transition must involve at least one committed location.</li>
+<li><em>Urgent location</em>: An urgent location requires that time cannot pass while it is a part of the current state.</li>
+</ul>
+<h3><a class="header" href="#specification-language" id="specification-language">Specification Language</a></h3>
+<ul>
+<li><em>E &lt;&gt; P</em>: For at least one path, there exists a location in which P holds.</li>
+<li><em>A &lt;&gt; P</em>: For all paths, there exists a location in which P holds.</li>
+<li><em>E [] P</em>: For at least one path, the invariant P holds for the entire path.</li>
+<li><em>A [] P</em>: For all paths, the invariant P holds for the entire path.</li>
+<li><em>P --&gt; Q</em>: For all paths, if P then Q</li>
+<li><em>P --&gt; &lt;=t Q</em>: For all paths, if P then Q within timeframe.</li>
+</ul>
 <h2><a class="header" href="#scalability--model-checking-uppaal-2" id="scalability--model-checking-uppaal-2">Scalability &amp; Model Checking: UPPAAL 2</a></h2>
 <h2><a class="header" href="#tapaal-and-timed-arc-petri-nets" id="tapaal-and-timed-arc-petri-nets">TAPAAL and Timed Arc Petri Nets</a></h2>
+<p>TAPAAL is a program for building Timed-Arc Petri Nets and model checking them.</p>
+<h3><a class="header" href="#petri-nets" id="petri-nets">Petri Nets</a></h3>
+<p>A Petri net is a tuple N = (P, T, A, W)</p>
+<ul>
+<li><em>P</em>: A finite set of places</li>
+<li><em>T</em>: A finite set of transactions.</li>
+<li><em>A</em>: A finite set of arcs.</li>
+<li><em>W</em>: The weight function, taking an arc and returning a natural number.</li>
+</ul>
+<p>A <em>place</em> in a Petri Net is drawn as a circle.
+<em>Arcs</em> are drawn from the circle to <em>transitions</em>, and the other way around.
+<em>Tokens</em> are represented as filled circles inside a place.</p>
+<img src="images/petri_place.png" alt="A place with a single token, an incoming and an outgoing arc." height="70px">
+<p><em>Transitions</em> are drawn as filled black boxes.</p>
+<img src="images/petri_transition.png" alt="A single transition, with one incoming and two outgoing arcs." height="70px">
+<p>The initial state of a Petri Net is expressed as a <em>marked net N</em>, which is a pair <em>(N, M0)</em>.</p>
+<h4><a class="header" href="#inhibitor-arcs" id="inhibitor-arcs">Inhibitor Arcs</a></h4>
+<p>The <em>inhibitor arc</em> goes from a <em>place</em> to a <em>transition</em>, and enforces the condition that the <em>transition</em> may only fire if the <em>place</em> is empty.</p>
+<img src="images/petri_inhibitor_arc.png" alt="An inhibitor arc from a place to a transition." height="70px">
+<h3><a class="header" href="#timed-arc-petri-nets" id="timed-arc-petri-nets">Timed-Arc Petri Nets</a></h3>
+<p>Timed-Arc Petri Nets are an extension of Petri Nets, where:</p>
+<ul>
+<li>Tokens have an age</li>
+<li>Tokens grow older at the same rate</li>
+<li>Input arcs to transitions have a time interval</li>
+</ul>
+<h4><a class="header" href="#age-invariants" id="age-invariants">Age Invariants</a></h4>
+<p>An age invariant is a condition for a place.
+The token age must correspond with the age invariant, or it deadlocks.</p>
+<h4><a class="header" href="#transport-arcs" id="transport-arcs">Transport Arcs</a></h4>
+<p>A transport arc conserves the age of the token while transferring it from one place to another.</p>
 <h2><a class="header" href="#static-analysis" id="static-analysis">Static Analysis</a></h2>
 <h2><a class="header" href="#bounded-model-checking" id="bounded-model-checking">Bounded Model Checking</a></h2>
+<p>Bounded Model Checking covers <em>SAT</em> and <em>SMT</em> solvers.
+They are both types of constraint satisfaction problems.</p>
+<h3><a class="header" href="#sat" id="sat">SAT</a></h3>
+<p><em>SAT</em> is short for <em>SATISFIABILITY</em>, which again is a term for <em>Boolean Satisfiability Problem</em>.
+Problems are posed as boolean logical formulas in <em>conjuctive normal form</em>, or CNF.</p>
+<h3><a class="header" href="#smt" id="smt">SMT</a></h3>
+<p><em>Satisfiability Modulo Theory</em> is an extension of <em>SAT</em>, where groups of variables can be replaced by predicates.
+This essentially allows <em>SMT</em> solvers to use <em>SAT</em> solvers to solve subproblems.</p>
 <h3><a class="header" href="#amazon" id="amazon">Amazon</a></h3>
 <blockquote>
 <p>Engineers use TLA+ to prevent serious but subtle bugs from reaching production</p>
@@ -678,8 +791,10 @@ The model becomes a testing ground for &quot;what-if&quot; features.</p>
 <p>The focus of the Facebook engineers is to provide fully automatic feedback on certain soundness bugs, such as memory safety and data races.
 As opposed to Amazon, this approach does not require engineers to be trained in formal methods, simply that they respond to the feedback of the tool.
 The tool works by inferring specification from the code, and ensuring that the program conforms with the inferred specification.</p>
-<p>It does not require whole-program analysis, which allows it to be very fast, and to operate on diffs.</p>
+<p>It does not require whole-program analysis, which allows it to return results typically within 10 minutes.</p>
 <h2><a class="header" href="#quantitative-model-checking" id="quantitative-model-checking">Quantitative Model Checking</a></h2>
+<p><em>State Space Explosion</em>: When states can be combined, these combinations expand exponentially, which makes it very difficult to cover all possible variations of a program, or its abstraction.</p>
+<p>Statistical Model Checking combats this problem by calculating the statistical probability of a property holding in a given model.</p>
 
                     </main>
 
