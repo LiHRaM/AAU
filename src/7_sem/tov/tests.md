@@ -243,9 +243,9 @@ There are four reasons for carefully planning your test cases:
 #### Planning Overview
 The test plan results in three types of artifacts:
 
-1. Test Design: A high level description of testable items and which testers are responsible for them.
-2. Test Case: Actual values for input along with expected output.
-3. Test Procedure: The steps required to operate the system and exercise the specified test cases.
+1. _Test Design_: A high level description of testable items and which testers are responsible for them.
+2. _Test Case_: Actual values for input along with expected output.
+3. _Test Procedure_: The steps required to operate the system and exercise the specified test cases.
 
 #### Organization and Tracking
 
