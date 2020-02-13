@@ -1,4 +1,4 @@
-## Location Based Services(LBS)
+## Location Based Services (LBS)
 
 # LBS in General
 - what is LBS
@@ -42,7 +42,8 @@ Components in LBSs
 - Lbs server talks with Mobile client, which provides its GPS location. Several clients exist, providing different locations.
 - Slide with categories.
 
-<img src="assets/GPS-catgories.png" width=400>
+<img src="assets/GPS-catgories.png" width=500>
+
 
 ## Important issues in LBSs
 - Positioning, location data management, location -dependent query processing, location privacy
@@ -61,8 +62,13 @@ Components in LBSs
   - UL-TOA (uplink time of arrival)
   - can determine distance based on speed and time difference between sending and recieving a tignal
   - indicate distance between multiple terminals = phone location 
+
+<img src="assets/TOA-uplink.png" width=400>
+
 - time difference of arrival(TDOA)
   - Measure the time difference between base stations. Terminals location is determined on a curve. More base station pairs, result in more curves, more accurate location.
+
+<img src="assets/TDOA.png" width=400>
 
 ## Global Positioning System (GPS)
 - Also uses principle of speed, time, distance (TOA, TDOA), however, base stations are now in space!
@@ -97,6 +103,7 @@ Components in LBSs
   - BeiDou (china)
 - Automatic identification system (AIS)
   - Used for ships, combination of radar, satellites and comms.
+
 # Positioning and tracking (Elaborate further on sampling)
 - A positioning system emits (ID, position)
   - Generalized position (error bounded)
@@ -114,20 +121,26 @@ Components in LBSs
 - Trajectory is a sequence of locations
 - Linear interpolation, easily done and accurate enough if the sampling frequency is sufficiently high
 
+<img src="assets/Trajectories.png" width=400>
+
 ## Three cases of tracking
 - Off-line: Given a set of samples, determine the trajectory
 - On-line: Constantly maintain the location
 - Prediction: Infer future locations, based on previous positions and velocity.
+
+<img src="assets/Trajectory2.png" width=400>
+
 ### Online location tracking
 - Mobile clients, continously moving objects, velocity is likely to change, based on traffic or other factors. Uses positioning technology (GPS)
 - Centralized server, maintains the location for clients.
 - Clients send a location update.
 - Applications of tracking: Traffic jam finding, alert ahead service, fleet management.
 
-
 ### GPS-based Outdoor tracking
 - Clients can send and recieve messages from both satelite and ground-based terminals, achieving a more accurate reading of location. 
   - Also reduces communication cost between moving client and server while maintaining accuracy.
+
+<img src="assets/Tracking-approach.png" width=400>
 
 #### Client side update policies
 - Period update:
@@ -152,6 +165,119 @@ Components in LBSs
   - Segment based:
     - Applicaple to road network based clients, no updates as long as client stays close to segment
 
+<img src="assets/policy-comparison.png" width=400>
+
 # Map Matching
 - Why: Low precision in reporting of location. Might be difficult to determine where on the road a device actually is.
-  - Map matching finds roads based on GPS trajectory, either online 
+
+- GPS reports may be low precision
+  - Map Matching is to find roads corresponding to a gps trajectory
+
+<img src="assets/Map-matching.png" width=250>
+
+## Online v offline
+- Online map matching relates the reported GPS positions to the road network while positions are reported
+  - Eg. navigation for driving
+  - real-time map matching can only rely on so-far recorded points. 
+  - compromises performance over accuracy
+- Offline matching happens after the trajectory data is collected
+  - Eg. Analysis of car's driving history
+  - Can take all GPS positions into consideration, giving more accuracy at the cost of performance
+
+### Steps in offline map matching
+- Data preprocessing
+  - Identify and remove outliers.
+  - E.g DBSCAN clustering of GPS positions
+- Matching
+  - Use an offline method
+- Post Processing
+  - Evaluate the results
+    - We need to know ground truth for evaluation
+      - Can measure the distance between the trajectory after map matching and the ground truth trajectory
+      - Count the amount of errors the matched trajectory still have
+
+## Distance between trajectories
+
+Different metrics:
+- Trajectory similarity measurement
+- Geometric based
+- Semantic based
+- Hybrid
+
+<img src="assets/distance-of-trajectory.png" width=400>
+
+
+## Inputs to Map Matching
+Basic Inputs
+ - GPS trajectory (online or offline)
+ - road network
+Other information that can be used
+ - Vehicle Speed
+ - Properties of the road network
+   - topology
+   - speed limit
+   - etc...
+
+## Map matching methods
+
+Local/incremental methods
+- for each point in a given trajectory, find the *local* match (point or road segment) from the road network 
+
+Global methods
+- Match *entire trajectory* with the road network
+
+Statistical methods
+- Use probability related tools sych as Bayesian classifier, Hidden Markov Model, Kalman filter, etc..
+
+<img src="assets/map-matching-methods.png" width=400>
+
+NOTE: all categories may opt to use basic and/or more inputs.
+
+## Naive Map Matching
+Snap each reported point to its nearest road segment.
+- Easy to implement, but not always accurate.
+- A local method
+
+<img src="assets/Naive-map-matching.png" width=300>
+
+<img src="assets/failures-in-naive-matching.png" width=400>
+
+## Global Method
+- Try to find a curve in the road network that is *as close as possible* to the given trajectory.
+  - thr road network is modeled as a graph embedded in the plane with straight-line edges.
+- There are different distance measures
+  - Fréchet distance is often used. 
+- Also known as *Geometric map matching*
+
+## Fréchet distance example
+Like walking a dog on a leash. The "dog" has a max distance (length of leash) that it can freely change speeds within (cannot go backwards).
+- Fréchet distance is the *minimal leash length* necessary to walk the curves from beginning to end
+
+*Example (black line$=$person's path, blue line$=$dog's path, orange lines$=$distance (leash) at points):*
+
+<img src="assets/frechet.png" width=400>
+
+## Probabilistic Map Matching
+- Look at a large pool of historical GPS trajectories.
+  - Find those ones with similar previous-positions, find ratios for which new point has highest probability to be accurate.
+
+<img src="assets/Probabilistic-matching.png" width=400>
+
+## Time Based Map Matching
+- Take time, distance and speed-limit into account. 
+  - Consider if point is feasible within time-frame
+
+<img src="assets/time-based-matching.png" width=400>
+
+NOTE: if both of the two previous methods could match, compare distance/time deltas, and decide which is most probable given the circumstance (eg too fast or too slow to reach point)
+
+
+
+
+
+
+
+
+
+
+
