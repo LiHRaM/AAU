@@ -174,7 +174,39 @@
 </li>
 </ul>
 </li>
-<li><a href="#location-based-services">Location Based Services</a></li>
+<li><a href="#location-based-services-lbs">Location Based Services (LBS)</a>
+<ul>
+<li><a href="#lbs-in-general">LBS in General</a>
+<ul>
+<li><a href="#gps-based-lbs-architecture">GPS-based LBS architecture</a></li>
+<li><a href="#important-issues-in-lbss">Important issues in LBSs</a></li>
+<li><a href="#location-technologies">Location technologies:</a></li>
+<li><a href="#global-positioning-system-gps">Global Positioning System (GPS)</a></li>
+<li><a href="#national-marine-electronics-association-nmea-standards">National Marine Electronics Association (NMEA) standards</a></li>
+<li><a href="#alternative-to-gps">Alternative to GPS</a></li>
+</ul>
+</li>
+<li><a href="#positioning-and-tracking-elaborate-further-on-sampling">Positioning and tracking (Elaborate further on sampling)</a>
+<ul>
+<li><a href="#trajectories">Trajectories</a></li>
+<li><a href="#three-cases-of-tracking">Three cases of tracking</a></li>
+</ul>
+</li>
+<li><a href="#map-matching">Map Matching</a>
+<ul>
+<li><a href="#online-v-offline">Online v offline</a></li>
+<li><a href="#distance-between-trajectories">Distance between trajectories</a></li>
+<li><a href="#inputs-to-map-matching">Inputs to Map Matching</a></li>
+<li><a href="#map-matching-methods">Map matching methods</a></li>
+<li><a href="#naive-map-matching">Naive Map Matching</a></li>
+<li><a href="#global-method">Global Method</a></li>
+<li><a href="#fr%C3%A9chet-distance-example">Fréchet distance example</a></li>
+<li><a href="#probabilistic-map-matching">Probabilistic Map Matching</a></li>
+<li><a href="#time-based-map-matching">Time Based Map Matching</a></li>
+</ul>
+</li>
+</ul>
+</li>
 <li><a href="#indoor-positioning-and-tracking">Indoor Positioning and Tracking</a></li>
 <li><a href="#indoor-lbs">Indoor LBS</a></li>
 <li><a href="#location-privacy-in-lbs">Location Privacy in LBS</a></li>
@@ -327,7 +359,440 @@ Consider the different applications of the available data in mobile applications
 <li>No dedicated servers, client to client communication, any device can be a provider.</li>
 <li>Data may be relayed across different devices.</li>
 </ul>
-<h2><a class="header" href="#location-based-services" id="location-based-services">Location Based Services</a></h2>
+<h2><a class="header" href="#location-based-services-lbs" id="location-based-services-lbs">Location Based Services (LBS)</a></h2>
+<h3><a class="header" href="#lbs-in-general" id="lbs-in-general">LBS in General</a></h3>
+<ul>
+<li>what is LBS
+<ul>
+<li>Infers location of entities (1 or more)</li>
+<li>Communicate between devices</li>
+<li>Uses location data.
+<ul>
+<li>examples of applications that provide information services
+<ul>
+<li>Input: Location data, service requests</li>
+<li>P2P interaction</li>
+<li>Output Location relevant info</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p>LBS triangle:</p>
+<ul>
+<li>Geoinforation -&gt; contents</li>
+<li>locaiton -&gt; location-dependend contents/service</li>
+<li>communication -&gt; service delivery</li>
+</ul>
+<p>Four universal roles </p>
+<ul>
+<li>Terminal
+<ul>
+<li>A mobile terminal provides the ability to change location.</li>
+</ul>
+</li>
+<li>Location enabler
+<ul>
+<li>a system enables the inferrence of the location of mobile terminals</li>
+</ul>
+</li>
+<li>Service provider
+<ul>
+<li>a service provider can generate additional value by utilizing location information</li>
+</ul>
+</li>
+<li>Service user
+<ul>
+<li>a user can utilize the service</li>
+</ul>
+</li>
+</ul>
+<p>Components in LBSs</p>
+<ul>
+<li>Localization, done 
+<ul>
+<li>outdoor with GPS, Cellular, WiFi</li>
+<li>Indoor, wifi, bluetooth, RFID</li>
+</ul>
+</li>
+<li>Service component:
+<ul>
+<li>Requests parsing</li>
+<li>location-dependent query processing</li>
+<li>result delivery</li>
+</ul>
+</li>
+<li>Information rendering:
+<ul>
+<li>Display to user</li>
+<li>Coordination with service component</li>
+</ul>
+</li>
+</ul>
+<h4><a class="header" href="#gps-based-lbs-architecture" id="gps-based-lbs-architecture">GPS-based LBS architecture</a></h4>
+<ul>
+<li>Lbs server talks with Mobile client, which provides its GPS location. Several clients exist, providing different locations.</li>
+<li>Slide with categories.</li>
+</ul>
+<img src="assets/GPS-catgories.png" width=500>
+<h4><a class="header" href="#important-issues-in-lbss" id="important-issues-in-lbss">Important issues in LBSs</a></h4>
+<ul>
+<li>Positioning, location data management, location -dependent query processing, location privacy
+<ul>
+<li>Each of these have indoor/outdoor aspects.</li>
+</ul>
+</li>
+</ul>
+<h4><a class="header" href="#location-technologies" id="location-technologies">Location technologies:</a></h4>
+<ul>
+<li>Network based: Use the infrastructures (antennas, base station), device is either sends signal, or is sensed by network</li>
+<li>Terminal based: location is stored within terminal, location is calculated by the user device, from signals from base stations, GPS.</li>
+</ul>
+<h5><a class="header" href="#basic-techniques-for-positioning" id="basic-techniques-for-positioning">Basic techniques for positioning</a></h5>
+<ul>
+<li>Cell global identity (CGI), 
+<ul>
+<li>Cell of Origin (COO), Cell-id, location, signature, location beacons.</li>
+<li>Masts are placed in a &quot;grid&quot; of cells, location of device can be determined based on the ID of the cell(s) that are currently covering the phone</li>
+</ul>
+</li>
+<li>time of arrival(TOA)
+<ul>
+<li>UL-TOA (uplink time of arrival)</li>
+<li>can determine distance based on speed and time difference between sending and recieving a tignal</li>
+<li>indicate distance between multiple terminals = phone location </li>
+</ul>
+</li>
+</ul>
+<img src="assets/TOA-uplink.png" width=400>
+<ul>
+<li>time difference of arrival(TDOA)
+<ul>
+<li>Measure the time difference between base stations. Terminals location is determined on a curve. More base station pairs, result in more curves, more accurate location.</li>
+</ul>
+</li>
+</ul>
+<img src="assets/TDOA.png" width=400>
+<h4><a class="header" href="#global-positioning-system-gps" id="global-positioning-system-gps">Global Positioning System (GPS)</a></h4>
+<ul>
+<li>Also uses principle of speed, time, distance (TOA, TDOA), however, base stations are now in space!
+<ul>
+<li>68 launched satellites, base stations in space.</li>
+<li>95% uptime
+<ul>
+<li>With only 1 base station we cant know precise location</li>
+<li>with 2 we can get a more accurate</li>
+<li>With 3 we should be able to narrow down location even further - it gives 2 possible points.</li>
+<li>with 4 we should be able to accurately locate locations. (Based on the overlap)</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h4><a class="header" href="#national-marine-electronics-association-nmea-standards" id="national-marine-electronics-association-nmea-standards">National Marine Electronics Association (NMEA) standards</a></h4>
+<ul>
+<li>Standard for comms between marine electronics devices.
+<ul>
+<li>Transmission of GPS data from GPS receiver to other devices, for real time positioning.</li>
+<li>Data sends a message, a series of data, in a sentence.</li>
+</ul>
+</li>
+</ul>
+<h5><a class="header" href="#message-format" id="message-format">Message Format</a></h5>
+<ul>
+<li>Sentences start with $12345,f1,df2
+<ul>
+<li>1 and 2 specify the device being used to determine position.</li>
+<li>Next 3 represent context of sentence
+<ul>
+<li>Most important ones:
+<ul>
+<li>GGA: Current fix data, 3d location and accuracy data)</li>
+<li>RMC: Minimum GPS sentences information</li>
+<li>GSA: Satellite status data</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Finally, data fields split by commas.</li>
+</ul>
+</li>
+</ul>
+<h4><a class="header" href="#alternative-to-gps" id="alternative-to-gps">Alternative to GPS</a></h4>
+<ul>
+<li>Global navigation satellite system (GNSS)
+<ul>
+<li>GPS (US)</li>
+<li>GLONASS (Russia)</li>
+<li>Galileo (EU)</li>
+<li>BeiDou (china)</li>
+</ul>
+</li>
+<li>Automatic identification system (AIS)
+<ul>
+<li>Used for ships, combination of radar, satellites and comms.</li>
+</ul>
+</li>
+</ul>
+<h3><a class="header" href="#positioning-and-tracking-elaborate-further-on-sampling" id="positioning-and-tracking-elaborate-further-on-sampling">Positioning and tracking (Elaborate further on sampling)</a></h3>
+<ul>
+<li>A positioning system emits (ID, position)
+<ul>
+<li>Generalized position (error bounded)</li>
+<li>maintenance of positioning is based on sampling.
+<ul>
+<li>samples contain the time and a possible inaccurate position.
+<ul>
+<li>Outdoor, GPS is used, indoors Wi-Fi or bluetooth is used.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>A tracking system uses the information from the positioning system to approxmiate the trajectory of a mobile object
+<ul>
+<li>Offline, approximate the historical trajectory</li>
+<li>Online, We maintain the current position, and predicts the trajectory.</li>
+<li>Approximation depends on the sampling frequency and the tracking method</li>
+</ul>
+</li>
+</ul>
+<h4><a class="header" href="#trajectories" id="trajectories">Trajectories</a></h4>
+<ul>
+<li>Moving objects gives trajectories,</li>
+<li>Usually just a sample of periodic positions</li>
+<li>Trajectory is a sequence of locations</li>
+<li>Linear interpolation, easily done and accurate enough if the sampling frequency is sufficiently high</li>
+</ul>
+<img src="assets/Trajectories.png" width=400>
+<h4><a class="header" href="#three-cases-of-tracking" id="three-cases-of-tracking">Three cases of tracking</a></h4>
+<ul>
+<li>Off-line: Given a set of samples, determine the trajectory</li>
+<li>On-line: Constantly maintain the location</li>
+<li>Prediction: Infer future locations, based on previous positions and velocity.</li>
+</ul>
+<img src="assets/Trajectory2.png" width=400>
+<h5><a class="header" href="#online-location-tracking" id="online-location-tracking">Online location tracking</a></h5>
+<ul>
+<li>Mobile clients, continously moving objects, velocity is likely to change, based on traffic or other factors. Uses positioning technology (GPS)</li>
+<li>Centralized server, maintains the location for clients.</li>
+<li>Clients send a location update.</li>
+<li>Applications of tracking: Traffic jam finding, alert ahead service, fleet management.</li>
+</ul>
+<h5><a class="header" href="#gps-based-outdoor-tracking" id="gps-based-outdoor-tracking">GPS-based Outdoor tracking</a></h5>
+<ul>
+<li>Clients can send and recieve messages from both satelite and ground-based terminals, achieving a more accurate reading of location. 
+<ul>
+<li>Also reduces communication cost between moving client and server while maintaining accuracy.</li>
+</ul>
+</li>
+</ul>
+<img src="assets/Tracking-approach.png" width=400>
+<h6><a class="header" href="#client-side-update-policies" id="client-side-update-policies">Client side update policies</a></h6>
+<ul>
+<li>Period update:
+<ul>
+<li>Based on a delta T</li>
+<li>Every Delta T time units, report current location to server, only last reported location is used
+<ul>
+<li>Cons:
+<ul>
+<li>Small delta T: High comms cost</li>
+<li>Large delta T: Inaccurate location</li>
+<li>Accuracy depends on the max speed of the client (reporting speed or velocity speed?)</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Region-based update
+<ul>
+<li>Domain is decomposed into region, client reports current region</li>
+<li>Server keeps last region. Update when moving to new region?
+<ul>
+<li>Notes:
+<ul>
+<li>Update frequency set by size of regions
+<ul>
+<li>Region-based guarantee: An object is within its region</li>
+<li>Finer regions: More accurate, more expensive, and vice versa.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Others:
+<ul>
+<li>Point based:
+<ul>
+<li>As long as client is within a circle, centered at a known spot, no updates are sent</li>
+</ul>
+</li>
+<li>Vector based:
+<ul>
+<li>As long as current position is close enough to the vector, no updates</li>
+</ul>
+</li>
+<li>Segment based:
+<ul>
+<li>Applicaple to road network based clients, no updates as long as client stays close to segment</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<img src="assets/policy-comparison.png" width=400>
+<h3><a class="header" href="#map-matching" id="map-matching">Map Matching</a></h3>
+<ul>
+<li>
+<p>Why: Low precision in reporting of location. Might be difficult to determine where on the road a device actually is.</p>
+</li>
+<li>
+<p>GPS reports may be low precision</p>
+<ul>
+<li>Map Matching is to find roads corresponding to a gps trajectory</li>
+</ul>
+</li>
+</ul>
+<img src="assets/Map-matching.png" width=250>
+<h4><a class="header" href="#online-v-offline" id="online-v-offline">Online v offline</a></h4>
+<ul>
+<li>Online map matching relates the reported GPS positions to the road network while positions are reported
+<ul>
+<li>Eg. navigation for driving</li>
+<li>real-time map matching can only rely on so-far recorded points. </li>
+<li>compromises performance over accuracy</li>
+</ul>
+</li>
+<li>Offline matching happens after the trajectory data is collected
+<ul>
+<li>Eg. Analysis of car's driving history</li>
+<li>Can take all GPS positions into consideration, giving more accuracy at the cost of performance</li>
+</ul>
+</li>
+</ul>
+<h5><a class="header" href="#steps-in-offline-map-matching" id="steps-in-offline-map-matching">Steps in offline map matching</a></h5>
+<ul>
+<li>Data preprocessing
+<ul>
+<li>Identify and remove outliers.</li>
+<li>E.g DBSCAN clustering of GPS positions</li>
+</ul>
+</li>
+<li>Matching
+<ul>
+<li>Use an offline method</li>
+</ul>
+</li>
+<li>Post Processing
+<ul>
+<li>Evaluate the results
+<ul>
+<li>We need to know ground truth for evaluation
+<ul>
+<li>Can measure the distance between the trajectory after map matching and the ground truth trajectory</li>
+<li>Count the amount of errors the matched trajectory still have</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h4><a class="header" href="#distance-between-trajectories" id="distance-between-trajectories">Distance between trajectories</a></h4>
+<p>Different metrics:</p>
+<ul>
+<li>Trajectory similarity measurement</li>
+<li>Geometric based</li>
+<li>Semantic based</li>
+<li>Hybrid</li>
+</ul>
+<img src="assets/distance-of-trajectory.png" width=400>
+<h4><a class="header" href="#inputs-to-map-matching" id="inputs-to-map-matching">Inputs to Map Matching</a></h4>
+<p>Basic Inputs</p>
+<ul>
+<li>GPS trajectory (online or offline)</li>
+<li>road network
+Other information that can be used</li>
+<li>Vehicle Speed</li>
+<li>Properties of the road network
+<ul>
+<li>topology</li>
+<li>speed limit</li>
+<li>etc...</li>
+</ul>
+</li>
+</ul>
+<h4><a class="header" href="#map-matching-methods" id="map-matching-methods">Map matching methods</a></h4>
+<p>Local/incremental methods</p>
+<ul>
+<li>for each point in a given trajectory, find the <em>local</em> match (point or road segment) from the road network </li>
+</ul>
+<p>Global methods</p>
+<ul>
+<li>Match <em>entire trajectory</em> with the road network</li>
+</ul>
+<p>Statistical methods</p>
+<ul>
+<li>Use probability related tools sych as Bayesian classifier, Hidden Markov Model, Kalman filter, etc..</li>
+</ul>
+<img src="assets/map-matching-methods.png" width=400>
+<p>NOTE: all categories may opt to use basic and/or more inputs.</p>
+<h4><a class="header" href="#naive-map-matching" id="naive-map-matching">Naive Map Matching</a></h4>
+<p>Snap each reported point to its nearest road segment.</p>
+<ul>
+<li>Easy to implement, but not always accurate.</li>
+<li>A local method</li>
+</ul>
+<img src="assets/Naive-map-matching.png" width=300>
+<img src="assets/failures-in-naive-matching.png" width=400>
+<h4><a class="header" href="#global-method" id="global-method">Global Method</a></h4>
+<ul>
+<li>Try to find a curve in the road network that is <em>as close as possible</em> to the given trajectory.
+<ul>
+<li>thr road network is modeled as a graph embedded in the plane with straight-line edges.</li>
+</ul>
+</li>
+<li>There are different distance measures
+<ul>
+<li>Fréchet distance is often used. </li>
+</ul>
+</li>
+<li>Also known as <em>Geometric map matching</em></li>
+</ul>
+<h4><a class="header" href="#fréchet-distance-example" id="fréchet-distance-example">Fréchet distance example</a></h4>
+<p>Like walking a dog on a leash. The &quot;dog&quot; has a max distance (length of leash) that it can freely change speeds within (cannot go backwards).</p>
+<ul>
+<li>Fréchet distance is the <em>minimal leash length</em> necessary to walk the curves from beginning to end</li>
+</ul>
+<p><em>Example (black line$=$person's path, blue line$=$dog's path, orange lines$=$distance (leash) at points):</em></p>
+<img src="assets/frechet.png" width=400>
+<h4><a class="header" href="#probabilistic-map-matching" id="probabilistic-map-matching">Probabilistic Map Matching</a></h4>
+<ul>
+<li>Look at a large pool of historical GPS trajectories.
+<ul>
+<li>Find those ones with similar previous-positions, find ratios for which new point has highest probability to be accurate.</li>
+</ul>
+</li>
+</ul>
+<img src="assets/Probabilistic-matching.png" width=400>
+<h4><a class="header" href="#time-based-map-matching" id="time-based-map-matching">Time Based Map Matching</a></h4>
+<ul>
+<li>Take time, distance and speed-limit into account. 
+<ul>
+<li>Consider if point is feasible within time-frame</li>
+</ul>
+</li>
+</ul>
+<img src="assets/time-based-matching.png" width=400>
+<p>NOTE: if both of the two previous methods could match, compare distance/time deltas, and decide which is most probable given the circumstance (eg too fast or too slow to reach point)</p>
 <h2><a class="header" href="#indoor-positioning-and-tracking" id="indoor-positioning-and-tracking">Indoor Positioning and Tracking</a></h2>
 <h2><a class="header" href="#indoor-lbs" id="indoor-lbs">Indoor LBS</a></h2>
 <h2><a class="header" href="#location-privacy-in-lbs" id="location-privacy-in-lbs">Location Privacy in LBS</a></h2>
