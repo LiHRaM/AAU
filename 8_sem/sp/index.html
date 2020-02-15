@@ -154,7 +154,13 @@
 <ul>
 <li><a href="#literature">Literature</a></li>
 <li><a href="#design-of-c">Design of C++</a></li>
-<li><a href="#the-basics">The Basics</a></li>
+<li><a href="#the-basics">The Basics</a>
+<ul>
+<li><a href="#minimal-c-program">Minimal C++ Program</a></li>
+<li><a href="#hello-world">Hello, World!</a></li>
+<li><a href="#square">Square</a></li>
+</ul>
+</li>
 <li><a href="#templates">Templates</a></li>
 <li><a href="#fundamental-types">Fundamental Types</a></li>
 <li><a href="#declarations-objects--values-and-type-aliases">Declarations, Objects &amp; Values and Type Aliases</a></li>
@@ -171,7 +177,54 @@
 <li>C++17, The Complete Guide by Nicolai M. Josuttis</li>
 </ul>
 <h3><a class="header" href="#design-of-c" id="design-of-c">Design of C++</a></h3>
+<p>Bjarne Stroustrup says that C++ is designed to provide:</p>
+<ul>
+<li>Constructs which map directly to the hardware, i.e. cheap and efficient low-level operators</li>
+<li>Cheap and elegant abstractions which allows user defined types to be used with the same ease as built-in types</li>
+</ul>
+<p>This is ironic, consider e.g. <a href="https://queue.acm.org/detail.cfm?id=3212479">C Is Not A Low-Level Language</a></p>
+<p>Other considerations:</p>
+<ul>
+<li>There should be no room for a lower-level language beneath C++</li>
+<li>Don't pay for things you don't use</li>
+</ul>
+<blockquote>
+<p>defining a new general-purpose or application-specific type is the most fundamental programming activity in C++</p>
+</blockquote>
 <h3><a class="header" href="#the-basics" id="the-basics">The Basics</a></h3>
+<p>C++ is a statically typed, compiled language.
+It is portable, in the sense that source code is portable, but compiled artifacts are not.</p>
+<h4><a class="header" href="#minimal-c-program" id="minimal-c-program">Minimal C++ Program</a></h4>
+<pre><code class="language-cpp">int main() { } // the minimal C++ program
+</code></pre>
+<h4><a class="header" href="#hello-world" id="hello-world">Hello, World!</a></h4>
+<pre><code class="language-cpp">#include &lt;iostream&gt; // include the &lt;&lt; operator
+
+int main()
+{
+    std::cout &lt;&lt; &quot;Hello, World!\n&quot;;
+}
+</code></pre>
+<p>Note: The <code>&lt;&lt;</code>, or &quot;Put to&quot; operator writes its second operand onto its first.</p>
+<h4><a class="header" href="#square" id="square">Square</a></h4>
+<pre><code class="language-cpp">#include &lt;iostream&gt;
+using namespace std; // use std without std::
+
+double square(double x)
+{
+    return x*x;
+}
+
+void print_square(double x)
+{
+    cout &lt;&lt; &quot;the square of &quot; &lt;&lt; x &lt;&lt; &quot; is &quot; &lt;&lt; square(x) &lt;&lt; &quot;\n&quot;;
+}
+
+int main()
+{
+    print_square(1.22);
+}
+</code></pre>
 <h3><a class="header" href="#templates" id="templates">Templates</a></h3>
 <h3><a class="header" href="#fundamental-types" id="fundamental-types">Fundamental Types</a></h3>
 <h3><a class="header" href="#declarations-objects--values-and-type-aliases" id="declarations-objects--values-and-type-aliases">Declarations, Objects &amp; Values and Type Aliases</a></h3>
