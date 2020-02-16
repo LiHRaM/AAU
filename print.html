@@ -2257,6 +2257,7 @@ The tool works by inferring specification from the code, and ensuring that the p
 <li><a href="8_sem/sp/index.html#minimal-c-program">Minimal C++ Program</a></li>
 <li><a href="8_sem/sp/index.html#hello-world">Hello, World!</a></li>
 <li><a href="8_sem/sp/index.html#square">Square</a></li>
+<li><a href="8_sem/sp/index.html#immutability">Immutability</a></li>
 </ul>
 </li>
 <li><a href="8_sem/sp/index.html#templates">Templates</a></li>
@@ -2322,6 +2323,21 @@ int main()
 {
     print_square(1.22);
 }
+</code></pre>
+<h4><a class="header" href="#immutability" id="immutability">Immutability</a></h4>
+<p>There are to types of immutability in C++: <code>const</code> and <code>constexpr</code>.
+The two differ in the sense that <code>const</code> is a variable modifier, i.e. it promises that a variable is immutable, whereas <code>constexpr</code> is a keyword used to denote expressions which are to be evaluated at compile time.</p>
+<p>Examples from Bjarne:</p>
+<pre><code class="language-cpp">const int dmv = 17;                         // dmv is a named constant
+int var = 17;                               // var is not a constant
+constexpr double max1 = 1.4*square(dmv);    // OK if square(17) is a constant expression
+constexpr double max2 = 1.4*square(var);    // error : var is not a constant expression
+const double max3 = 1.4*square(var);        // OK, may be evaluated at run time
+
+double sum(const vector&lt;double&gt;&amp;);          // sum will not modify its argument (§2.2.5)
+vector&lt;double&gt; v {1.2, 3.4, 4.5};           // v is not a constant
+const double s1 = sum(v);                   // OK: evaluated at run time
+constexpr double s2 = sum(v);               // error : sum(v) not constant expression
 </code></pre>
 <h3><a class="header" href="#templates" id="templates">Templates</a></h3>
 <h3><a class="header" href="#fundamental-types" id="fundamental-types">Fundamental Types</a></h3>
