@@ -82,7 +82,68 @@ const double s1 = sum(v);                   // OK: evaluated at run time
 constexpr double s2 = sum(v);               // error : sum(v) not constant expression
 ```
 
+#### Output
+The `>>`, or the "get from" operator, where the value from the left operand is transferred to the right.
+Type is inferred from the right operand.
+```cpp
+bool accept()
+{
+    cout << "Do you want to proceed (y or n)?\n";   // write question to std::cout
+
+    char answer = 0;
+    cin >> answer;                                  // read answer from std::cin
+    
+    if (answer == 'y') return true;
+    return false;
+}
+```
+
 ### Templates
+Templates are a form of parametric polymorphism.
+
+```cpp
+template<typename T> // For all types T
+class Vector {
+private:
+    T* elem; // elem is an array of Ts with sz elements
+    int sz;
+public:
+    // the API of the class
+};
+```
+
+#### Function Objects
+A functor can be created using templates, for example:
+
+```cpp
+template<typename T>
+class Less_than {
+  const T val;
+public:
+  Less_than(const T& v) : val(v) {};
+  bool operator()(const T& x) const { return x < val; }
+};
+
+// Using the above declarations, I could create a function object like so
+Less_than<char> less_than_char {'a'}; // n.b.: This can be done in a global scope
+
+// And call it like so, n.b.: cannot be done in global scope
+less_than_char('b'); // False, because 'b' is greater than 'a'.
+```
+
+#### Variadic Templates
+Templates can take a variable number of type arguments.
+```cpp
+// The C++ Programming Language 4ed, Bjarne Stroustrup
+template<typename T, typename... Tail>
+void f(T head, Tail... tail)
+{
+    g(head);    // do something to head
+    f(tail...); // try again with tail
+}
+
+void f() { }    // do nothing
+```
 
 ### Fundamental Types
 
