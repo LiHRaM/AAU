@@ -2258,9 +2258,15 @@ The tool works by inferring specification from the code, and ensuring that the p
 <li><a href="8_sem/sp/index.html#hello-world">Hello, World!</a></li>
 <li><a href="8_sem/sp/index.html#square">Square</a></li>
 <li><a href="8_sem/sp/index.html#immutability">Immutability</a></li>
+<li><a href="8_sem/sp/index.html#output">Output</a></li>
 </ul>
 </li>
-<li><a href="8_sem/sp/index.html#templates">Templates</a></li>
+<li><a href="8_sem/sp/index.html#templates">Templates</a>
+<ul>
+<li><a href="8_sem/sp/index.html#function-objects">Function Objects</a></li>
+<li><a href="8_sem/sp/index.html#variadic-templates">Variadic Templates</a></li>
+</ul>
+</li>
 <li><a href="8_sem/sp/index.html#fundamental-types">Fundamental Types</a></li>
 <li><a href="8_sem/sp/index.html#declarations-objects--values-and-type-aliases">Declarations, Objects &amp; Values and Type Aliases</a></li>
 <li><a href="8_sem/sp/index.html#pointers-references-and-ownership">Pointers, References and Ownership</a></li>
@@ -2339,7 +2345,59 @@ vector&lt;double&gt; v {1.2, 3.4, 4.5};           // v is not a constant
 const double s1 = sum(v);                   // OK: evaluated at run time
 constexpr double s2 = sum(v);               // error : sum(v) not constant expression
 </code></pre>
+<h4><a class="header" href="#output" id="output">Output</a></h4>
+<p>The <code>&gt;&gt;</code>, or the &quot;get from&quot; operator, where the value from the left operand is transferred to the right.
+Type is inferred from the right operand.</p>
+<pre><code class="language-cpp">bool accept()
+{
+    cout &lt;&lt; &quot;Do you want to proceed (y or n)?\n&quot;;   // write question to std::cout
+
+    char answer = 0;
+    cin &gt;&gt; answer;                                  // read answer from std::cin
+    
+    if (answer == 'y') return true;
+    return false;
+}
+</code></pre>
 <h3><a class="header" href="#templates" id="templates">Templates</a></h3>
+<p>Templates are a form of parametric polymorphism.</p>
+<pre><code class="language-cpp">template&lt;typename T&gt; // For all types T
+class Vector {
+private:
+    T* elem; // elem is an array of Ts with sz elements
+    int sz;
+public:
+    // the API of the class
+};
+</code></pre>
+<h4><a class="header" href="#function-objects" id="function-objects">Function Objects</a></h4>
+<p>A functor can be created using templates, for example:</p>
+<pre><code class="language-cpp">template&lt;typename T&gt;
+class Less_than {
+  const T val;
+public:
+  Less_than(const T&amp; v) : val(v) {};
+  bool operator()(const T&amp; x) const { return x &lt; val; }
+};
+
+// Using the above declarations, I could create a function object like so
+Less_than&lt;char&gt; less_than_char {'a'}; // n.b.: This can be done in a global scope
+
+// And call it like so, n.b.: cannot be done in global scope
+less_than_char('b'); // False, because 'b' is greater than 'a'.
+</code></pre>
+<h4><a class="header" href="#variadic-templates" id="variadic-templates">Variadic Templates</a></h4>
+<p>Templates can take a variable number of type arguments.</p>
+<pre><code class="language-cpp">// The C++ Programming Language 4ed, Bjarne Stroustrup
+template&lt;typename T, typename... Tail&gt;
+void f(T head, Tail... tail)
+{
+    g(head);    // do something to head
+    f(tail...); // try again with tail
+}
+
+void f() { }    // do nothing
+</code></pre>
 <h3><a class="header" href="#fundamental-types" id="fundamental-types">Fundamental Types</a></h3>
 <h3><a class="header" href="#declarations-objects--values-and-type-aliases" id="declarations-objects--values-and-type-aliases">Declarations, Objects &amp; Values and Type Aliases</a></h3>
 <h3><a class="header" href="#pointers-references-and-ownership" id="pointers-references-and-ownership">Pointers, References and Ownership</a></h3>
