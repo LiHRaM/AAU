@@ -35,3 +35,4 @@
     - [Web Information Processing](./8_sem/wip/README.md)
     - [Mobile Data and Location-based Services](./8_sem/mdls/README.md)
     - [Software Innovation](./8_sem/swi/README.md)
+    - [Mobile HCI](./8_sem/mhci/README.md)
