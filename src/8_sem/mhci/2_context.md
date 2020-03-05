@@ -1,6 +1,6 @@
 ## Mobile Computing and Context
 
-### ***C***ontext and ***c***ontext
+### ___C___ ontext and ___c___ ontext
 
 ### Contextual Inquiry
 
@@ -8,7 +8,7 @@
 #### Questionnaires
 #### Observation
 
-### Communicating ***C***ontext
+### Communicating ___C___ ontext
 
 ### 7 Tips for Good Analysis
 1. Forget what you think you know
