@@ -2462,7 +2462,20 @@ void f() { }    // do nothing
 </ul>
 </li>
 <li><a href="8_sem/mdls/index.html#indoor-positioning-and-tracking">Indoor Positioning and Tracking</a></li>
-<li><a href="8_sem/mdls/index.html#indoor-lbs">Indoor LBS</a></li>
+<li><a href="8_sem/mdls/index.html#indoor-lbs">Indoor LBS</a>
+<ul>
+<li><a href="8_sem/mdls/index.html#modeling-indoor-spaces">Modeling Indoor Spaces</a>
+<ul>
+<li><a href="8_sem/mdls/index.html#distance-aware-indoor-space-model">Distance Aware Indoor Space Model</a></li>
+<li><a href="8_sem/mdls/index.html#computing-indoor-distances-efficiently">Computing Indoor Distances Efficiently</a></li>
+<li><a href="8_sem/mdls/index.html#indexing-framework-for-indoor-distances-and-poi">Indexing Framework for Indoor Distances and POI</a></li>
+<li><a href="8_sem/mdls/index.html#querying-distance-aware-range-and-nearest-neighbors-efficiently">Querying Distance Aware Range and Nearest-Neighbors Efficiently</a></li>
+</ul>
+</li>
+<li><a href="8_sem/mdls/index.html#analyzing-indoor-mobility-data">Analyzing Indoor Mobility Data</a></li>
+<li><a href="8_sem/mdls/index.html#future-research">Future Research</a></li>
+</ul>
+</li>
 <li><a href="8_sem/mdls/index.html#location-privacy-in-lbs">Location Privacy in LBS</a></li>
 <li><a href="8_sem/mdls/index.html#mobile-database">Mobile Database</a></li>
 <li><a href="8_sem/mdls/index.html#mobile-programming">Mobile Programming</a></li>
@@ -3049,6 +3062,40 @@ Other information that can be used</li>
 <p>NOTE: if both of the two previous methods could match, compare distance/time deltas, and decide which is most probable given the circumstance (eg too fast or too slow to reach point)</p>
 <h2><a class="header" href="#indoor-positioning-and-tracking" id="indoor-positioning-and-tracking">Indoor Positioning and Tracking</a></h2>
 <h2><a class="header" href="#indoor-lbs" id="indoor-lbs">Indoor LBS</a></h2>
+<p>It's easy to motivate location-based services.
+People spend most of their time indoors.
+Most of our shared venues are not only indoors, but also complex.</p>
+<p>There are three main areas of research and development:</p>
+<ul>
+<li>Indoor LBS</li>
+<li>Indoor Mobility Data</li>
+<li>Indoor Flow Analysis</li>
+</ul>
+<p>Some applications include:</p>
+<ul>
+<li>Indoor Route Sharing</li>
+<li>Warehouse Management</li>
+<li>Indoor Social and Recommendations</li>
+</ul>
+<p>Technical challenges include:</p>
+<ul>
+<li>Space: Indoor spaces contain a lot of entities which affect indoor movements, these are hard to model using outdoor modelling</li>
+<li>Positioning: Indoor positioning is not as good as GPS currently, current methods are lacking</li>
+<li>Data: Modeling entities, points of interest, and trajectories.</li>
+</ul>
+<h3><a class="header" href="#modeling-indoor-spaces" id="modeling-indoor-spaces">Modeling Indoor Spaces</a></h3>
+<p>The following section is based on the following papers:</p>
+<ul>
+<li>Hua Lu, Xin Cao, Christian S. Jensen: A Foundation for Efficient Indoor Distance-Aware Query Processing. ICDE 2012: 438-449</li>
+<li>Søren Kejser Jensen, Jens Thomas Vejlby Nielsen, Hua Lu, Muhammad Aamir Cheema: Outdoor-indoor space: unified modeling and shortest path search. ISA@SIGSPATIAL 2016: 35-42</li>
+<li>Zhou Shao, Muhammad Aamir Cheema, David Taniar, Hua Lu: VIP-Tree: An Effective Index for Indoor Spatial Queries. PVLDB 10(4): 325-336 (2016)</li>
+</ul>
+<h4><a class="header" href="#distance-aware-indoor-space-model" id="distance-aware-indoor-space-model">Distance Aware Indoor Space Model</a></h4>
+<h4><a class="header" href="#computing-indoor-distances-efficiently" id="computing-indoor-distances-efficiently">Computing Indoor Distances Efficiently</a></h4>
+<h4><a class="header" href="#indexing-framework-for-indoor-distances-and-poi" id="indexing-framework-for-indoor-distances-and-poi">Indexing Framework for Indoor Distances and POI</a></h4>
+<h4><a class="header" href="#querying-distance-aware-range-and-nearest-neighbors-efficiently" id="querying-distance-aware-range-and-nearest-neighbors-efficiently">Querying Distance Aware Range and Nearest-Neighbors Efficiently</a></h4>
+<h3><a class="header" href="#analyzing-indoor-mobility-data" id="analyzing-indoor-mobility-data">Analyzing Indoor Mobility Data</a></h3>
+<h3><a class="header" href="#future-research" id="future-research">Future Research</a></h3>
 <h2><a class="header" href="#location-privacy-in-lbs" id="location-privacy-in-lbs">Location Privacy in LBS</a></h2>
 <h2><a class="header" href="#mobile-database" id="mobile-database">Mobile Database</a></h2>
 <h2><a class="header" href="#mobile-programming" id="mobile-programming">Mobile Programming</a></h2>
@@ -3297,7 +3344,11 @@ Other information that can be used</li>
 <li><a href="8_sem/mhci/index.html#7-tips-for-good-analysis">7 Tips for Good Analysis</a></li>
 </ul>
 </li>
-<li><a href="8_sem/mhci/index.html#interacting-with-mobile-devices">Interacting with Mobile Devices</a></li>
+<li><a href="8_sem/mhci/index.html#interacting-with-mobile-devices">Interacting with Mobile Devices</a>
+<ul>
+<li><a href="8_sem/mhci/index.html#hardware">Hardware</a></li>
+</ul>
+</li>
 </ul>
 <h2><a class="header" href="#introduction-3" id="introduction-3">Introduction</a></h2>
 <p>This course is <em>not</em> about programming, it's about design.
@@ -3323,6 +3374,7 @@ Motivated by the enterprise requesting more software engineers with an understan
 <li>KISS (Keep it Simple, Stupid!)</li>
 </ol>
 <h2><a class="header" href="#interacting-with-mobile-devices" id="interacting-with-mobile-devices">Interacting with Mobile Devices</a></h2>
+<h3><a class="header" href="#hardware" id="hardware">Hardware</a></h3>
 
                     </main>
 
