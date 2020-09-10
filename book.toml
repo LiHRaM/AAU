@@ -16,3 +16,7 @@ renderer = ["html"]
 [output.html]
 # additional-css = ["mermaid.css"]
 additional-js = ["mermaid.min.js", "mermaid-init.js"]
+
+[output.html.fold]
+enable = true
+level = 0
