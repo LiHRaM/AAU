@@ -1,0 +1,266 @@
+<!DOCTYPE HTML>
+<html lang="en" class="sidebar-visible no-js light">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>Lecture 1 - Notes at Aalborg University</title>
+        
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff" />
+
+        <link rel="shortcut icon" href="../../favicon.png">
+        <link rel="stylesheet" href="../../css/variables.css">
+        <link rel="stylesheet" href="../../css/general.css">
+        <link rel="stylesheet" href="../../css/chrome.css">
+        <link rel="stylesheet" href="../../css/print.css" media="print">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="../../FontAwesome/css/font-awesome.css">
+        <link href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" rel="stylesheet" type="text/css">
+        <link href="https://fonts.googleapis.com/css?family=Source+Code+Pro:500" rel="stylesheet" type="text/css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="../../highlight.css">
+        <link rel="stylesheet" href="../../tomorrow-night.css">
+        <link rel="stylesheet" href="../../ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+        
+
+        
+    </head>
+    <body>
+        <!-- Provide site root to javascript -->
+        <script type="text/javascript">
+            var path_to_root = "../../";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "light" : "light";
+        </script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script type="text/javascript">
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script type="text/javascript">
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            var html = document.querySelector('html');
+            html.classList.remove('no-js')
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add('js');
+        </script>
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script type="text/javascript">
+            var html = document.querySelector('html');
+            var sidebar = 'hidden';
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            }
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <div class="sidebar-scrollbox">
+                <ol class="chapter"><li class="chapter-item affix "><a href="../../intro.html">Intro</a></li><li class="chapter-item affix "><a href="../../structure.html">Structure</a></li><li class="chapter-item "><a href="../../1_sem/index.html"><strong aria-hidden="true">1.</strong> Semester 1</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../../1_sem/ip/index.html"><strong aria-hidden="true">1.1.</strong> Imperative Programming</a></li><li class="chapter-item "><a href="../../1_sem/la/index.html"><strong aria-hidden="true">1.2.</strong> Linear Algebra</a></li><li class="chapter-item "><a href="../../1_sem/pbl/index.html"><strong aria-hidden="true">1.3.</strong> Problem Based Learning</a></li></ol></li><li class="chapter-item "><a href="../../2_sem/index.html"><strong aria-hidden="true">2.</strong> Semester 2</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../../2_sem/cart/index.html"><strong aria-hidden="true">2.1.</strong> Computer Architecture</a></li><li class="chapter-item "><a href="../../2_sem/dm/index.html"><strong aria-hidden="true">2.2.</strong> Discrete Mathematics</a></li><li class="chapter-item "><a href="../../2_sem/oop/index.html"><strong aria-hidden="true">2.3.</strong> Object Oriented Programming</a></li></ol></li><li class="chapter-item "><a href="../../3_sem/index.html"><strong aria-hidden="true">3.</strong> Semester 3</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../../3_sem/ad/index.html"><strong aria-hidden="true">3.1.</strong> Algorithms and Datastructures</a></li><li class="chapter-item "><a href="../../3_sem/deb/index.html"><strong aria-hidden="true">3.2.</strong> Design and Evaluation of User Interfaces</a></li><li class="chapter-item "><a href="../../3_sem/su/index.html"><strong aria-hidden="true">3.3.</strong> System's Development</a></li></ol></li><li class="chapter-item "><a href="../../4_sem/index.html"><strong aria-hidden="true">4.</strong> Semester 4</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../../4_sem/loc/index.html"><strong aria-hidden="true">4.1.</strong> Languages and Compilers</a></li><li class="chapter-item "><a href="../../4_sem/os/index.html"><strong aria-hidden="true">4.2.</strong> Principles of Operating Systems and Concurrency</a></li><li class="chapter-item "><a href="../../4_sem/ss/index.html"><strong aria-hidden="true">4.3.</strong> Syntax and Semantics</a></li></ol></li><li class="chapter-item "><a href="../../5_sem/index.html"><strong aria-hidden="true">5.</strong> Semester 5</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../../5_sem/cc/index.html"><strong aria-hidden="true">5.1.</strong> Computability and Complexity</a></li><li class="chapter-item "><a href="../../5_sem/mi/index.html"><strong aria-hidden="true">5.2.</strong> Machine Intelligence</a></li><li class="chapter-item "><a href="../../5_sem/se/index.html"><strong aria-hidden="true">5.3.</strong> Software Engineering</a></li></ol></li><li class="chapter-item "><a href="../../6_sem/index.html"><strong aria-hidden="true">6.</strong> Semester 6</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../../6_sem/aad/index.html"><strong aria-hidden="true">6.1.</strong> Advanced Algorithms and Datastructures</a></li><li class="chapter-item "><a href="../../6_sem/db/index.html"><strong aria-hidden="true">6.2.</strong> Database Systems</a></li><li class="chapter-item "><a href="../../6_sem/ts/index.html"><strong aria-hidden="true">6.3.</strong> Theory of Science</a></li></ol></li><li class="chapter-item "><a href="../../7_sem/index.html"><strong aria-hidden="true">7.</strong> Semester 7</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../../7_sem/dis/index.html"><strong aria-hidden="true">7.1.</strong> Distributed Systems</a></li><li class="chapter-item "><a href="../../7_sem/pp/index.html"><strong aria-hidden="true">7.2.</strong> Programming Paradigms</a></li><li class="chapter-item "><a href="../../7_sem/tov/index.html"><strong aria-hidden="true">7.3.</strong> Test and Verification</a></li></ol></li><li class="chapter-item "><a href="../../8_sem/index.html"><strong aria-hidden="true">8.</strong> Semester 8</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../../8_sem/sp/index.html"><strong aria-hidden="true">8.1.</strong> Selected Topics in Programming</a></li><li class="chapter-item "><a href="../../8_sem/wip/index.html"><strong aria-hidden="true">8.2.</strong> Web Information Processing</a></li><li class="chapter-item "><a href="../../8_sem/mdls/index.html"><strong aria-hidden="true">8.3.</strong> Mobile Data and Location-based Services</a></li><li class="chapter-item "><a href="../../8_sem/swi/index.html"><strong aria-hidden="true">8.4.</strong> Software Innovation</a></li><li class="chapter-item "><a href="../../8_sem/mhci/index.html"><strong aria-hidden="true">8.5.</strong> Mobile HCI</a></li></ol></li><li class="chapter-item expanded "><a href="../../9_sem/index.html"><strong aria-hidden="true">9.</strong> Semester 9</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../9_sem/iret/index.html"><strong aria-hidden="true">9.1.</strong> IT Law</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../sem/iret/lec_1.html" class="active"><strong aria-hidden="true">9.1.1.</strong> Lecture 1</a></li><li class="chapter-item "><a href="../../sem/iret/lec_2.html"><strong aria-hidden="true">9.1.2.</strong> Lecture 2</a></li><li class="chapter-item "><a href="../../sem/iret/lec_3.html"><strong aria-hidden="true">9.1.3.</strong> Lecture 3</a></li><li class="chapter-item "><a href="../../sem/iret/lec_4.html"><strong aria-hidden="true">9.1.4.</strong> Lecture 4</a></li><li class="chapter-item "><a href="../../sem/iret/lec_5.html"><strong aria-hidden="true">9.1.5.</strong> Lecture 5</a></li><li class="chapter-item "><a href="../../sem/iret/lec_6.html"><strong aria-hidden="true">9.1.6.</strong> Lecture 6</a></li><li class="chapter-item "><a href="../../sem/iret/lec_7.html"><strong aria-hidden="true">9.1.7.</strong> Lecture 7</a></li><li class="chapter-item "><a href="../../sem/iret/lec_8.html"><strong aria-hidden="true">9.1.8.</strong> Lecture 8</a></li></ol></li></ol></li></ol>
+            </div>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                
+                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky bordered">
+                    <div class="left-buttons">
+                        <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </button>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light (default)</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        
+                        <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                        
+                    </div>
+
+                    <h1 class="menu-title">Notes at Aalborg University</h1>
+
+                    <div class="right-buttons">
+                        <a href="../../print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+                        
+                    </div>
+                </div>
+
+                
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" name="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+                
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script type="text/javascript">
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <h1><a class="header" href="#lecture-1---gdpr" id="lecture-1---gdpr">Lecture 1 - GDPR</a></h1>
+<h2><a class="header" href="#article-1---subject-matter-and-objectives" id="article-1---subject-matter-and-objectives">Article 1 - Subject-matter and objectives</a></h2>
+<p>To summarize, the purpose of GDPR is to protect &quot;natural persons with regard to the processing of personal data&quot;, and to impose consistencies which allow &quot;free movement of personal data within the Union&quot;.</p>
+<h2><a class="header" href="#article-2---material-scope" id="article-2---material-scope">Article 2 - Material Scope</a></h2>
+<h3><a class="header" href="#what-is-processing" id="what-is-processing">What is processing?</a></h3>
+<ul>
+<li>Physical information is not actionable <strong>unless it is stored in a register</strong>.</li>
+<li>Verbal information is not actionable <strong>unless it was accessed via actionable methods</strong>, such as electronic or physical information in a register.</li>
+</ul>
+<h3><a class="header" href="#what-is-personal-data" id="what-is-personal-data">What is personal data?</a></h3>
+<p>We separate personal data into four qualifiers:</p>
+<ol>
+<li>Any information</li>
+<li>Relating to</li>
+<li>An identified or identifiable</li>
+<li>Natural person</li>
+</ol>
+<h3><a class="header" href="#what-is-a-natural-person" id="what-is-a-natural-person">What is a natural person?</a></h3>
+<ul>
+<li>Living persons</li>
+<li>Dead persons (up to and including 10 years of dying)</li>
+<li>Enkeltmandsvirksomhed <!-- TODO: translate --> </li>
+<li>Interessentselskaber <!-- TODO: translate --></li>
+</ul>
+<h3><a class="header" href="#cases" id="cases">Cases</a></h3>
+<ul>
+<li><a href="https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX%3A62013CJ0212">Rynes</a>: Not allowed to place a camera on the roof, because it included a view of an official road.</li>
+</ul>
+<h2><a class="header" href="#article-3---territorial-scope" id="article-3---territorial-scope">Article 3 - Territorial Scope</a></h2>
+<h2><a class="header" href="#article-4---definitions" id="article-4---definitions">Article 4 - Definitions</a></h2>
+<h3><a class="header" href="#the-article-29-group-on-relating-to" id="the-article-29-group-on-relating-to">The Article-29 Group on Relating To</a></h3>
+<blockquote>
+<p>Data relates to an individual if it refers to the identity, characteristics or behaviour of an individual or if such information is used to determine or influence the way in which that person is treated or evaluated.</p>
+</blockquote>
+<table><thead><tr><th>Element</th><th>Explanation</th></tr></thead><tbody>
+<tr><td>Content</td><td>Information &quot;relates&quot; to a person when it is &quot;about&quot; that person, and this has to be assessed in the light of all circumstances surrounding the case.</td></tr>
+<tr><td>Purpose</td><td></td></tr>
+<tr><td>Result</td><td></td></tr>
+</tbody></table>
+<br>
+<table><thead><tr><th>Term</th><th>Definition</th></tr></thead><tbody>
+<tr><td>Legal Definition</td><td>Definition of a term in the context of the law. I.e. &quot;behandling&quot; in GDPR is defined in Article 4.</td></tr>
+</tbody></table>
+<p>N.B.: Journalists, and the police are generally excepted from GDPR, although the police is regulated, just by another law.</p>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                        
+                            <a rel="prev" href="../../9_sem/iret/index.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+                        
+
+                        
+                            <a rel="next" href="../../sem/iret/lec_2.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+                        
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                
+                    <a rel="prev" href="../../9_sem/iret/index.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+                
+
+                
+                    <a rel="next" href="../../sem/iret/lec_2.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+                
+            </nav>
+
+        </div>
+
+        
+
+        
+
+        
+        
+        
+        <script type="text/javascript">
+            window.playpen_copyable = true;
+        </script>
+        
+
+        
+
+        
+        <script src="../../elasticlunr.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../../mark.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../../searcher.js" type="text/javascript" charset="utf-8"></script>
+        
+
+        <script src="../../clipboard.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../../highlight.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../../book.js" type="text/javascript" charset="utf-8"></script>
+
+        <!-- Custom JS scripts -->
+        
+        <script type="text/javascript" src="../../mermaid.min.js"></script>
+        
+        <script type="text/javascript" src="../../mermaid-init.js"></script>
+        
+
+        
+
+    </body>
+</html>
