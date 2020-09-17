@@ -1,48 +1,68 @@
 # Summary
 
-[Intro](./intro.md)
-[Structure](./structure.md)
+[Intro](./intro.md) [Structure](./structure.md)
+
+--------------------------------------------------------------------------------
+
 - [Semester 1](./1_sem/README.md)
-    - [Imperative Programming](./1_sem/ip/README.md)
-    - [Linear Algebra](./1_sem/la/README.md)
-    - [Problem Based Learning](./1_sem/pbl/README.md)
+
+  - [Imperative Programming](./1_sem/ip/README.md)
+  - [Linear Algebra](./1_sem/la/README.md)
+  - [Problem Based Learning](./1_sem/pbl/README.md)
+
 - [Semester 2](./2_sem/README.md)
-    - [Computer Architecture](./2_sem/cart/README.md)
-    - [Discrete Mathematics](./2_sem/dm/README.md)
-    - [Object Oriented Programming](./2_sem/oop/README.md)
+
+  - [Computer Architecture](./2_sem/cart/README.md)
+  - [Discrete Mathematics](./2_sem/dm/README.md)
+  - [Object Oriented Programming](./2_sem/oop/README.md)
+
 - [Semester 3](./3_sem/README.md)
-    - [Algorithms and Datastructures](./3_sem/ad/README.md)
-    - [Design and Evaluation of User Interfaces](./3_sem/deb/README.md)
-    - [System's Development](./3_sem/su/README.md)
+
+  - [Algorithms and Datastructures](./3_sem/ad/README.md)
+  - [Design and Evaluation of User Interfaces](./3_sem/deb/README.md)
+  - [System's Development](./3_sem/su/README.md)
+
 - [Semester 4](./4_sem/README.md)
-    - [Languages and Compilers](./4_sem/loc/README.md)
-    - [Principles of Operating Systems and Concurrency](./4_sem/os/README.md)
-    - [Syntax and Semantics](./4_sem/ss/README.md)
+
+  - [Languages and Compilers](./4_sem/loc/README.md)
+  - [Principles of Operating Systems and Concurrency](./4_sem/os/README.md)
+  - [Syntax and Semantics](./4_sem/ss/README.md)
+
 - [Semester 5](./5_sem/README.md)
-    - [Computability and Complexity](./5_sem/cc/README.md)
-    - [Machine Intelligence](./5_sem/mi/README.md)
-    - [Software Engineering](./5_sem/se/README.md)
+
+  - [Computability and Complexity](./5_sem/cc/README.md)
+  - [Machine Intelligence](./5_sem/mi/README.md)
+  - [Software Engineering](./5_sem/se/README.md)
+
 - [Semester 6](./6_sem/README.md)
-    - [Advanced Algorithms and Datastructures](./6_sem/aad/README.md)
-    - [Database Systems](./6_sem/db/README.md)
-    - [Theory of Science](./6_sem/ts/README.md)
+
+  - [Advanced Algorithms and Datastructures](./6_sem/aad/README.md)
+  - [Database Systems](./6_sem/db/README.md)
+  - [Theory of Science](./6_sem/ts/README.md)
+
 - [Semester 7](./7_sem/README.md)
-    - [Distributed Systems](./7_sem/dis/README.md)
-    - [Programming Paradigms](./7_sem/pp/README.md)
-    - [Test and Verification](./7_sem/tov/README.md)
+
+  - [Distributed Systems](./7_sem/dis/README.md)
+  - [Programming Paradigms](./7_sem/pp/README.md)
+  - [Test and Verification](./7_sem/tov/README.md)
+
 - [Semester 8](./8_sem/README.md)
-    - [Selected Topics in Programming](./8_sem/sp/README.md)
-    - [Web Information Processing](./8_sem/wip/README.md)
-    - [Mobile Data and Location-based Services](./8_sem/mdls/README.md)
-    - [Software Innovation](./8_sem/swi/README.md)
-    - [Mobile HCI](./8_sem/mhci/README.md)
+
+  - [Selected Topics in Programming](./8_sem/sp/README.md)
+  - [Web Information Processing](./8_sem/wip/README.md)
+  - [Mobile Data and Location-based Services](./8_sem/mdls/README.md)
+  - [Software Innovation](./8_sem/swi/README.md)
+  - [Mobile HCI](./8_sem/mhci/README.md)
+
 - [Semester 9](./9_sem/README.md)
-    - [IT Law](./9_sem/iret/README.md)
-        - [Lecture 1](./sem/iret/lec_1.md)
-        - [Lecture 2](./sem/iret/lec_2.md)
-        - [Lecture 3](./sem/iret/lec_3.md)
-        - [Lecture 4](./sem/iret/lec_4.md)
-        - [Lecture 5](./sem/iret/lec_5.md)
-        - [Lecture 6](./sem/iret/lec_6.md)
-        - [Lecture 7](./sem/iret/lec_7.md)
-        - [Lecture 8](./sem/iret/lec_8.md)
+
+  - [IT Law](./9_sem/iret/README.md)
+
+    - [Lecture 1](./9_sem/iret/lec_1.md)
+    - [Lecture 2](./9_sem/iret/lec_2.md)
+    - [Lecture 3](./9_sem/iret/lec_3.md)
+    - [Lecture 4](./9_sem/iret/lec_4.md)
+    - [Lecture 5](./9_sem/iret/lec_5.md)
+    - [Lecture 6](./9_sem/iret/lec_6.md)
+    - [Lecture 7](./9_sem/iret/lec_7.md)
+    - [Lecture 8](./9_sem/iret/lec_8.md)
