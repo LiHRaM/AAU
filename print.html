@@ -968,8 +968,172 @@ Collisions  exist, but they are hard to find with this property.</li>
 <h3><a class="header" href="#solidity" id="solidity">Solidity</a></h3>
 <ul>
 <li>An object oriented language for implementing smart contracts.</li>
-<li>Used in Ethereum.</li>
+<li>
+<h1>Used in Ethereum.
+Cryptographical Tools</h1>
+</li>
 </ul>
+<p>A summary of the tools necessary for Blockchains.</p>
+<h2><a class="header" href="#hash" id="hash">Hash</a></h2>
+<p>A hash function $H$ takes binary input of arbitrary length, and creates
+fixed-length output of it.</p>
+<p>$H: X = {0,1}^* \rightarrow {0,1}^L$<br />
+typically where $L \in {128, 160, 256, 512}$</p>
+<p>For security purposes, it is important that a small change in the input
+results in a large change in the output. Collisions exist, but they are
+hard to find with this property.</p>
+<h2><a class="header" href="#signatures-using-asymmetric-cryptography" id="signatures-using-asymmetric-cryptography">Signatures using Asymmetric Cryptography</a></h2>
+<p>Digital signatures are typically done using three algorithms, and a
+known hash $H$.</p>
+<h4><a class="header" href="#keygen" id="keygen">KeyGen</a></h4>
+<p>An algorithm which returns two keys: a private signing key, and a public
+verification key.</p>
+<h4><a class="header" href="#sign" id="sign">Sign</a></h4>
+<p>An algorithm which computes the signature of some input, given the
+private key. This input is typically a hash of some data to be sent.</p>
+<h4><a class="header" href="#verify" id="verify">Verify</a></h4>
+<p>Decrypts the signature using the public key and compare the result with
+the hash of the received data.</p>
+<h2><a class="header" href="#merkle-trees-1" id="merkle-trees-1">Merkle Trees</a></h2>
+<p>A complete binary tree of hashes. It is built starting from an initial
+set of symbols. Also known as a hash tree. Explots a hash function H
+(SHA1, MD5). Leaves are H applied to the initial symbols. Internal nodes
+are H applied to the sons of a node.</p>
+<h1><a class="header" href="#blockchain-basics" id="blockchain-basics">Blockchain Basics</a></h1>
+<p>A blockchain is a digitized, decentralized, public ledger of all
+cryptocurrency transactions. Constantly growing as 'mined' blocks (the
+most recent transactions) are recorded and added to it in chronological
+order, it allows market participants to keep track of digital currency
+transactions without central recordkeeping <sup class="footnote-reference"><a href="#1">1</a></sup>. The Blockchain in
+essence is a collection of Blocks. Each Block is composed of the
+following elements: data, a hash pointer, and a timestamp.</p>
+<h2><a class="header" href="#hash-pointers" id="hash-pointers">Hash Pointers</a></h2>
+<p>Pointer to where some info is stored. Cryptographic hash of the info. If
+we have a hash pointer, we can: (1) ask to get the info back, and (2)
+verify that it hasn't changed. Similar to how programs to download are
+often accompanied by a hash, to verify that you downloaded the correct
+file.</p>
+<h2><a class="header" href="#consensus" id="consensus">Consensus</a></h2>
+<p>The Blockchain network is in principle completely asynchronous and
+decentralized. In terms of currency, the problem to solve is
+double-spending, i.e. being able to spend the same money more than once.</p>
+<h4><a class="header" href="#nakamoto-consensus" id="nakamoto-consensus">Nakamoto Consensus</a></h4>
+<p>Assuming that 1. most nodes are honest, and 2. adding a block is
+computationally expensive, we can ignore received blockchains which are
+shorter than ours, for two reasons: 1. it was created later than mine,
+and 2. it can be out of sync. This assumes that the honest nodes have
+more CPU power than attacker nodes.</p>
+<h2><a class="header" href="#proof-of-work" id="proof-of-work">Proof of Work</a></h2>
+<p>Provide a computational puzzle that is hard to solve when you want to
+add a valid block, but easy to solve when you want to verify that a
+block is valid. Specifically, the new block must be a combination of a
+nonce and a header. The nonce is accepted when $H(\mathtt{header})$
+starts with $n$ zeros. $n$ defines how hard it is to add a new block.</p>
+<h4><a class="header" href="#example" id="example">Example</a></h4>
+<p>Say the hashing algorithm is <code>SHA256</code>, and $n = 36$. Each nonce has the
+probability $2^{-36}$ of success. The nonce must therefore be
+brute-forced, but only requires one hash to verify.</p>
+<h1><a class="header" href="#blockchain-details" id="blockchain-details">Blockchain Details</a></h1>
+<h2><a class="header" href="#transactions-1" id="transactions-1">Transactions</a></h2>
+<p>A transaction contains the following data:</p>
+<ul>
+<li>
+<p>A list of input transactions</p>
+</li>
+<li>
+<p>A list of tuples of the recipient public key, and the amount to
+send.</p>
+</li>
+<li>
+<p>Personal signature, signed with private key</p>
+</li>
+</ul>
+<p>In order to verify a transaction, one must:</p>
+<ol>
+<li>
+<p>Verify the signature using the public key of the sender</p>
+</li>
+<li>
+<p>Verify the signatures of each of the input transactions</p>
+</li>
+<li>
+<p>Ensure that the money has not been spent between the input
+transactions and the new transaction.</p>
+</li>
+</ol>
+<p>Since the transaction is signed using the private key, only the owner of
+the identity can transfer the money from that point. A single user can
+have an arbitrary amount of identities.</p>
+<h2><a class="header" href="#user-miners" id="user-miners">User Miners</a></h2>
+<p>A miner does the following:</p>
+<ol>
+<li>
+<p>Verify all the transactions by looking that input transactions are
+covered and properly signed</p>
+</li>
+<li>
+<p>Compute the Merkle root hash for the transactions</p>
+</li>
+<li>
+<p>Solve the puzzle on the previous block, for immutability</p>
+</li>
+<li>
+<p>Broadcast the new header</p>
+</li>
+<li>
+<p>Go on collecting new transactions for next block</p>
+</li>
+</ol>
+<p>Miners receive compensation for computing the next block. However, it is
+estimated that we waste $15 million / day on energy to power the
+miners.</p>
+<h2><a class="header" href="#smart-contracts" id="smart-contracts">Smart Contracts</a></h2>
+<h4><a class="header" href="#definition" id="definition">Definition</a></h4>
+<p>Computer protocols that facilitate, verify or enforce the negotiation or
+performance of a contract, or that make a contractual clause
+unnecessary. Define the rules and penalties around an agreement in the
+same way that a traditional contract does, but also automatically
+enforce those obligations, i.e. code is law.</p>
+<h4><a class="header" href="#ethereum-1" id="ethereum-1">Ethereum</a></h4>
+<p>Contracts are the main building blocks of Ethereum, the second most
+popular blockchain. The contract is a program which lives inside the
+distributed Ethereum network and has its own ether balance of Ether<sup class="footnote-reference"><a href="#2">2</a></sup>,
+memory and code. Every time you send a transaction to a contract, it
+executes its code, which can store data, send transactions and interact
+with other contracts. In order to run the contract, you create a
+transaction of Ether to the contract, optionally with some input
+information. The contract runs until it completes or runs out of Ether.
+The Ether paid is awarded to the winning miner. Each miner runs the
+smart contract, and produces the same output. The winning miner will
+publish the block to the rest of the network. Other miners validate that
+they get the same result. The contracts may be compiled online using the
+Solidity Compiler<sup class="footnote-reference"><a href="#3">3</a></sup>.</p>
+<h1><a class="header" href="#summary" id="summary">Summary</a></h1>
+<p>When to use blockchains:</p>
+<ol>
+<li>
+<p>Are there multiple parties in the ecosystem?</p>
+</li>
+<li>
+<p>Is establishing trust between all the parties an issue?</p>
+</li>
+<li>
+<p>Is it critical to have a tamper-proof and permanent record of
+transactions?</p>
+</li>
+<li>
+<p>Are we securing the ownership or management of a finite resource?</p>
+</li>
+<li>
+<p>Does this ecosystem benefit from improved transparency?</p>
+</li>
+<div class="footnote-definition" id="1"><sup class="footnote-definition-label">1</sup>
+<p>Merkle tree</p>
+</div>
+<div class="footnote-definition" id="2"><sup class="footnote-definition-label">2</sup>
+<p>Ether is the cryptocurrency / cryptofuel of Ethereum</p>
+</div>
+</ol>
 <h1><a class="header" href="#hadoop-rs-programming-assignment" id="hadoop-rs-programming-assignment">Hadoop-Rs: Programming Assignment</a></h1>
 <h2><a class="header" href="#goals" id="goals">Goals</a></h2>
 <p>There are five tasks in all.
