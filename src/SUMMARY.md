@@ -43,6 +43,7 @@
 - [Semester 7](./7_sem/README.md)
 
   - [Distributed Systems](./7_sem/dis/README.md)
+    - [Blockchain Notes](./7_sem/dis/8_blockchain.2.md)
   - [Programming Paradigms](./7_sem/pp/README.md)
   - [Test and Verification](./7_sem/tov/README.md)
 

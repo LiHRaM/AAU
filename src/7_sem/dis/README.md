@@ -11,5 +11,4 @@ Essentially, how can we utilize all this raw computing power available to us to 
 {{#include 6_replication_and_consistency.md}}
 {{#include 7_consensus.md}}
 {{#include 8_blockchain.md}}
-{{#include 8_blockchain.2.md}}
 {{#include 9_miniproject.md}}
