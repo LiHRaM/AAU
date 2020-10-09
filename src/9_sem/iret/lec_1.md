@@ -6,12 +6,12 @@ To summarize, the purpose of GDPR is to protect "natural persons with regard to 
 
 ## Article 2 - Material Scope
 
-### What is processing?
+### Processing
 
 - Physical information is not actionable **unless it is stored in a register**.
 - Verbal information is not actionable **unless it was accessed via actionable methods**, such as electronic or physical information in a register.
 
-### What is personal data?
+### Personal Data
 
 We separate personal data into four qualifiers:
 
@@ -20,11 +20,11 @@ We separate personal data into four qualifiers:
 3. An identified or identifiable
 4. Natural person
 
-### What is a natural person?
+### Natural Person
 
 - Living persons
 - Dead persons (up to and including 10 years of dying)
-- Enkeltmandsvirksomhed <!-- TODO: translate --> 
+- Enkeltmandsvirksomhed <!-- TODO: translate -->
 - Interessentselskaber <!-- TODO: translate -->
 
 ### Cases
